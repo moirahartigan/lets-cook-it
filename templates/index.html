@@ -1,7 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
 
+        <!-- Recipe -->
+        <div class="col s12 m7 left">
+            <div>
+            {% for recipe in recipe_list %}
+            <div class="row">
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="images/sample-1.jpg">
+                      <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}    
+            {% endfor %}
+            </div>
 
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
