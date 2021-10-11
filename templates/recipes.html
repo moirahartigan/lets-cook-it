@@ -2,12 +2,38 @@
 
 {% block content %}
 
-    {% for recipe in recipes %}
+<div class="row">
+    <div class="col s12">
+        <h3 class="center-align page-heading">
+            Recipes
+        </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row"> 
+
+<!-- search -->
+
+<section>
+    
+</section>
+        
+        <!-- Recipe Entries -->
+    {% for recipe in recipes_list %}
+
+    { if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+    {% endif %}
     {{ recipe.categories }}<br>
     {{ recipe.title }}<br>
     {{ recipe.ingredients }}<br>
     {{ recipe.method }}<br>
+    {% endfor %}
+    </div>
+</div>
 
-{% endfor %}
+
 
 {% endblock content %}
