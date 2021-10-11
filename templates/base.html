@@ -2,53 +2,86 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A recipe sharing site where you can find, store and share your favourite recipes">
-    <meta name="keywords" content="recipe sharing, recipe, ingredients, recipe method, recipe blog">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    <title>Lets Cook It</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A recipe sharing site where you can find, store and share your favourite recipes">
+  <meta name="keywords" content="recipe sharing, recipe, ingredients, recipe method, recipe blog">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" type="text.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  
+  <title>Lets Cook It</title>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <!-- Desktop navbar -->
-            <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Lets Cook It</a>
-              <a href="#" data-target="mobile-demo" 
-              class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Log Out</a></li>
-              </ul>
-            </div>
-          </nav>
-          <!-- Mobile navbar -->
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">recipes</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Log Out</a></li>
+  <header>
+      <nav>
+      <!-- Desktop navbar -->
+      <div class="navbar-fixed">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Lets Cook It</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Register</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <!-- Mobile navbar -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="#">recipes</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="#">Log Out</a></li>
+    </ul>
+
+
+  </header>
+
+
+  {% block content %}
+  <!-- Content Goes here -->
+  {% endblock content %}
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/" target="_blank"
+                title="Facebook link" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/" target="_blank"
+                title="Instagram link" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/" target="_blank" title="Twitter link"
+                rel="noopener"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/" target="_blank" title="Youtube link"
+                rel="noopener"><i class="fab fa-youtube"></i></a></li>
           </ul>
+        </div>
+      </div>
+    </div>
 
-
-    </header>
-   
-
-    {% block content %}
-    {% endblock content %}
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{% static 'js/script.js' %}"></script>    
+<!-- Script tags -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
