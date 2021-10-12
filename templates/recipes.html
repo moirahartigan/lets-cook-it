@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>Recipes.html</h1>
+
 <div class="row">
     <div class="col s12">
         <h3 class="center-align page-heading">
@@ -11,29 +13,53 @@
 </div>
 
 <div class="container">
-    <div class="row"> 
+    <div class="row">
 
-<!-- search -->
+        <!-- search -->
 
-<section>
-    
-</section>
-        
+        <section>
+<h1>testing</h1>
+        </section>
+
         <!-- Recipe Entries -->
-    {% for recipe in recipes_list %}
+        <section class="recipes">
+            <div class="row">
+                {% for recipe in recipes_list %}
 
-    { if forloop.counter|divisibleby:3 %}
+
+                <div class="col s12 m6 16 x14">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                            {% else %}
+                            <img src="{{ recipe.featured_image.url }}">
+                            {% endif %}
+                            <span class="card-title">{{ recipe.category }}</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="recipe-heading">{{ recipe.title }}</h3>
+                            <span>By: {{ recipe.author }}</span>
+                        </div>
+                        <div class="card-action btn-box">
+                            <a href="{% url 'full_recipes' recipe.slug %}">Full Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            { if forloop.counter|divisibleby:3 %}
     </div>
     <div class="row">
-    {% endif %}
-    {{ recipe.categories }}<br>
+        {% endif %}
+        <!-- {{ recipe.categories }}<br>
     {{ recipe.title }}<br>
     {{ recipe.ingredients }}<br>
-    {{ recipe.method }}<br>
-    {% endfor %}
+    {{ recipe.method }}<br> -->
+        {% endfor %}
     </div>
+
 </div>
 
-
+</section>
 
 {% endblock content %}
