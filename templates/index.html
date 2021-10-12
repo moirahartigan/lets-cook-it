@@ -3,9 +3,21 @@
 
 <h1>Index. html - Recpies sharing site</h1>
 
-<div>
+<div class="album py-5 bg-light">
     <div class="container">
         <div class="row">
+            {% for lets_cook_it_app in object_list %}
+            <div class="col md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="https://via.placeholder.com/150x100" alt="Recipe Card">
+                    <div class="card-body">
+                        <h4 class=""><a href="{{ lets_cook_it_app.get_absolute_url }}">{{ lets_cook_it_app.title }}</a></h4>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
       <!-- Page Content goes here -->
         </div>
     </div>
