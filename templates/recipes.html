@@ -4,62 +4,25 @@
 
 <h1>Recipes.html</h1>
 
-<div class="row">
-    <div class="col s12">
-        <h3 class="center-align page-heading">
-            Recipes
-        </h3>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <!-- search -->
-
-        <section>
-<h1>testing</h1>
-        </section>
-
-        <!-- Recipe Entries -->
-        <section class="recipes">
-            <div class="row">
-                {% for recipe in recipes_list %}
-
-
-                <div class="col s12 m6 16 x14">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                            {% else %}
-                            <img src="{{ recipe.featured_image.url }}">
-                            {% endif %}
-                            <span class="card-title">{{ recipe.category }}</span>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="recipe-heading">{{ recipe.title }}</h3>
-                            <span>By: {{ recipe.author }}</span>
-                        </div>
-                        <div class="card-action btn-box">
-                            <a href="{% url 'full_recipes' recipe.slug %}">Full Recipe</a>
-                        </div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for recipe in index %}
+            <div class="col md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="https://via.placeholder.com/150x100" alt="Recipe Card">
+                    <div class="card-body">
+                        <h4 class=""><a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a></h4>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
 
-            { if forloop.counter|divisibleby:3 %}
+            {% endfor %}
+     
+        </div>
     </div>
-    <div class="row">
-        {% endif %}
-        <!-- {{ recipe.categories }}<br>
-    {{ recipe.title }}<br>
-    {{ recipe.ingredients }}<br>
-    {{ recipe.method }}<br> -->
-        {% endfor %}
-    </div>
+</div> 
 
-</div>
 
-</section>
-
-{% endblock content %}
+{% endblock %}
