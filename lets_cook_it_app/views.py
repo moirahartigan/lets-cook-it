@@ -32,6 +32,7 @@ class RecipeDetail(View):
         )
 
 
+
 class RegisterPage(generic.TemplateView):
     template_name = 'register.html'
     
