@@ -32,6 +32,23 @@ class RecipeDetail(View):
         )
 
 
+class RecipeCreate(View):
+    model = Recipe
+    fields = ['title', 'catergries', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Recipe.objects.filter(status=1)
+        recipe = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "add_detail.html",
+            {
+                "recipe": recipe,
+            },
+        )
+
+
 
 class RegisterPage(generic.TemplateView):
     template_name = 'register.html'
