@@ -39,7 +39,7 @@ class RecipeCreateView(generic.CreateView):
 
     def get(self, request, *args, **kwargs):
         context = {'form': RecipeCreateForm()}
-        return render(request, 'recipes/recipe_form.html', context)
+        return render(request, 'recipe_form.html', context)
 
     def post(self, request, *args, **kwargs):
         form = RecipeCreateForm(request.POST)
@@ -47,7 +47,7 @@ class RecipeCreateView(generic.CreateView):
             recipe = form.save()
             recipe.save()
             return HttpResponseRedirect(reverse('recipes:detail', args=[slug]))
-        return render(request, 'recipes/recipe_form.html', {'form': form})
+        return render(request, 'recipe_form.html', {'form': form})
 
 
 class RegisterPage(generic.TemplateView):
