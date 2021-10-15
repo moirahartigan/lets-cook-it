@@ -2,56 +2,67 @@
 {% load static %}
 {% block content %}
 
-<h1>Recipe_detail.html</h1>
-
-<div class="masthead">
-  <div class="container">
+<h1>Full Recipe</h1>
+<div class="container-fluid">
+  <div class="masthead">
+    <div class="container">
       <div class="row g-0">
-          <div class="col-md-6 masthead-text">
-              <!-- Recipe title goes in these h1 tags -->
-              <h1 class="recipe-title">{{ recipe.title }}</h1>
-              <!-- Recipe author goes before the | the recipe's created date goes after -->
-              <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
-          </div>
-          <div class="d-none d-md-block col-md-6 masthead-image">
-              <!-- The featured image URL goes in the src attribute -->
-              {% if "placeholder" in recipe.image.url %}
-              <img src="/static/css/images/hero-img.jpg" width="100%">
-              {% else %}
-              <img src=" {{ recipe.image.url }}" width="100%">
-              {% endif %}
-          </div>
+        <div class="col-md-6 masthead-text">
+          <!-- Recipe title goes in these h1 tags -->
+          <h1 class="recipe-title">{{ recipe.title }}</h1>
+          <!-- Recipe stats -->
+          <div>
+            <span class="value">Prep time: {{ recipe.prep_time }}</span>
+            <span class="title">Mins</span>
+        </div>
+        <div>
+          <span class="value">Cook time: {{ recipe.cook_time }}</span>
+          <span class="title">Mins</span>
       </div>
+        <div>
+            <span class="title">Serves</span>
+            <span class="value">{{ recipe.servings }}</span>
+        </div>
+          <!-- Recipe author goes before the | the recipe's created date goes after -->
+          <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+        </div>
+        <div class="d-none d-md-block col-md-6 masthead-image">
+          <!-- The featured image URL goes in the src attribute --> 
+          {% if "placeholder" in recipe.image_url.url %}
+          <img src="/static/css/images/burger-img.jpg" width="100%">
+          {% else %} <img src=" {{ recipe.image_url.url }}" width="100%"> 
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+    <div class="col card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <!-- The recipe ingredients goes inside the card-text. -->
+        <!-- Use the | safe filter inside the template tags -->
+        <p class="card-text ">
+        <h1>Ingredients:</h1>
+        {{ recipe.ingredients | safe }}
+        </p>
+      </div>
       <div class="col card mb-4  mt-3 left  top">
-          <div class="card-body">
-              <!-- The recipe ingredients goes inside the card-text. -->
-              <!-- Use the | safe filter inside the template tags -->
-              <p class="card-text ">
-                <h1>Ingredients:</h1>
-                  {{ recipe.ingredients | safe }}
-              </p>
-            </div>
-            <div class="col card mb-4  mt-3 left  top">
-              <div class="card-body">
-                  <!-- The recipe method goes inside the card-text. -->
-                  <!-- Use the | safe filter inside the template tags -->
-                  <p class="card-text ">
-                    <h1>method:</h1>
-                      {{ recipe.method | safe }}
-                  </p>
-                </div>
+        <div class="card-body">
+          <!-- The recipe method goes inside the card-text. -->
+          <!-- Use the | safe filter inside the template tags -->
+          <p class="card-text ">
+          <h1>Method:</h1>
+          {{ recipe.method | safe }}
+          </p>
+        </div>
       </div>
-  </div>
-  <div class="row">
+    </div>
+    <div class="row">
       <div class="col">
-          <hr>
+        <hr>
       </div>
+    </div>
   </div>
-  
-</div>
-{% endblock %}
+  {% endblock %}

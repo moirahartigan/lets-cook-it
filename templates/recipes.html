@@ -16,11 +16,11 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="image-container">
-                            {% if "placeholder" in recipe.image.url %}
+                            {% if "placeholder" in recipe.image_url.url %}
                             <img class="card-img-top"
-                                src="{% static 'images/hero-img.jpg' %}">
+                                src="{% static 'images/woman-in-chef-hat.jpg' %}">
                             {% else %}
-                            <img class="card-img-top" src=" {{ recipe.image.url }}">
+                            <img class="card-img-top" src=" {{ recipe.image_url.url }}">
                             {% endif %}
                             <div class="image-flash">
                                 <p class="author">Author: {{ recipe.author }}</p>

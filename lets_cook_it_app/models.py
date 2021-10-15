@@ -20,7 +20,7 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe')
     image_url = CloudinaryField('image_url', default='placeholder')
-    recipe_url = models.URLField(null=True)
+    recipe_url = models.URLField(unique=True, null=True)
     ingredients = models.TextField()
     method = models.TextField()
     prep_time = models.CharField(max_length=5,)
