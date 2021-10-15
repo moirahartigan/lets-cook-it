@@ -19,7 +19,8 @@ class Recipe(models.Model):
     slug = models.SlugField(max_length=220, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe')
-    image = CloudinaryField('image', default='placeholder')
+    image_url = CloudinaryField('image_url', default='placeholder')
+    recipe_url = models.URLField(null=True)
     ingredients = models.TextField()
     method = models.TextField()
     prep_time = models.CharField(max_length=5,)
