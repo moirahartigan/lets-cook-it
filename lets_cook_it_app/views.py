@@ -39,17 +39,30 @@ class RecipeCreateView(generic.CreateView):
 
     def get(self, request, *args, **kwargs):
         context = {'form': RecipeCreateForm()}
-        return render(request, 'recipe_form.html', context)
+        return render(request, 'recipes.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = RecipeCreateForm(request.POST)
+        context = {'form': RecipeCreateForm()}
+
+        form = RecipeCreateForm(data=request.POST)
+
         if form.is_valid():
-            recipe = form.save()
-            recipe.save()
-            return HttpResponseRedirect(reverse('recipes:detail', args=[slug]))
-        return render(request, 'recipe_form.html', {'form': form})
+            form.instance.email = request.user.email
+            form.instance.name = request.user.username
+            form.save()
+        else:
+            form = RecipeCreateForm()
+            
+        return render(
+            request,
+            "recipes.html",
+            {
+                "uploaded": True,
+                "form": RecipeCreateForm(),
+            },
+        )
+        
 
 
-class RegisterPage(generic.TemplateView):
-    template_name = 'register.html'
+
     

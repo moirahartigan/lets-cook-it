@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
+
 <div class="container-fluid">
 <h2 class="">Recipes</h2>
-<div><a href="#" class="btn btn-primary">Upload</a></div>
+<div><a href="{% url 'create' %}" class="btn btn-primary">Upload</a></div>
 <div class="container-fluid">
     <div class="row">
 
@@ -18,7 +19,7 @@
                         <div class="image-container">
                             {% if "placeholder" in recipe.image_url.url %}
                             <img class="card-img-top"
-                                src="{% static 'images/woman-in-chef-hat.jpg' %}">
+                                src="/static/css/images/woman-in-chef-hat.jpg">
                             {% else %}
                             <img class="card-img-top" src=" {{ recipe.image_url.url }}">
                             {% endif %}
@@ -60,6 +61,28 @@
     {% endif %}
 
 </div>
+</div>
+<div class="col-md-4 card mb-4  mt-3 ">
+    <div class="card-body">
+        <!-- For later -->
+        {% if commented %}
+        <div class="alert alert-success" role="alert">
+            Your recipe is awaiting approval
+        </div>
+        {% else %}
+        {% if user.is_authenticated %}
 
+        <h3>Upload recipe:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form method="post" style="margin-top: 1.3em;">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+</div>
 </div>
 {% endblock %}
