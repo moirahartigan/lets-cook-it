@@ -28,6 +28,8 @@ class Recipe(models.Model):
     servings = models.CharField(max_length=2,)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(
+        User, related_name='recipe_like', blank=True)
     categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
     class Meta:
@@ -35,3 +37,6 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()

@@ -36,6 +36,20 @@ class RecipeDetail(View):
         )
 
 
+class RecipeLike(View):
+
+    def recipe(self, request, slug):
+        recipe = get_object_or_404(Recipe, slug=slug)
+
+        if recipe.likes.filter(id=request.user.id).exists():
+            recipe.likes.remove(request.user)
+        else:
+            recipe.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+        
+
 class RecipeCreateView(generic.CreateView):
     model = Recipe
 
