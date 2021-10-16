@@ -26,12 +26,43 @@ class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
+        liked = False
+        if recipe.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         return render(
             request,
             "recipe_detail.html",
             {
                 "recipe": recipe,
+                "liked": liked,
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Recipe.objects.filter(status=1)
+        recipe = get_object_or_404(queryset, slug=slug)
+        liked = False
+        if recipe.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        form = RecipeCreateForm(data=request.POST)
+
+        # if form.is_valid():
+        #     form.instance.email = request.user.email
+        #     form.instance.name = request.user.username
+        #     form.save()
+        # else:
+        #     form = RecipeCreateForm()
+
+
+        return render(
+            request,
+            "recipe_detail.html",
+            {
+                "recipe": recipe,
+                "liked": liked,
+                "form": RecipeCreateForm()
             },
         )
 
@@ -62,12 +93,12 @@ class RecipeCreateView(generic.CreateView):
 
         form = RecipeCreateForm(data=request.POST)
 
-        if form.is_valid():
-            form.instance.email = request.user.email
-            form.instance.name = request.user.username
-            form.save()
-        else:
-            form = RecipeCreateForm()
+        # if form.is_valid():
+        #     form.instance.email = request.user.email
+        #     form.instance.name = request.user.username
+        #     form.save()
+        # else:
+        #     form = RecipeCreateForm()
             
         return render(
             request,

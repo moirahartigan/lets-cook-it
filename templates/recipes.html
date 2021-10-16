@@ -53,8 +53,9 @@
       <div class="alert alert-success" role="alert"> Your recipe is awaiting approval 
 
       </div> 
-      {% else %} 
+      {% else %}      
       {% if user.is_authenticated %} 
+      
       <h3>Upload recipe:</h3>
       <p>Posting as: {{ user.username }}</p>
       <form method="post" style="margin-top: 1.3em;">
