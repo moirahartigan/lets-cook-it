@@ -4,7 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Recipe
+from .models import Recipe, Comment
+from .forms import RecipeCommentForm
 
 
 
@@ -28,6 +29,7 @@ class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
+        comments = recipe.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -37,7 +39,42 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
+                "comments": comments,
+                "commented": False,
                 "liked": liked,
+                'comment_form': RecipeCommentForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Recipe.objects.filter(status=1)
+        recipe = get_object_or_404(queryset, slug=slug)
+        comments = recipe.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if recipe.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        comment_form = RecipeCommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe
+            comment.save()
+        else:
+            comment_form = RecipeCommentForm()
+
+
+        return render(
+            request,
+            "recipe_detail.html",
+            {
+                "recipe": recipe,
+                "comments": comments,
+                "commented": True,
+                "liked": liked,
+                'comment_form': RecipeCommentForm()
             },
         )
 
