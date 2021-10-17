@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
+from django.db import models
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe, Comment
@@ -103,3 +104,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
+
+class RecipeUpdate(UpdateView):
+    model = Recipe
+    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
+    template_name = 'recipe_form.html'
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
