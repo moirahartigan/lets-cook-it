@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.db import models
-from django.urls import reverse
+# from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe, Comment
 from .forms import RecipeCommentForm
@@ -99,6 +99,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     template_name = 'recipe_form.html'
 
     def get_success_url(self):
+        return ('/')
         return reverse('recipe_detail', kwargs={'slug': self.object.slug})
 
     def form_valid(self, form):
@@ -108,7 +109,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
 class RecipeUpdate(UpdateView):
     model = Recipe
-    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
+    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
     template_name = 'recipe_form.html'
 
     def get_success_url(self):

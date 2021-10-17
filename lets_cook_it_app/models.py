@@ -20,14 +20,14 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe')
     image_url = CloudinaryField('image_url', default='placeholder')
-    recipe_url = models.URLField(unique=True, null=True)
+    recipe_url = models.URLField(null=True)
     ingredients = models.TextField()
     method = models.TextField()
     prep_time = models.CharField(max_length=5,)
     cook_time = models.CharField(max_length=5,)
     servings = models.CharField(max_length=2,)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
     categories = models.ForeignKey(Categories, on_delete=models.CASCADE)

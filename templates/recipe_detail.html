@@ -35,21 +35,36 @@
 						<!-- Recipe author goes before the | the recipe's created date goes after -->
 						<p class="recipe-subtitle">Created by: {{ recipe.author }} | {{ recipe.created_on }}</p>
 						<!-- Likes -->
-						<div class="col-1"> <strong>
+						<div class="col-1"> 
+							<strong>
                 {% if user.is_authenticated %}
                 <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                   {% csrf_token %}
                   {% if liked %}
-                  <button type="submit" name="recipe_id" value="{{ recipe.slug }}" class="btn-like"><i class="fas fa-heart"></i></button>
+                  <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                   {% else %}
-                  <button type="submit" name="recipe_id" value="{{ recipe.slug }}" class="btn-like"><i class="far fa-heart"></i></button>
+                  <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                   {% endif %}
                 </form>
                 {% else %}
                 <span class="text-secondary"> <i class="far fa-heart"></i></span>
                 {% endif %}
                 <span class="text-secondary"> {{ recipe.number_of_likes }}</span>
-              </strong> </div>
+              </strong> 
+			</div>
+			<!-- edit delete buttons -->
+			<div class="row btn-row-recipe">
+				<div class="col">
+					<div class="col">
+						<a class="btn-edit" href="#">Edit <i
+								class="fas fa-edit"></i></a>
+					</div>
+					<div class="col">
+						<a class="btn-delete" href="#">Delete <i
+								class="fas fa-trash-alt"></i></a>
+					</div>
+				</div>
+			</div>
 					</div>
 					<div class="d-none d-md-block col-md-6 masthead-image">
 						<!-- The featured image URL goes in the src attribute -->{% if "placeholder" in recipe.image_url.url %} <img src="/static/css/images/burger-img.jpg" width="100%"> {% else %} <img src=" {{ recipe.image_url.url }}" width="100%"> {% endif %} </div>
