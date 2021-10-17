@@ -40,3 +40,21 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+  
+
+# comments model
+class Comment(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
+
+    name = models.CharField(max_length=40)
+    email = models.EmailField()
+    message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Comment {self.message} by {self.name}"
+
