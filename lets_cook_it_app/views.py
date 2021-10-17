@@ -37,7 +37,7 @@ class RecipeDetail(View):
 
         return render(
             request,
-            "recipe_detail.html",
+            "view_recipe.html",
             {
                 "recipe": recipe,
                 "comments": comments,
