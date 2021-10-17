@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe
-from .forms import RecipeCreateForm
+
 
 
 class HomeList(generic.ListView):
@@ -21,8 +24,7 @@ class RecipeList(generic.ListView):
 
 
 class RecipeDetail(View):
-    model = Recipe
-
+   
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -39,33 +41,6 @@ class RecipeDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-        queryset = Recipe.objects.filter(status=1)
-        recipe = get_object_or_404(queryset, slug=slug)
-        liked = False
-        if recipe.likes.filter(id=self.request.user.id).exists():
-            liked = True
-
-        form = RecipeCreateForm(data=request.POST)
-
-        # if form.is_valid():
-        #     form.instance.email = request.user.email
-        #     form.instance.name = request.user.username
-        #     form.save()
-        # else:
-        #     form = RecipeCreateForm()
-
-
-        return render(
-            request,
-            "recipe_detail.html",
-            {
-                "recipe": recipe,
-                "liked": liked,
-                "form": RecipeCreateForm()
-            },
-        )
-
 
 class RecipeLike(View):
 
@@ -78,38 +53,16 @@ class RecipeLike(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
-
         
 
-class RecipeCreateView(generic.CreateView):
+class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
+    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
+    template_name = 'recipe_form.html'
 
-    def get(self, request, *args, **kwargs):
-        context = {'form': RecipeCreateForm()}
-        return render(request, 'recipes.html', context)
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
 
-    def post(self, request, *args, **kwargs):
-        context = {'form': RecipeCreateForm()}
-
-        form = RecipeCreateForm(data=request.POST)
-
-        # if form.is_valid():
-        #     form.instance.email = request.user.email
-        #     form.instance.name = request.user.username
-        #     form.save()
-        # else:
-        #     form = RecipeCreateForm()
-            
-        return render(
-            request,
-            "recipes.html",
-            {
-                "uploaded": True,
-                "form": RecipeCreateForm(),
-            },
-        )
-        
-
-
-
-    
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
