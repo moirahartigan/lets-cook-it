@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 from django.utils import timezone
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -31,6 +32,12 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
     categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
+
+    # Using slugify found here https://kodnito.com/posts/slugify-urls-django/
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Recipe, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-created_on']

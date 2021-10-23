@@ -33,7 +33,7 @@
                                     <img class="card-img-top" src=" {{ recipe.image_url.url }}">
                                     {% endif %}
                                     <div class="image-flash">
-                                        <p class="author">Author: {{ post.author }}</p>
+                                        <p class="author">Author: {{ recipe.author }}</p>
                                     </div>
                                 </div>
                                 <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">

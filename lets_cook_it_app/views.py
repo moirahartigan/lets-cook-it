@@ -95,7 +95,7 @@ class RecipeLike(View):
 
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
-    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
+    fields = ['title', 'categories', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
     template_name = 'recipe_form.html'
 
     def get_success_url(self):
@@ -109,7 +109,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
 class RecipeEdit(LoginRequiredMixin, UpdateView):
     model = Recipe
-    fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
+    fields = ['title', 'categories', 'image_url', 'recipe_url', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
     template_name = 'recipe_edit_form.html'
 
     def get_success_url(self):
