@@ -9,10 +9,13 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Categories(models.Model):
-    title = models.CharField(max_length=220, unique=True)
+    name = models.CharField(max_length=220, unique=True)
 
     def __str__(self):
-        return self.title
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class Recipe(models.Model):

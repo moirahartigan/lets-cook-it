@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<h1>Create A New recipe Category</h1>
+<br/><br>
+
+<div class="container">
+    <div class="row create-bg">
+        <form method="POST">
+            
+            
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add Category</legend>
+                {{ form|crispy }}
+                {% csrf_token %}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Upload</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

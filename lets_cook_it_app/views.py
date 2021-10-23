@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.db import models
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Recipe, Comment
+from .models import Recipe, Comment, Categories
 from .forms import RecipeCommentForm
 
 
@@ -105,6 +105,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+        
+
+class AddCategoryView(LoginRequiredMixin, CreateView):
+    model = Categories
+    fields = '__all__'
+    template_name = 'add_category.html'
 
 
 class RecipeEdit(LoginRequiredMixin, UpdateView):
@@ -113,14 +119,16 @@ class RecipeEdit(LoginRequiredMixin, UpdateView):
     template_name = 'recipe_edit_form.html'
 
     def get_success_url(self):
-        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
-    
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})    
 
 
 class RecipeDelete(LoginRequiredMixin, DeleteView):
     model = Recipe
     template_name = 'recipe_delete_confirm.html'
     success_url = reverse_lazy('recipes')
+
+
+ 
 
 
    

@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('create/', views.RecipeCreateView.as_view(), name='create'),
+    path('add_category/', views.AddCategoryView.as_view(), name='add_category'),
     path('recipes/', views.RecipeList.as_view(), name='recipes'),
     path('<slug:slug>', views.RecipeDetail.as_view(), name='recipe_detail'),
     path('edit/<slug:slug>', views.RecipeEdit.as_view(), name='recipe_edit'),
