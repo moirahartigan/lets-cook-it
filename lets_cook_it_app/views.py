@@ -110,8 +110,11 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 class RecipeEdit(UpdateView):
     model = Recipe
     fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
-    template_name = 'recipe_form.html'
-    success_url = reverse_lazy('recipe_detail')
+    template_name = 'recipe_edit_form.html'
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
+    
 
 
 class RecipeDelete(DeleteView):
