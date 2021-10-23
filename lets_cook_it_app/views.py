@@ -107,7 +107,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class RecipeEdit(UpdateView):
+class RecipeEdit(LoginRequiredMixin, UpdateView):
     model = Recipe
     fields = ['categories', 'title', 'slug', 'image_url', 'recipe_url', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
     template_name = 'recipe_edit_form.html'
@@ -117,7 +117,7 @@ class RecipeEdit(UpdateView):
     
 
 
-class RecipeDelete(DeleteView):
+class RecipeDelete(LoginRequiredMixin, DeleteView):
     model = Recipe
     template_name = 'recipe_delete_confirm.html'
     success_url = reverse_lazy('recipes')
