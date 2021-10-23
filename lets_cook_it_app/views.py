@@ -17,7 +17,6 @@ class HomeList(generic.ListView):
     paginate_by = 3
     
 
-
 class RecipeList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
@@ -25,6 +24,13 @@ class RecipeList(generic.ListView):
     paginate_by = 6
 
 
+# class CategoryView(generic.ListView):
+#     model = Categories
+#     queryset = Recipe.objects.values('categories').distinct()
+#     template_name = 'categories.html'
+
+
+# CRUD - Read functionality
 class RecipeDetail(View):
    
     def get(self, request, slug, *args, **kwargs):
@@ -92,7 +98,7 @@ class RecipeLike(View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
         
-
+# CRUD - Create functionality
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
     fields = ['title', 'categories', 'image_url', 'recipe_url', 'author', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings']
@@ -112,7 +118,7 @@ class AddCategoryView(LoginRequiredMixin, CreateView):
     fields = '__all__'
     template_name = 'add_category.html'
 
-
+# CRUD - updadte functionality
 class RecipeEdit(LoginRequiredMixin, UpdateView):
     model = Recipe
     fields = ['title', 'categories', 'image_url', 'recipe_url', 'ingredients', 'method', 'prep_time', 'cook_time', 'servings',]
@@ -121,7 +127,7 @@ class RecipeEdit(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('recipe_detail', kwargs={'slug': self.object.slug})    
 
-
+# CRUD - Delete functionality
 class RecipeDelete(LoginRequiredMixin, DeleteView):
     model = Recipe
     template_name = 'recipe_delete_confirm.html'
