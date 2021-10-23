@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.db import models
 from django.urls import reverse_lazy
@@ -113,5 +113,11 @@ class RecipeEdit(UpdateView):
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('recipe_detail')
 
-    # def get_success_url(self):
-    #     return reverse('recipe_detail', kwargs={'slug': self.object.slug})
+
+class RecipeDelete(DeleteView):
+    model = Recipe
+    template_name = 'recipe_delete_confirm.html'
+    success_url = reverse_lazy('recipes')
+
+
+   

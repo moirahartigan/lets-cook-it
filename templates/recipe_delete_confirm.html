@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <p>Are you sure you want to delete "{{ recipe.title }}"?</p>
+
+    <input type="submit" value="confirm">
+
+</form>
+
+{% endblock %}
