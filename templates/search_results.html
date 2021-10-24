@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <center>
+        {% if searched %}
+            <h3 class="center-align page-heading">
+            You Searched For {{ searched }}
+            </h3>
+            <br/>
+            <div class="container-fluid">
+                <div class="row">
+            
+                    <!-- Recipes Entries Column -->
+                    <div class="col-12 mt-3 left">
+                        <div class="row">
+                            {% for recipe in ingredients %}
+                            <div class="col-md-4">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="image-container">
+                                            {% if "placeholder" in recipe.image_url.url %} 
+                                            <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg"> 
+                                            {% else %}
+                                            <img class="card-img-top" src=" {{ recipe.image_url.url }}">
+                                            {% endif %}
+                                            <div class="image-flash">
+                                                <p class="author">Author: {{ recipe.author }}</p>
+                                                <p class="category">Category: {{ recipe.categories }}</p>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                                            <h2 class="card-title">{{ recipe.title }}</h2>
+                                        </a>
+                                        <hr />
+                                        <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                            {{ post.number_of_likes }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                        <div class="row">
+                            {% endif %}
+                            {% endfor %}
+            
+                        </div>
+                    </div>
+                </div>
+            
+        {% else %}
+            <h3>Oops you forgot to search for an ingredient ....</h3>
+        {% endif %}
+        
+
+    </center>
+
+ 
+
+
+{% endblock %}

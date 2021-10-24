@@ -135,8 +135,19 @@ class RecipeDelete(LoginRequiredMixin, DeleteView):
 
 
 def SearchView(request):
-       
-        return render(request, 'search.html', {})
+    if request.method == "POST":
+        searched = request.POST['searched']
+        ingredients = Recipe.objects.filter(ingredients__contains=searched)
+               
+        return render(request,
+        'search_results.html',
+        {'searched':searched,
+        'ingredients':ingredients})
+    else:
+        return render(request,
+        'search_results.html',
+        {})
+
 
 
 
