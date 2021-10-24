@@ -24,10 +24,10 @@ class RecipeList(generic.ListView):
     paginate_by = 6
 
 
-# class CategoryView(generic.ListView):
-#     model = Categories
-#     queryset = Recipe.objects.values('categories').distinct()
-#     template_name = 'categories.html'
+class CategoryView(generic.ListView):
+    model = Categories
+    queryset = Recipe.objects.values('categories').distinct()
+    template_name = 'categories.html'
 
 
 # CRUD - Read functionality
@@ -134,7 +134,11 @@ class RecipeDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('recipes')
 
 
- 
+def SearchView(request):
+       
+        return render(request, 'search.html', {})
+
+
 
 
    
