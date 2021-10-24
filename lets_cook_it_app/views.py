@@ -148,7 +148,21 @@ def SearchView(request):
         'search_results.html',
         {})
 
+# User profile
+class ProfileRecipes(View):
 
+    def get(self, request, *args, **kwargs):
+        published = Recipe.objects.filter(status=1, author=request.user)
+        draft = Recipe.objects.filter(status=0, author=request.user)
+
+        return render(
+            request,
+            'profile.html',
+            {
+                'published': published,
+                'draft': draft,
+            }
+        )
 
 
 
