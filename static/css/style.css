@@ -13,13 +13,17 @@ body {
     font-family: Poppins, sans-serif; 
 }
 
-.header {
-    background-repeat: no-repeat; 
-    background-size: cover; 
+
+.hero {
+    background-image: url(../css/images/ingredients-img-2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
-    margin-top:-100px;
+    height: 100vh;
 }
 
+/* search box */
 .search {
     position: relative;
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)

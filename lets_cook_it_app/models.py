@@ -32,6 +32,7 @@ class Recipe(models.Model):
     servings = models.CharField(max_length=2,)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
+    approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
     categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
