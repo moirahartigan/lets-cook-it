@@ -54,7 +54,8 @@
                 <span class="text-secondary"> {{ recipe.number_of_likes }}</span>
               </strong> 
 			</div>
-			<!-- edit delete buttons -->
+			<!-- edit/delete buttons -->
+			{% if user.is_authenticated %}
 			<div class="row btn-row-recipe">
 				<div class="col">
 					<div class="col">
@@ -67,7 +68,8 @@
 					</div>
 				</div>
 			</div>
-					</div>
+			{% endif %}		
+		</div>
 					<div class="d-none d-md-block col-md-6 masthead-image">
 						<!-- The featured image URL goes in the src attribute -->
 						{% if "placeholder" in recipe.image_url.url %} 
