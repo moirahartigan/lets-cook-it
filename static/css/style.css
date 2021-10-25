@@ -59,6 +59,27 @@ body {
 border-right: none;    
 }
 
+/* login */
+.login {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px;
+}
+
+.login img {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+/* .inp {
+    height: 50px;
+    width: 70px;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+
+} */
+
 /* search box */
 .search {
     position: relative;
