@@ -1,21 +1,45 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<section class="py-5 bg-light">
+  <div class="container">
+      <div class="row login g-0">
+          <div class="col-lg-5">
+              <img class="img-fluid" src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg" alt="">
+          </div>
+          <div class="col-lg-7 text-center py-5">
+              <h1 class="py-5"><strong>Register</strong></h1>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+              <div class="py-3 pt-3">
+                 
+                     
+                  <form method="POST" action="{% url 'account_signup' %}">
+                      <div class="form-row py-3 pt-5">
+                          <div class="offset-1 col-lg-10">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            {% if redirect_field_value %}
+                            <input class="inp" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                            <button class="btn1 btn-signup right" type="submit">{% trans "Register" %} &raquo;</button>                          
+                          </div>
+                          <div class="py-3 pt-5">
+                           <p>{% blocktrans %}Already have an account?</p>
+                           <p>please <a href="{{ login_url }}">Log in</a>.{% endblocktrans %}</p>
+                           </div>
+                      </div>
+                  </form>
+                </div>
+          </div>
+
+      </div>
+    </div> 
+</section>
+
 
 {% endblock %}
