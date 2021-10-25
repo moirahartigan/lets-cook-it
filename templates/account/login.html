@@ -6,47 +6,37 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+
 <section class="py-5 bg-light">
-<div class="container">
-  <div class="row login g-0">
-    <div class="col-lg-5">
-      <img class="img-fluid" src="https://res.cloudinary.com/cloudmoira/image/upload/v1635154252/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_crz2yv.jpg" alt="">
-    </div>
-    <div class="col-lg-7 text-center py-5">
-      <h1 class="py-5"><strong>Welcome Back</strong></h1>
-       <br>
-       <br>
-       <div class="py-3 pt-3">
-      <h3>{% trans "Sign In" %}</h3>
+    <div class="container">
+        <div class="row login g-0">
+            <div class="col-lg-5">
+                <img class="img-fluid" src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg" alt="">
+            </div>
+            <div class="col-lg-7 text-center py-5">
+                <h1 class="py-5"><strong>Welcome Back</strong></h1>
 
-      <p>{% blocktrans %}Don't have an account?
-        <a class="link" href="{{ signup_url }}">Register here</a> first.{% endblocktrans %}</p>
+                <div class="py-3 pt-3">
+                    <h3>{% trans "Sign In" %}</h3>
+                    <p>{% blocktrans %}Don't have an account?
+                    <a class="link" href="{{ signup_url }}">Register here</a> first.{% endblocktrans %}</p>
      
-        <form method="POST" action="{% url 'account_login' %}">
-          <div class="form-row py-3 pt-5">
-            <div class="offset-1 col-lg-10">
-          {% csrf_token %}
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <input class="inp" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <button class="btn1 btn-signup right" type="submit">{% trans "Log In" %}</button>
-          </div>
+                    <form method="POST" action="{% url 'account_login' %}">
+                        <div class="form-row py-3 pt-5">
+                            <div class="offset-1 col-lg-10">
+                              {% csrf_token %}
+                              {{ form.as_p }}
+                              {% if redirect_field_value %}
+                              <input class="inp" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                              {% endif %}
+                              <button class="btn1 btn-signup right" type="submit">{% trans "Log In" %}</button>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+            </div>
+
         </div>
-        </form>
-         </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-       
-
-  
-
-
-
+      </div> 
 </section>
 {% endblock %}

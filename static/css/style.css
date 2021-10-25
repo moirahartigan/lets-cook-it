@@ -15,7 +15,7 @@ body {
 
 
 .hero {
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635156815/Recipe%20images/vegetables-set-left-black-slate_1_sk0ubb.jpg);
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/c_thumb,w_200,g_face/v1635157566/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -64,11 +64,23 @@ border-right: none;
     background: #fff;
     border-radius: 30px;
     box-shadow: 12px 12px 22px;
+    
 }
 
 .login img {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    height: auto;
+}
+
+.btn1{
+    height: 50px;
+    width: 45%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 600;
+    background: rgb(226, 48, 48);
 }
 
 /* .inp {
