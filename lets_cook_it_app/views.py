@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.db import models
 from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe, Comment, Categories
 from .forms import RecipeCommentForm
@@ -148,23 +149,27 @@ def SearchView(request):
         'search_results.html',
         {})
 
-# User profile
+# User Recipe View
 class ProfileRecipes(View):
 
     def get(self, request, *args, **kwargs):
-        user_recipes = Recipe.objects.filter(author=request.user)
-        published = Recipe.objects.filter(status=1, author=request.user)
-        draft = Recipe.objects.filter(status=0, author=request.user)
-        
+        published_list = Recipe.objects.filter(status=1, author=request.user)
+        draft_list = Recipe.objects.filter(status=0, author=request.user)
+
         return render(
             request,
             'profile.html',
             {
-                'published': published,
-                'draft': draft,
-                'user_recipes': user_recipes,
+                'published_list': published_list,
+                'draft_list': draft_list
             }
         )
+
+
+
+  
+        
+
 
 
 

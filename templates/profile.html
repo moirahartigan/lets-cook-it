@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Profile Page </h1>
+<h1>My Recipes </h1>
 
 <div class="container">
         <div class="row">
@@ -27,7 +27,7 @@
       <!-- recipe -->
       <div class="col-12 mt-3 left">
         <div class="row">
-          {% for recipe in recipe_list %}
+          {% for recipe in published_list %}
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
