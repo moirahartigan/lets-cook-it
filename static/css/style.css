@@ -15,7 +15,7 @@ body {
 
 
 .hero {
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/c_thumb,w_200,g_face/v1635157566/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg);
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635156815/Recipe%20images/vegetables-set-left-black-slate_1_sk0ubb.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,6 +62,10 @@ border-right: none;
 /* login */
 .login {
     background: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     border-radius: 30px;
     box-shadow: 12px 12px 22px;
     

@@ -55,7 +55,7 @@
               </strong> 
 			</div>
 			<!-- edit/delete buttons -->
-			{% if user.is_authenticated %}
+			{% if user.is_authenticated and user == recipe.author %}
 			<div class="row btn-row-recipe">
 				<div class="col">
 					<div class="col">
