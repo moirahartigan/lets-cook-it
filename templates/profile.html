@@ -28,8 +28,8 @@
       <div class="col-12 mt-3 left">
         <div class="row">
           {% for recipe in published_list %}
-          <div class="col-md-4">
-            <div class="card mb-4">
+          <div class="col-md-3">
+            <div class="card mb-3">
               <div class="card-body">
                 <div class="image-container">
                   {% if "placeholder" in recipe.image_url.url %}
@@ -45,6 +45,10 @@
                 <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
                   <h2 class="card-title">{{ recipe.title }}</h2>
                 </a>
+                <Button><a href="{% url 'recipe_edit' recipe.slug %}" class="btn btn-primary"><i
+                  class="fas fa-edit"></i></a></Button>
+                <button><a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-primary"><i
+                  class="fas fa-trash-alt"></i></a></button>
                 <hr />
                 <p class="card-text text-muted h6">{{ recipe.created_on }}</p>
               </div>
