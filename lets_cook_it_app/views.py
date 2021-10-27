@@ -114,8 +114,9 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     form_class = RecipeForm
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('profile')
-
+# https://stackoverflow.com/questions/42481287/automatically-set-logged-in-user-as-the-author-in-django-using-createview-and-mo
     def form_valid(self, form):
+        form.instance.author = self.request.user
         print(form.cleaned_data)
         return super().form_valid(form)
         
