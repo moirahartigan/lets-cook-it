@@ -70,6 +70,7 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
+            
         else:
             comment_form = RecipeCommentForm()
 

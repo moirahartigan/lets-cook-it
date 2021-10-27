@@ -19,7 +19,7 @@ class RecipeAdmin(SummernoteModelAdmin):
     summernote_fields = ('ingredients', 'method')
     actions = ['approve_recipes']
 
-    def approve_approve_recipes(self, request, queryset):
+    def approve_recipes(self, request, queryset):
         queryset.update(approved=True)
 
 
