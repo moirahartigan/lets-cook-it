@@ -1,32 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>My Recipes </h1>
+
 
 <div class="container">
         <div class="row">
-            <div class="col-12 pt-5">
-                <h3> {{ user.username }}'s Profile </h3>
+            <div class="col-12 pt-5 text-center text-capitalize">
+                <h1> {{ user.username }}'s Recipe Page </h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <!-- <div class="row">
+            <div class="col text-center">
                 <h5>My Recipes</h5>
             </div>
-        </div>
+        </div> -->
         <div class="row">
-            <div class="col">                
-                <a href="{% url 'create' %}" class="btn btn-primary">Add Recipe <i
+            <div class="col text-center p-2">                
+                <a href="{% url 'create' %}" class="btn btn-success">Add Recipe <i
                     class="fas fa-plus-square"></i></a>
-                    <a href="{% url 'add_category' %}" class="btn btn-primary">Add Category <i
+                    <a href="{% url 'add_category' %}" class="btn btn-success">Add Category <i
                       class="fas fa-plus-square"></i></a>               
             </div>
         </div>
 </div>
 
-<div class="container-fluid">
+
+<section class="col-12 mt-3 left">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for recipe in published_list %}
+      
+      <div class="col-3">
+        <div class="card h-100" style="width: 19rem;">
+          {% if "placeholder" in recipe.image_url.url %}
+          <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
+          {% else %}
+          <img class="card-img-top" src="{{ recipe.image_url.url }}">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.title }}</h5>
+            <p class="card-text">Created by: {{ recipe.author }}</p>
+            <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
+            <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
+            <a href="{% url 'recipe_edit' recipe.slug %}" class="btn btn-outline-success" id="bt2">Edit</a>
+            <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-outline-success" id="bt3">Delete</a>
+            
+          </div>
+        </div>
+      </div>
+     
+      
+  
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="container-fluid">
     <div class="row">
-      <!-- recipe -->
+  
       <div class="col-12 mt-3 left">
         <div class="row">
           {% for recipe in published_list %}
@@ -81,6 +114,6 @@
     </nav>
     {% endif %}
   </div>
-</div>
+</div> -->
 
 {% endblock %}
