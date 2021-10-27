@@ -13,22 +13,51 @@
   <h2>Recipes</h2>
 
   <!-- Search -->
-  <div class="container">
-    <div class="row height d-flex justify-content-center align-items-center">
+  <section>
+    <div class="container">
+      <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8">
-            <form class="search" method=POST action="{% url 'search_results' %}"> <i class="fa fa-search"></i> 
-              {% csrf_token %}
-              <input type="search" class="form-control" placeholder="Search Recipes" name="searched"> 
-              <button class="btn btn-primary">Search</button> 
-            </form>
+          <form class="search" method=POST action="{% url 'search_results' %}"> <i class="fa fa-search"></i>
+            {% csrf_token %}
+            <input type="search" class="form-control" placeholder="Search Recipes" name="searched">
+            <button class="btn btn-primary">Search</button>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </section>
 
+  <section class="col-12 mt-3 left">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for recipe in recipe_list %}
+        
+        <div class="col-3">
+          <div class="card h-100" style="width: 19rem;">
+            {% if "placeholder" in recipe.image_url.url %}
+            <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
+            {% else %}
+            <img class="card-img-top" src="{{ recipe.image_url.url }}">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ recipe.title }}</h5>
+              <p class="card-text">Created by: {{ recipe.author }}</p>
+              <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
+              <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
 
-  <div class="container-fluid">
+            </div>
+          </div>
+        </div>
+       
+        
+    
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- <div class="container-fluid">
     <div class="row">
-      <!-- recipe -->
+      
       <div class="col-12 mt-3 left">
         <div class="row">
           {% for recipe in recipe_list %}
@@ -79,6 +108,6 @@
     </nav>
     {% endif %}
   </div>
-</div>
+</div> -->
 
-{% endblock %}
+  {% endblock %}
