@@ -15,6 +15,13 @@ class RecipeForm(forms.ModelForm):
         }
 
 
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Categories
+        fields = ('name',)
+
+
 class RecipeCommentForm(forms.ModelForm):
 
     class Meta:

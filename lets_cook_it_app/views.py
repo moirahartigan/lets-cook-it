@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe, Comment, Categories
-from .forms import RecipeCommentForm, RecipeForm
+from .forms import RecipeCommentForm, CategoryForm, RecipeForm
 
 
 
@@ -113,10 +113,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = 'recipe_form.html'
-
-    def get_success_url(self):
-        return ('/')
-        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
+    success_url = reverse_lazy('profile')
 
     def form_valid(self, form):
         print(form.cleaned_data)
@@ -125,8 +122,10 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
 class AddCategoryView(LoginRequiredMixin, CreateView):
     model = Categories
-    fields = '__all__'
+    form_class = CategoryForm
     template_name = 'add_category.html'
+    success_url = reverse_lazy('profile')
+   
 
 # CRUD - update functionality
 class RecipeEdit(LoginRequiredMixin, UpdateView):
