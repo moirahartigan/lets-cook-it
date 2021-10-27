@@ -29,6 +29,14 @@ class CategoryView(generic.ListView):
     model = Categories
     queryset = Recipe.objects.values('categories').distinct()
     template_name = 'categories.html'
+    
+# def CategoryView(request, slug):
+#     categories = Recipe.objects.get(slug=slug)
+
+#     context = {
+#         'categories': categories
+#     }
+#     return render(request, 'categories.html', context)
 
 
 # CRUD - Read functionality

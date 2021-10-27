@@ -27,13 +27,13 @@
                     <div class="card border-warning card-wr-bg">
                         <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
                         {% if "placeholder" in recipe.image_url.url %}
-                        <img class="card-img-top" src="https://res.cloudinary.com/cloudmoira/image/upload/v1635154286/Recipe%20images/jennie-brown-MKBoRZEGeiM-unsplash_i7lf4w.jpg">
+                        <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg">
                         {% else %}
                         <img class="card-img-top" src="{{ recipe.image_url.url }}">
                         {% endif %}
                         <div class="card-body d-grid gap-5">
                         <h5 class="card-title text-center text-capitalize">{{ recipe.title }}</h5>
-                        <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
+                        <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link"><h2 class="card-title text-center">View Recipe</h2></a>
                         </div>
                        
                     </div>

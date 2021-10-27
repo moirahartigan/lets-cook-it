@@ -18,6 +18,9 @@ class Categories(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
+    # def get_Recipe(self):
+    #     return Recipe.objects.filter(categories_name=self.title)
+
 
 class Recipe(models.Model):
     title = models.CharField(max_length=220, unique=True)
