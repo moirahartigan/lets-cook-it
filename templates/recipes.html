@@ -16,7 +16,7 @@
   <section>
     <div class="container">
       <div class="row height d-flex justify-content-center align-items-center">
-        <div class="col-md-8 py-5">
+        <div class="col-xs-6 col-md-8 col-lg-6 col-11 py-5">
           <form class="search" method=POST action="{% url 'search_results' %}"> <i class="fa fa-search"></i>
             {% csrf_token %}
             <input type="search" class="form-control" placeholder="Search Recipes" name="searched">
@@ -28,12 +28,12 @@
   </section>
 
   <section class="col-12 mt-3 left">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
         {% for recipe in recipe_list %}
         
         <div class="col-3">
-          <div class="card h-100" style="width: 19rem;">
+          <div class="card h-100" style="width: 18rem;">
             {% if "placeholder" in recipe.image_url.url %}
             <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
             {% else %}
