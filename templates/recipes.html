@@ -26,25 +26,29 @@
       </div>
     </div>
   </section>
-
-  <section class="col-12 mt-3 left">
-    <div class="container-fluid">
+  <!-- class="col-12 mt-3 left -->
+  <section>
+    <div class="container">
       <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
+        <!-- row-cols-1 row-cols-md-2 g-4 py-5 -->
         {% for recipe in recipe_list %}
         
-        <div class="col-3">
-          <div class="card h-100" style="width: 18rem;">
+        <div class="col-md-6 col-lg-4">
+          <div class="card mb-3">
+            <!-- <div class="card-image card h-100" style="width: 18rem;"> -->
             {% if "placeholder" in recipe.image_url.url %}
             <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
             {% else %}
             <img class="card-img-top" src="{{ recipe.image_url.url }}">
             {% endif %}
+            <p class="image-flash">
+            <span class="card-cat">{{ recipe.categories }}</span>
+          </p>
             <div class="card-body">
               <h5 class="card-title">{{ recipe.title }}</h5>
               <p class="card-text">Created by: {{ recipe.author }}</p>
               <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
               <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
-
             </div>
           </div>
         </div>

@@ -23,6 +23,7 @@ body {
     height: 100vh;
 }
 
+
 .card{
     box-shadow: -1px 15px 30px -10px black;
 }
@@ -65,6 +66,19 @@ border-right: none;
     object-fit: cover;
 }
 
+.card-cat {
+    font-size: 1.3em;
+    padding: 5px 10px;
+    border-top-right-radius: 10px;
+    background-color: #fff;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 33%;
+    min-width: 30%;
+}
+
 /* login */
 .login {
     background: #fff;
@@ -82,6 +96,7 @@ border-right: none;
     border-bottom-left-radius: 30px;
     height: auto;
 }
+
 
 .btn1{
     height: 50px;

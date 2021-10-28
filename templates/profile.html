@@ -25,13 +25,13 @@
 </div>
 
 
-<section class="col-12 mt-3 left">
+<section>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       {% for recipe in published_list %}
       
-      <div class="col-3">
-        <div class="card h-100" style="width: 19rem;">
+      <div class="col-md-6 col-lg-4">
+        <div class="card mb-3">
           {% if "placeholder" in recipe.image_url.url %}
           <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
           {% else %}
