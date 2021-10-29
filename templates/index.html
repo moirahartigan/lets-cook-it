@@ -28,7 +28,7 @@
                 <div class="item mb-4">
                 <!-- recipe card -->
                     <div class="card border-warning card-wr-bg">
-                        <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
+                        <a class="recipe-card-image card-img-top" href="{% url 'recipe_detail' recipe.slug %}"></a>
                         {% if "placeholder" in recipe.image_url.url %}
                         <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg">
                         {% else %}
