@@ -35,7 +35,7 @@
               </div>
           </div>
 						<!-- Recipe author goes before the | the recipe's created date goes after -->
-						<p class="recipe-subtitle">Created by: {{ recipe.author }} | {{ recipe.created_on }}</p>
+						<p class="recipe-subtitle">Uploaded by: {{ recipe.author }} | {{ recipe.created_on }}</p>
 						<!-- Likes -->
 						<div class="col-1"> 
 							<strong>
@@ -54,18 +54,19 @@
                 <span class="text-secondary"> {{ recipe.number_of_likes }}</span>
               </strong> 
 			</div>
+			<br>
 			<!-- edit/delete buttons -->
+
 			{% if user.is_authenticated and user == recipe.author %}
 			<div class="row btn-row-recipe">
 				<div class="col">
 					<div class="col">
-						<a class="btn-edit" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
+						<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
 								class="fas fa-edit"></i></a>
-					</div>
-					<div class="col">
-						<a class="btn-delete" href="{% url 'recipe_delete' recipe.slug %}">Delete <i 
+						<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}" >Delete <i 
 								class="fas fa-trash-alt"></i></a>
 					</div>
+					
 				</div>
 			</div>
 			{% endif %}		

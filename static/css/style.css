@@ -6,6 +6,7 @@ import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@10
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     font-family: Poppins, sans-serif; 
 }
 
+/* Index page */
 
 .hero {
     background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635156815/Recipe%20images/vegetables-set-left-black-slate_1_sk0ubb.jpg);
@@ -23,6 +25,14 @@ body {
     height: 50vh;
 }
 
+.heading-line {
+    width: 50%;
+    margin: auto;
+    margin-top: 1%;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+  }
+  
 
 .card{
     box-shadow: -1px 15px 30px -10px black;
