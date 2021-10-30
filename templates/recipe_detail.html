@@ -119,11 +119,11 @@
 					<div class="comments" style="padding: 10px;">
 						<p class="font-weight-bold text-primary"> 
             				{{ comment.name }} 
-            				<span class="text-muted fst-itali">
+            				<span class="text-muted fst-italic">
               					{{ comment.created_on }}
                 			</span> Wrote: 
 						</p> 
-						<p class="font-weight-bold">
+						<p class="comment-message">
                 		{{ comment.message | linebreaks }} 
 						</p>
 						<hr>
@@ -131,6 +131,7 @@
         			{% endfor %} 
       			</div>
 			</div>
+			<div class="col-md-1"></div>
 			<!-- Leave a comment -->
 			<div class="col-md-4 card mb-4  mt-3 ">
 				<div class="card-body"> 
