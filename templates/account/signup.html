@@ -10,29 +10,30 @@
   <div class="container">
       <div class="row login g-0">
           <div class="d-none d-lg-block col-lg-5">
-              <img class="img-fluid" src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg" alt="">
+              <img src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg" alt="">
           </div>
-          <div class="col-lg-7 text-center py-2">
-              <h1 class="py-5"><strong>Register</strong></h1>
+          <div class="col-lg-7 py-2">
+              <h1 class="py-3 text-center"><strong>Register</strong></h1>
 
-              <div class="py-3 pt-3">
+              <div class="col-lg-12 mt-3 offset-md-2 py-3 pt-3">
                  
                      
-                  <form method="POST" action="{% url 'account_signup' %}">
-                      <div class="form-row py-3 pt-2">
+                  <form class="register" id="register_form" method="POST" action="{% url 'account_signup' %}">
+                      <div class="row d.block py-3 pt-2">
                           <div class="offset-1 col-lg-10">
+                            <!-- <div class="d-block col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4"> -->
                             {% csrf_token %}
                             {{ form.as_p }}
                             {% if redirect_field_value %}
-                            <input class="inp" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            <input class="register" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                             {% endif %}
                           </div>
-                          <div class="offset-1 col-lg-10 py-3 pt-4">
+                          <div class="offset-1 col-lg-10 py-3 pt-2">
                             <button class="btn1 btn-signup right" type="submit">{% trans "Register" %} &raquo;</button>                          
                           </div>
-                          <div class="py-3 pt-5">
-                           <p>{% blocktrans %}Already have an account?</p>
-                           <p>please <a href="{{ login_url }}">Log in</a>.{% endblocktrans %}</p>
+                          <div class="offset-1 py-3 pt-2">
+                           <p>{% blocktrans %}Already have an account? Please Log in  <a href="{{ login_url }}">here</a>.{% endblocktrans %}</p>
+                           <p></p>
                            </div>
                       </div>
                   </form>

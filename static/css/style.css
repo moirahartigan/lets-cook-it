@@ -118,14 +118,17 @@ border-right: none;
     background: rgb(226, 48, 48);
 }
 
-/* .inp {
-    height: 50px;
-    width: 70px;
-    border: none;
-    outline: none;
-    border-radius: 60px;
+.register input {
+    display: block;
+    border: 1px solid black;
+    width: 60%;
+}
 
-} */
+.register label {
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 700;
+  }
 
 /* search box */
 .search {
