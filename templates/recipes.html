@@ -3,11 +3,6 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<!-- {% if user.is_authenticated %}
-<div>
-  <a href="{% url 'create' %}" class="btn btn-primary">Upload</a>
-</div>
-{% endif %} -->
 
 <div class="container py-5">
   <h2 class="text-center">Recipes</h2>
@@ -26,16 +21,16 @@
       </div>
     </div>
   </section>
-  <!-- class="col-12 mt-3 left -->
+
   <section>
     <div class="container">
       <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
-        <!-- row-cols-1 row-cols-md-2 g-4 py-5 -->
+
         {% for recipe in recipe_list %}
         
         <div class="col-md-6 col-lg-4">
           <div class="card mb-3 card">
-            <!-- <div class="card-image card h-100" style="width: 18rem;"> -->
+ 
             {% if "placeholder" in recipe.image_url.url %}
             <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
             {% else %}
@@ -47,7 +42,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ recipe.title }}</h5>
               <p class="card-text">Created by: {{ recipe.author }}</p>
-              <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
+ 
               <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
             </div>
           </div>
@@ -59,59 +54,6 @@
       </div>
     </div>
   </section>
-  <!-- <div class="container-fluid">
-    <div class="row">
-      
-      <div class="col-12 mt-3 left">
-        <div class="row">
-          {% for recipe in recipe_list %}
-          <div class="col-md-3">
-            <div class="card mb-3">
-              <div class="card-body">
-                <div class="image-container img-fluid">
-                  {% if "placeholder" in recipe.image_url.url %}
-                  <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg">
-                  {% else %}
-                  <img class="card-img-top" src="{{ recipe.image_url.url }}">
-                  {% endif %}
-                  <div class="image-flash">
-                    <p class="author">Author: {{ recipe.author }}</p>
-                    <p class="category">Category: {{ recipe.categories }}</p>
-                  </div>
-                </div>
-                <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
-                  <h2 class="card-title">{{ recipe.title }}</h2>
-                </a>
-                <hr />
-                <p class="card-text text-muted h6">{{ recipe.created_on }}</p>
-              </div>
-            </div>
-          </div>
-          {% if forloop.counter|divisibleby:4 %}
-        </div>
-        <div class="row">
-          {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-      <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li>
-          <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-        </li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li>
-          <a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
-    {% endif %}
-  </div>
-</div> -->
+  
 
   {% endblock %}
