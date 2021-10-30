@@ -39,19 +39,17 @@
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
-            <p class="card-text">Created by: {{ recipe.author }}</p>
+            <p class="card-text">Added by: {{ recipe.author }}</p>
             <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
             <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
             <a href="{% url 'recipe_edit' recipe.slug %}" class="btn btn-outline-success" id="bt2">Edit</a>
             <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-outline-success" id="bt3">Delete</a>
             
-          </div>
-        </div>
-      </div>
-     
-      
-  
-      {% endfor %}
+            
+          </div>          
+        </div>        
+      </div>   
+      {% endfor %}      
     </div>
   </div>
 </section>

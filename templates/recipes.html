@@ -41,7 +41,7 @@
           </p>
             <div class="card-body">
               <h5 class="card-title">{{ recipe.title }}</h5>
-              <p class="card-text">Uploaded by: {{ recipe.author }}</p>
+              <p class="card-text">Added by: {{ recipe.author }}</p>
  
               <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
             </div>
@@ -55,5 +55,27 @@
     </div>
   </section>
   
+    <!-- PAGINATION -->
 
+    {% if is_paginated %}
+    <div class="pagination">
+        <div class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+</div>
   {% endblock %}
