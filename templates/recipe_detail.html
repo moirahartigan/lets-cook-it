@@ -18,12 +18,13 @@
               <span class="value">Prep time: {{ recipe.prep_time }}</span> 
               <span class="title">Mins</span> 
             </div>
-						<div> 
+			<div> 
               <span class="value">Cook time: {{ recipe.cook_time }}</span> 
               <span class="title">Mins</span> 
             </div>
-						<div> <span class="title">Serves</span> 
-              <span class="value">{{ recipe.servings }}</span> 
+			<div>
+				<span class="title">Serves</span> 
+            	<span class="value">{{ recipe.servings }}</span> 
             </div>
             <div class="row">
               <div class="col">
@@ -34,12 +35,13 @@
                   {% endif %}
               </div>
           </div>
-						<!-- Recipe author goes before the | the recipe's created date goes after -->
-						<p class="recipe-subtitle">Uploaded by: {{ recipe.author }} | {{ recipe.created_on }}</p>
-						<!-- Likes -->
-						<div class="col-1"> 
-							<strong>
-                {% if user.is_authenticated %}
+
+			<!-- Recipe author goes before the | the recipe's created date goes after -->
+			<p class="recipe-subtitle">Uploaded by: {{ recipe.author }} | {{ recipe.created_on }}</p>
+			<!-- Likes -->
+			<div class="col-1"> 
+				<strong>
+					{% if user.is_authenticated %}
                 <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                   {% csrf_token %}
                   {% if liked %}
@@ -49,7 +51,7 @@
                   {% endif %}
                 </form>
                 {% else %}
-                <span class="text-secondary"> <i class="far fa-heart"></i></span>
+                <span class="text-secondary"><i class="far fa-heart"></i></span>
                 {% endif %}
                 <span class="text-secondary"> {{ recipe.number_of_likes }}</span>
               </strong> 
