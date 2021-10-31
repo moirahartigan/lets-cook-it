@@ -1,5 +1,5 @@
-{% load static %}
-import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100;300;400;600;700&display=swap');
 
 
 * {
@@ -9,10 +9,15 @@ import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@10
     border: none;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Poppins, sans-serif; 
+#hero-text h1 {
+    margin: 20px;
 }
+
+#hero-text h2 {
+    margin: 20px;
+}
+
+
 
 /* Index page */
 
@@ -22,8 +27,18 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 50vh;
+    height: 60vh;
 }
+
+#hero-text h1 {
+    margin: 60px;
+    font-family: Poppins;
+}
+
+#hero-text h2 {
+    margin: 20px;
+}
+
 
 .heading-line {
     width: 50%;
@@ -32,10 +47,22 @@ body {
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
   }
-  
+
+/* general styling for all pages */
+
+body {
+    min-height: 100vh;
+    font-family: Poppins, sans-serif;
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635709109/Recipe%20images/augustine-wong-li0iC0rjvvg-unsplash_a2toce.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
 
 .card{
     box-shadow: -1px 15px 30px -10px black;
+    /* border-radius: 25px; */
 }
 .card-wr-bg:hover{
     background-color: #f4dd97;

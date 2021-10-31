@@ -13,17 +13,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
     crossorigin="anonymous" type="text/css">
-   <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <!-- Owl Carousel -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
 </head>
 
-  <title>Lets Cook It</title>
+<title>Lets Cook It</title>
 </head>
 
 <body>
@@ -33,7 +39,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Lets Cook It</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -58,98 +65,110 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
             </li>
-           {% endif %}
+            {% endif %}
           </ul>
         </div>
       </div>
     </nav>
-    
+
 
   </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert text-center {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-          </button>         
+  
+  <main>
+    <div>
+      {% if user.is_authenticated %}
+      <em class="welcome-msg-main">Hello {{ request.user }}</em>
+      {% endif %}
+  
+      <!-- Pop up message alert -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert text-center {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+              {{ message | safe }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+              </button>
+            </div>
+            {% endfor %}
+          </div>
         </div>
-        {% endfor %}
       </div>
     </div>
-  </div>
 
-  <main>
-  {% block content %}
-  <!-- Content Goes here -->
-  {% endblock content %}
-</main>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+  </main>
 
-<!-- Page Footer -->
+  <!-- Page Footer -->
 
   <footer class="bg-light text-center text-white">
-  <div class="container p-4 pb-0">
-    <section class="mb-4">
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/" target="_blank"
-                title="Facebook link" role="button" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/" target="_blank"
-                title="Instagram link" role="button" rel="noopener"><i class="fab fa-instagram"></i></a>
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="https://www.twitter.com/" target="_blank" 
-                title="Twitter link" role="button" rel="noopener"><i class="fab fa-twitter"></i></a>
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/" target="_blank" 
-                title="Github link" role="button" rel="noopener"><i class="fab fa-github"></i></a>
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="https://www.linkedin.com/" target="_blank" 
-                title="Github link" role="button"><i class="fab fa-google"></i></a>          
-     
-    </section>
-  </div>
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-white">Moira Hartigan</a>
-  </div>
-</footer>
-  
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/"
+          target="_blank" title="Facebook link" role="button" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/"
+          target="_blank" title="Instagram link" role="button" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="https://www.twitter.com/"
+          target="_blank" title="Twitter link" role="button" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/"
+          target="_blank" title="Github link" role="button" rel="noopener"><i class="fab fa-github"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="https://www.linkedin.com/"
+          target="_blank" title="Github link" role="button"><i class="fab fa-google"></i></a>
+
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white">Moira Hartigan</a>
+    </div>
+  </footer>
 
 
 
-<!-- Bootstrap  -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- Jquery Cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Owl Carousel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- MouseWheel.js -->
-<script src="jquery.mousewheel.js"></script>
-<script src="{% static 'js/script.js' %}"></script>
-<script>
-// js for message to dismiss itself
-setTimeout(function() {
-    let messages = document.getElementById("msg");
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-},3000);
 
-// owl-carousel jquery
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
+  <!-- Bootstrap  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <!-- Jquery Cdn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- MouseWheel.js -->
+  <!-- <script src="jquery.mousewheel.js"></script> -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    // js for message to dismiss itself
+    setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+
+    // owl-carousel jquery
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
         },
-        600:{
-            items:2
+        600: {
+          items: 2
         },
-        1000:{
-            items:4
+        1000: {
+          items: 4
         }
-    }
-})
-  
-</script>
+      }
+    })
+  </script>
 
 
 </body>
