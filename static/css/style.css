@@ -118,16 +118,27 @@ border-right: none;
     background: rgb(226, 48, 48);
 }
 
+.register {
+    padding: 10px 10px 10px 10px;
+}
+
 .register input {
-    display: block;
-    border: 1px solid black;
-    width: 60%;
+    padding: 10px;
+    border-radius: 60px;
+    height: 50px;
+    width: 80%;
+    height: 50px;
+    border:none;
+    outline: none;
+    box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);
+    
 }
 
 .register label {
-    display: block;
-    padding-bottom: 5px;
-    font-weight: 700;
+    display: none;
+    /* display: block; */
+    /* padding-bottom: 15px;
+    font-weight: 700; */
   }
 
 /* search box */
