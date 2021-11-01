@@ -1,108 +1,301 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Lets Cook It!
+## **Code Institute - Portfolio Project 4: _Full-Stack Toolkit_** 
+Lets Cook It! is a virtual recipe collection where all your favourite recipes can be saved in the one place.
 
-Welcome moirahartigan,
+It is a community based experience that allows casual, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes.
+## Demo
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[View the Live Website Here]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<img src="https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/blob/master/readme/am-i-responsive.png">
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Table of contents
+1. [UX](#UX)
+     1. [Project Goals](#Project-Goals)
+     2. [User Stories](#User-Stories)
+     3. [Development Planes](#Development-Planes)
+2. [Data Schema](#Data-Schema)
+     1. [Users Collection](#Users-Collection)
+     2. [Recipes Collection](#Recipes-Collection)
+     3. [Categories Collection](#Categories-Collection)
+3. [Features](#Features)
+     1. [Design Features](#Design-Features) 
+     2. [Existing Features](#Existing-Features)
+     3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+4. [Issues and Bugs](#Issues-and-Bugs)
+5. [Technologies Used](#Technologies-Used)
+     1. [Languages](#Languages)
+     2. [Tools](#Tools)
+     3. [Libraries](#Libraries)
+     4. [Database Management](#Database-Management)
+6. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
+7. [Deployment](#Deployment)
+     1. [1. Database Creation](#1-Database-Creation)
+     2. [2. Local Copy Creation](#2-Local-Copy-Creation)
+     3. [3. Heroku App Creation](#3-Heroku-App-Creation)
+8. [Credits](#Credits)
+9. [Acknowledgements](#Acknowledgements)
+10. [Technical Support](#Technical-Support)
+***
 
-`python3 -m http.server`
+### User Stories
+**As a Casual User, I want to:**
 
-A blue button should appear to click: _Make Public_,
+1. Easily find recipes on the database. 
+2. View the recipe detail page to get additional information.
 
-Another blue button should appear to click: _Open Browser_.
+**As a Non-Registered User, I want to:**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+1. Navigate to Registration page to Sign-up for an account.
 
-A blue button should appear to click: _Make Public_,
+**As a Registered User, I want to:**
 
-Another blue button should appear to click: _Open Browser_.
+1. Log into my account to gain access to the full functionality of the site.
+2. Navigate to my recipes page to view my uploaded recipes.
+3. Navigate to upload page to add my recipe to the database.
+4. View and edit my recipes as needed.
+5. View and delete my added recipes if I so wish.
+6. Add a comment to another users recipe.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**As an Administrative Account holder, I want to:**
 
-To log into the Heroku toolbelt CLI:
+1. View **any** recipe to edit recipe as needed.
+2. View **any** recipe to delete recipe as needed.
+3. Approve recipe comments from registered users.
+4. Approve user's uploaded recipes for public view.
+5. Add and edit and delete recipe categories.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Strategy
+#### Site Owners Goals 
 
-------
+ 
+<br>
+The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly design.
 
-## Release History
+### Scope
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Structure
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### <em>Website Sections:</em>
+* #### Home - 
+  * 
+  * 
+  *  
+ <br>
+<p align="center">
+<img src="">
+</p>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+ * #### Navigation bar - 
+   * The navigation bar is displayed on top right hand side of the screen. 
+<br>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<p align="center">
+  <img src=""> 
+ </p> 
+ 
+ <br>
+ 
+  * For mobile and tablet view there is a hamburger icon which upon clicked slides the nav bar menu out from the right of the screen. 
+<br>
+<p align="center">
+  <img src="">
+    </p>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* ####  - 
+  *  
+  <br>
+  <p align="center">
+  <img src="">
+  </p> 
+ 
+ 
+* ####  -
+  * 
+  * 
+  * 
+<br>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  <p align="center">
+   <img src="">
+    </p> 
+   <br>
+   
+  * For mobile and tablet view the layout has been changed to a vertical view.
+<br>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+ <p align="center">
+   <img src="">
+   </p> 
+  
+   
+* #### 
+  * 
+<br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+ <p align="center">
+   <img src="">
+  </p>
+  
+  
+* #### 
+  *  
+    <br>
+    
+ <p align="center">
+  <img src="">
+    </p>
+    
+  * #### 
+    * 
+    * 
+    * 
+<br>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  <p align="center">
+    <img src="">
+      </p>
+ 
+  
+* #### Footer -
+   On the footer of the website the user can find our social media icons which are linked to each specific page.
+   <br>
+   
+   <p align="center">
+   <img src="">
+     </p>
+   
+  
+ * #### 404 Error -
+   * A 404 error page has been added to redirect users back to the home page.
+<br>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<p align="center">
+  <img src="">
+    </p>
+<br>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### <em>Website Flow</em>
+The flow of the site is simple and makes the logical linear progression from : Our Philosophy --> Services --> Contact us.
+The user might choose their own route through the page, but the site has been designed to try and maintain their focused interest throughout the journey towards the end goal of completing the contact form and make an enquiry. A call to action button has been added to both the home page, and the services page to allow the user to go directly to the contact section if they wish.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Skeleton
 
-------
+#### <em>Wireframes</em>
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+[Wireframe for Mobile](https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/blob/master/assets/wireframes/wireframe-mobile-view.pdf)    
+[Wireframe for Tablet](https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/blob/master/assets/wireframes/wireframe-tablet-view.pdf)  
+[Wireframe for Desktop](https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/blob/master/assets/wireframes/wireframe-desktop-view.pdf)  
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Surface
+#### <em>Colour Scheme</em>
+I chose a simple colour palette to allow the focus to be on the images and the information provided. The background colour alternates between a plain white background and an image. I applied an dark gradient overlay to each background image used throughout the site. This was done to avoid distraction and to draw the users eye to the information sitting on the images. I used the below colours to highlight the navigation links and call to action buttons on the landing page, the services page and the contact page.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* Palette:
+                                                                                                      
+<p align="center">                                                                                           
+ <img src="">
+</p>
+                                                                                                                   
+#### <em>Typography</em>
+The font-families chosen are Poppins and Lora. For consistency I used Poppins for headings and titles and Lora was used for the sub heading of services and Find us.
+#### <em>Imagery</em>
+Imagery plays a very important part in the design for this website. I chose bright colourful images that complimented each other on the page while highlighting a fun and enjoyable care service.  
 
-**So….?**
+# Features
+### Current Features
++
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Future Features
++ 
+***
+# Technologies Used
+### Languages Used
+1. [HTML](https://en.wikipedia.org/wiki/HTML5) - To create a basic site.
+2. [CSS](https://en.wikipedia.org/wiki/CSS) - To create a nice style and to stand-out.
+3. [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - To improve responsiveness.
+4. [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - To improve the navigation bar in mobile view.
+### Frameworks Libraries and Programmes Used
+* [Font Awesome](https://fontawesome.com/) - used for icons.
+* [Google Fonts](https://fonts.google.com/) - to import the font-family used in the website: Playfair Display and Courgette.
+* [GitHub](https://github.com/) - used to host repository.
+* [GitPod](https://gitpod.io/workspaces) - used to develop project and organise version control.
+* [GitHub Pages](https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/settings/pages) - used to deploy the site.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse) - for performance review.
 
-**Can I opt out?**
+***
+# Testing
+### Validator Testing
+At the completion or heavy editing of sections, I used the following to check my code for syntax errors:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### <em>HTML Validator</em>
 
-**Anything more?**
+  <p align="center">  
+ <img src=""> 
+ </p>
+  
+  
+* The warning returned from the html validator identified the navigation section was lacking a heading - however a business logo was used in place of a heading for this section. 
+#### <em>CSS Validator</em>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+  <p align="center">  
+  <img src="
+  ">
+ </p>
+    
+    
+* All pages came back with no errors.
+ 
+### Lighthouse Testing
+I used Chromes Lighthouse tools to test the site's performance. I made sure to check both desktop and mobile performances. Below are the screenshots from both tests:
+#### <em>lighthouse Mobile</em>
+![Mobile]()
+#### <em>lighthouse Desktop</em>
+![Desktop]()
+***
+# Deployment
+### Deployment through GitHub Pages
+This site was deployed through GitHub Pages using the following steps:
 
----
+* Log into GitHub.
+* Locate the repository.
+* Click the "settings" option along the options bar.
+* Then go to "Pages" tab in the left hand side sidebar.
+* Then under "Source" click the "None" dropdown and select the "Main" branch
+* Click the save button.
+* The page will update and at the top it will say: "Your site is ready to be published at
+* ()
 
-Happy coding!
+# Credits
+### Code
+* The Code Institute material was the main source of information used to create this project.
+* [Bootstrap](https://getbootstrap.com/) for creating a responsive site.
+* [w3schools](https://www.w3schools.com/) was used as a general source of knowledge 
+* [MND Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) was used as a general source of knowledge.
+* [youtube](https://www.youtube.com/watch?v=44axq8Absis) This tutorial was used to learn how to achieve a transparent navigation bar.
+* [Stack Overflow](https://stackoverflow.com/) was used to assist during debugging.
+* [github docs](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) was used to create the 404 page.
+
+### Media
+* Images were sourced from the following:
+    * [unsplash](https://unsplash.com)
+    * [pexels](https://www.pexels.com)
+    * [pixabay](https://pixabay.com/)
+ * The site logo image was designed by myself Moira Hartigan with the use of [Free Logo Maker](https://logomakr.com/)
+
+### Acknowledgements
+* I would like to thank the Slack Community for their endless support.
+* I would like to thank Kasia Bogucka our class cohort facilitator for her constant assistance and encouragement.
+* Finally, I would like to thank my mentor Oluwafemi Medale for his guidence and feedback throughout this milestone project.
+ 
+***
