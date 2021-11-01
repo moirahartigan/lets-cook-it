@@ -22,7 +22,60 @@
     margin: 20px;
 }
 
+/* Credit: Codepen CSS Bouncing Arrow @ https://codepen.io/bitstarr/pen/XjaJGz */
+/* .arrow {
+    height: 3rem;
+    left: 50%;
+    margin-left: -1rem;
+    position: relative;
+    width: 2.5rem;
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635794754/Recipe%20images/pngegg_2_punwhd.png);
+    background-size: contain;
+}
 
+.bounce {
+    -webkit-animation: bounce 4s infinite;
+    animation: bounce 4s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+} */
+/* /End of Credit */
 
 /* Index page */
 
