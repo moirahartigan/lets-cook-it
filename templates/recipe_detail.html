@@ -32,21 +32,20 @@
 						</div>
 					</div>
 					<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>
-
 					<!-- edit/delete buttons -->
 					{% if user.is_authenticated and user == recipe.author %}
 					<div class="row btn-row-recipe">
-						<!-- <div class="col"> -->
-							<div class="col">
+						<div class="col">
+							<div class="col-6">
 								<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
 										class="fas fa-edit"></i></a>
 								<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
 										class="fas fa-trash-alt"></i></a>
-								{% elif user.is_superuser %}
-								<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-										class="fas fa-trash-alt"></i></a>
+								<!-- {% elif user.is_superuser %} -->
+								<!-- <a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+										class="fas fa-trash-alt"></i></a> -->
 							</div>
-						<!-- </div> -->
+						</div>
 					</div>
 					{% endif %}
 				</div>

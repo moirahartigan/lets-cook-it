@@ -233,6 +233,7 @@ border-right: none;
 
 
 .Recipe-detail-card {
+    margin-top: 40px;
     box-shadow: -1px 15px 30px -10px black;
     border-radius: .25rem;
     background-color: rgb(194, 187, 187);
@@ -251,6 +252,12 @@ border-right: none;
     object-fit: cover;
     height: 400px;
     border-radius: .25rem;
+}
+
+/* Edit Recipe */
+
+.edit-form {
+    width: 60%;
 }
 
 /* add media query for this */
