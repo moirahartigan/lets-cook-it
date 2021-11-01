@@ -3,19 +3,22 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container">
+<div class="container-responsive delete-message">
     <div class="row">
         <div class="col-12 pt-5 text-center text-capitalize">
-            <h1> Delete Recipe </h1>
+            <h1 class="delete-pg-title"> Delete Recipe </h1>
         </div>
     </div>
 
     <div class="row">
-        <div class="col text-center py-5">    
+        <div class="col delete-body text-center m-5 py-5">    
             <form method="post">
                 {% csrf_token %}
 
-                <p>{{ user.username }} are you sure you want to delete {{ recipe.title }}?</p>
+                <p><strong>{{ user.username }}</strong> 
+                    <br> are you sure you want to delete
+                    <br>
+                    <strong> {{ recipe.title }}?</strong></p>
 
                 <!-- <input type="submit" value="confirm">             -->
             

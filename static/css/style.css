@@ -260,6 +260,24 @@ border-right: none;
     width: 60%;
 }
 
+/* delete Recipe */
+
+.delete-pg-title {
+    font-family: 'Lato', sans-serif;
+}
+
+.delete-body {
+    background-color: rgb(245, 228, 212);
+    border-radius: 25px;
+}
+
+.delete-message {
+    height: 100vh;
+    font-size: 150%;
+    
+
+}
+
 /* add media query for this */
 @media (max-width: 575.98px) {
 .masthead-image {
