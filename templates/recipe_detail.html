@@ -5,11 +5,9 @@
 
 
 <div class="container">
-	<div class="masthead">
-		<!-- reciped details/stats -->
-	
-			<div class="row g-5">
-				<div class="col-md-3 Recipe-detail-card card-body masthead-text">					
+		<!-- reciped details/stats -->	
+			<div class="row">
+				<div class="col-md-4 col-sm-6 Recipe-detail-card card-body masthead-text">					
 					<h1 class="recipe-title">{{ recipe.title }}</h1>					
 					<p class="category">Category: {{ recipe.categories }}</p>
 					<div>
@@ -53,10 +51,12 @@
 					{% endif %}
 				</div>
 
+				<!-- emply col -->
 				<div class="col-md-1"></div>
 
+				<!-- image col -->
 				<div class="col-md-7 d-md-block masthead-image gy-5">
-					<!-- The featured image -->
+					
 					{% if "placeholder" in recipe.image_url.url %}
 					<img class="recipe-img" src="/static/css/images/burger-img.jpg" width="100%">
 					{% else %}
@@ -64,13 +64,12 @@
 					{% endif %}
 				</div>
 			</div>
-		
-	</div>
+	
 </div>
+
 
 <section>
 	<br>
-
 	<div class="container">
 		<div class="row gx-5">
 			<div class="col-md-4 Recipe-detail-card card-body mt-3 gy-5">
