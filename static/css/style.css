@@ -217,6 +217,11 @@ border-right: none;
 
 
 /* Recipe view page */
+
+.masthead {
+    /* display: inline-block */
+}
+
 .recipe-title {
     font-family: 'Gloria Hallelujah', cursive;
 }
@@ -243,26 +248,26 @@ border-right: none;
 }
 
 .recipe-img {
-    object-fit: cover;
+    /* object-fit: cover; */
     height: 400px;
     border-radius: .25rem;
 }
 
 /* add media query for this */
 @media (max-width: 575.98px) {
-    .masthead-image {
-        display: flex;
-        flex-direction: column;
-      }
+.masthead-image {
+    display: flex;
+    flex-direction: column;
+}
           
-    .masthead-text {
-        order: 2;
-        text-align: center;
-        padding-top: 20px;
+.masthead-text {
+    order: 2;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .recipe-img {
-    /* object-fit: cover; */
+    object-fit: cover;
     height: 200px;
     border-radius: .25rem;
 }
