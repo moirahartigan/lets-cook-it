@@ -268,6 +268,28 @@ border-right: none;
     background: blue
 }
 
+/* recipe list page */
+
+.page-links {
+    width: 20vw;
+    margin: 0 auto 2vh auto;
+    text-align: center;
+  }
+  
+  .current {
+    color: rgb(48, 42, 42);
+  }
+  
+  .page-links a {
+    color: rgb(65, 53, 53);
+    margin-left: 2%;
+  }
+  
+  .page-links a:hover {
+    color: rgb(212, 107, 107);
+    font-weight: bold;
+  }
+
 
 /* Recipe view page */
 
