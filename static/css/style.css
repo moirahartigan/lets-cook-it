@@ -248,7 +248,7 @@ border-right: none;
 }
 
 .recipe-img {
-    /* object-fit: cover; */
+    object-fit: cover;
     height: 400px;
     border-radius: .25rem;
 }

@@ -9,7 +9,7 @@
 		<!-- reciped details/stats -->
 	
 			<div class="row g-5">
-				<div class="col-md-3 Recipe-detail-card card-body masthead-text text-center">					
+				<div class="col-md-3 Recipe-detail-card card-body masthead-text">					
 					<h1 class="recipe-title">{{ recipe.title }}</h1>					
 					<p class="category">Category: {{ recipe.categories }}</p>
 					<div>
@@ -35,30 +35,10 @@
 					</div>
 					<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>
 
-					<!-- Likes -->
-					<div class="col-1">
-						<strong>
-							{% if user.is_authenticated %}
-							<form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
-								{% csrf_token %}
-								{% if liked %}
-								<button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
-										class="fas fa-heart"></i></button>
-								{% else %}
-								<button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
-										class="far fa-heart"></i></button>
-								{% endif %}
-							</form>
-							{% else %}
-							<span class="text-secondary"><i class="far fa-heart"></i></span>
-							{% endif %}
-							<span class="text-secondary"> {{ recipe.number_of_likes }}</span>
-						</strong>
-					</div>
 					<!-- edit/delete buttons -->
 					{% if user.is_authenticated and user == recipe.author %}
 					<div class="row btn-row-recipe">
-						<div class="col">
+						<!-- <div class="col"> -->
 							<div class="col">
 								<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
 										class="fas fa-edit"></i></a>
@@ -68,17 +48,19 @@
 								<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
 										class="fas fa-trash-alt"></i></a>
 							</div>
-						</div>
+						<!-- </div> -->
 					</div>
 					{% endif %}
 				</div>
+
 				<div class="col-md-1"></div>
-				<div class="col-md-7 masthead-image gy-5">
+
+				<div class="col-md-7 d-md-block masthead-image gy-5">
 					<!-- The featured image -->
 					{% if "placeholder" in recipe.image_url.url %}
-					<img class="recipe-img img-fluid" src="/static/css/images/burger-img.jpg" width="100%">
+					<img class="recipe-img" src="/static/css/images/burger-img.jpg" width="100%">
 					{% else %}
-					<img class="recipe-img img-fluid" src=" {{ recipe.image_url.url }}" width="100%">
+					<img class="recipe-img" src=" {{ recipe.image_url.url }}" width="100%">
 					{% endif %}
 				</div>
 			</div>
@@ -102,7 +84,7 @@
 			<div class="col-md-1"></div>
 
 			<div class="col-md-7 mb4 Recipe-detail-card mt-3">
-				<div class="card-body recipe-heading">
+				<div class="card-body">
 					<!-- The recipe method -->
 					<p class="card-text ">
 						<h1 class="recipe-heading">Method:</h1> {{ recipe.method | safe }}
