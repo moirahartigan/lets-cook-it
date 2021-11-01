@@ -31,27 +31,22 @@
         {% for recipe in recipe_list %}
         
         <div class="col-md-6 col-lg-4">
-          <div class="card mb-3 card">
- 
-            {% if "placeholder" in recipe.image_url.url %}
-            <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
-            {% else %}
-            <img class="card-img-top" src="{{ recipe.image_url.url }}">
-            {% endif %}
-            <p class="image-flash">
-            <span class="card-cat">{{ recipe.categories }}</span>
-          </p>
-            <div class="card-body">
-              <h5 class="card-title">{{ recipe.title }}</h5>
-              <p class="card-text">Added by: {{ recipe.author }}</p>
- 
-              <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
+          <div class="card mb-3 card"> 
+                {% if "placeholder" in recipe.image_url.url %}
+                <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
+                {% else %}
+                <img class="card-img-top" src="{{ recipe.image_url.url }}">
+                {% endif %}
+                <p class="image-flash">
+                    <span class="card-cat">{{ recipe.categories }}</span>
+                </p>
+                <div class="card-body">
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <p class="card-text">Added by: {{ recipe.author }}</p> 
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
+                </div>
             </div>
-          </div>
         </div>
-       
-        
-    
         {% endfor %}
       </div>
     </div>
