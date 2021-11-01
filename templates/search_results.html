@@ -3,63 +3,56 @@
 {% block content %}
 
 <div>
-<h2 class="text-center">Search Results</h2>
+    <h2 class="text-center">Search Results</h2>
 </div>
-    <section>
-        {% if searched %}
-            <h3 class="text-center">
-            You Searched For {{ searched }}
-            </h3>
-            <br/>
-            <div class="container">
+<section>
+    {% if searched %}
+    <h3 class="text-center">
+        <br>
+        You Searched For <strong> {{ searched }}</strong>
+    </h3>
+    <br />
+    <div class="container">
+        <div class="row">
+
+            <!-- Recipes Entries Column -->
+            <div class="col-12 mt-3 left">
                 <div class="row">
-            
-                    <!-- Recipes Entries Column -->
-                    <div class="col-12 mt-3 left">
-                        <div class="row">
-                            {% for recipe in ingredients %}
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card mb-3 card h-100">
-                                  <!-- <div class="card-image card h-100" style="width: 18rem;"> -->
-                                  {% if "placeholder" in recipe.image_url.url %}
-                                  <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
-                                  {% else %}
-                                  <img class="card-img-top" src="{{ recipe.image_url.url }}">
-                                  {% endif %}
-                                  <p class="image-flash">
-                                  <span class="card-cat">{{ recipe.categories }}</span>
-                                </p>
-                                  <div class="card-body">
-                                    <h5 class="card-title">{{ recipe.title }}</h5>
-                                    <p class="card-text">Added by: {{ recipe.author }}</p>
-                                    <!-- <p class="category">Category: {{ recipe.categories }}</p> -->
-                                    <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
-                                  </div>
-                                </div>
-                              </div>
-                            {% if forloop.counter|divisibleby:3 %}
-                        </div>
-                        <div class="row">
+                    {% for recipe in ingredients %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card mb-3 card h-100">
+                            {% if "placeholder" in recipe.image_url.url %}
+                            <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
+                            {% else %}
+                            <img class="card-img-top" src="{{ recipe.image_url.url }}">
                             {% endif %}
-                            {% endfor %}
-            
+                            <p class="image-flash">
+                                <span class="card-cat">{{ recipe.categories }}</span>
+                            </p>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ recipe.title }}</h5>
+                                <p class="card-text">Added by: {{ recipe.author }}</p>
+                                <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success"
+                                    id="bt">View</a>
+                            </div>
                         </div>
-                    </div>                    
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
                 </div>
+                <br>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
 
-               
-
+                </div>
             </div>
-            
-        {% else %}
-            <h3>Oops you forgot to search for an ingredient ....</h3>
-        {% endif %}
-        
-    
+        </div>
+    </div>
 
-    </section>
+    {% else %}
+    <h3>Oops you forgot to search for an ingredient ....</h3>
+    {% endif %}
 
- 
-
+</section>
 
 {% endblock %}
