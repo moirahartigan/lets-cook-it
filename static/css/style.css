@@ -245,12 +245,14 @@ border-right: none;
 .search input {
     height: 60px;
     text-indent: 25px;
-    border: 2px solid #d6d4d4
+    border: 2px solid #d6d4d4;
+    border-radius: 20px;
 }
 
 .search input:focus {
     box-shadow: none;
-    border: 2px solid blue
+    border: 2px solid white;
+    border-radius: 20px;
 }
 
 .search .fa-search {
@@ -265,7 +267,7 @@ border-right: none;
     right: 5px;
     height: 50px;
     width: 110px;
-    background: blue
+    background: white
 }
 
 /* recipe list page */

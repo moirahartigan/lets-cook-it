@@ -15,8 +15,10 @@
           <form class="search" method=POST action="{% url 'search_results' %}"> <i class="fa fa-search"></i>
             {% csrf_token %}
             <input type="search" class="form-control" placeholder="Search Recipes" name="searched">
-            <button class="btn btn-primary">Search</button>
+            
           </form>
+          <br>
+          <div class="text-center"><button class="btn btn-success">Search</button></div> 
         </div>
       </div>
     </div>
