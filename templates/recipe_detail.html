@@ -31,25 +31,11 @@
 							{% endif %}
 						</div>
 					</div>
-					<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>
-					<!-- edit/delete buttons -->
-					{% if user.is_authenticated and user == recipe.author %}
-					<div class="row btn-row-recipe">
-						<div class="col">
-							<div class="col-6">
-								<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
-										class="fas fa-edit"></i></a>
-								<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-										class="fas fa-trash-alt"></i></a>
-								<!-- {% elif user.is_superuser %} -->
-								<!-- <a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-										class="fas fa-trash-alt"></i></a> -->
-							</div>
-						</div>
-					</div>
-					{% endif %}
+					<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>					
 				</div>
-
+				<!-- where edit and delete buttons were -->
+				
+				
 				<!-- emply col -->
 				<div class="col-md-1"></div>
 
@@ -62,16 +48,33 @@
 					<img class="recipe-img" src=" {{ recipe.image_url.url }}" width="100%">
 					{% endif %}
 				</div>
+				
 			</div>
-	
-</div>
+			<br>
+			<!-- edit/delete buttons -->
+			{% if user.is_authenticated and user == recipe.author %}
+			<div class="row btn-row-recipe">
+				<!-- <div class="col"> -->
+					<div class="col-md-4 col-sm-6 text-center d-md-block">
+						<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
+								class="fas fa-edit"></i></a>
+						<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+								class="fas fa-trash-alt"></i></a>
+						{% elif user.is_superuser %}
+						<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+								class="fas fa-trash-alt"></i></a>
+					</div>
+				<!-- </div> -->
+			</div>
+			{% endif %}
 
+</div>
 
 <section>
 	<br>
 	<div class="container">
 		<div class="row gx-5">
-			<div class="col-md-4 Recipe-detail-card card-body mt-3 gy-5">
+			<div class="col-md-4 col-sm-6 Recipe-detail-card card-body mt-3 gy-5">
 				<div class="card-body">
 					<!-- The recipe ingredients -->
 					<p class="card-text">
@@ -81,7 +84,7 @@
 			</div>
 			<div class="col-md-1"></div>
 
-			<div class="col-md-7 mb4 Recipe-detail-card mt-3">
+			<div class="col-md-7 col-sm-6 mb4 Recipe-detail-card mt-3">
 				<div class="card-body">
 					<!-- The recipe method -->
 					<p class="card-text ">

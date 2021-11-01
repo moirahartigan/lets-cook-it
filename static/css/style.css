@@ -295,9 +295,6 @@ border-right: none;
 
 /* Recipe view page */
 
-.masthead {
-    /* display: inline-block */
-}
 
 .recipe-title {
     font-family: 'Gloria Hallelujah', cursive;
@@ -305,7 +302,7 @@ border-right: none;
 
 .recipe-heading {
     font-family: 'Gloria Hallelujah', cursive;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 
 
