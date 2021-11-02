@@ -170,21 +170,23 @@ Below is the chart of the custom data model used.
 
 It is a mobile-first website because people usually cook with a recipe so a good mobile-first design helps users whose main purpose is seeing recipes. For users whose main purpose is creating and posting recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website.
 
-- [Wireframes: Home]()
+- [Wireframes: Home](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Landing-page.png)
 
-- [Wireframes: Recipes]()
+- [Wireframes: Recipes](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Recipes-page.png)
 
-- [Wireframes: Register]()
+- [Wireframes: Register](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Register.png)
 
-- [Wireframes: Login]()
+- [Wireframes: Login](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Login.png)
 
-- [Wireframes: Profile]()
+- [Wireframes: Profile](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Profile-page.png)
 
-- [Wireframes: Recipe Detail]()
+- [Wireframes: Recipe Detail For a logged in User](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Recipe-detail-page-logged-in-user.png)
 
-- [Wireframes: Add Recipe]()
+- [Wireframes: Recipe Detail For a Regular non-logged in User](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Recipe-detail-page-reg-user.png)
 
-- [Wireframes: Edit Recipe]()
+- [Wireframes: Add Recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Upload-page.png)
+
+- [Wireframes: Edit Recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Edit-recipe-page.png)
 
 
 
