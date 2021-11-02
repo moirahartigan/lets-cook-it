@@ -5,69 +5,60 @@
 
 
 <div class="container">
-		<!-- reciped details/stats -->	
+	<!-- reciped details/stats -->
+	<div class="row">
+		<div class="col-md-4 col-sm-6 Recipe-detail-card card-body masthead-text">
+			<h1 class="recipe-title">{{ recipe.title }}</h1>
+			<p class="category">Category: {{ recipe.categories }}</p>
+			<div>
+				<span class="value">Prep time: {{ recipe.prep_time }}</span>
+				<span class="title">Mins</span>
+			</div>
+			<div>
+				<span class="value">Cook time: {{ recipe.cook_time }}</span>
+				<span class="title">Mins</span>
+			</div>
+			<div>
+				<span class="title">Serves</span>
+				<span class="value">{{ recipe.servings }}</span>
+			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6 Recipe-detail-card card-body masthead-text">					
-					<h1 class="recipe-title">{{ recipe.title }}</h1>					
-					<p class="category">Category: {{ recipe.categories }}</p>
-					<div>
-						<span class="value">Prep time: {{ recipe.prep_time }}</span>
-						<span class="title">Mins</span>
-					</div>
-					<div>
-						<span class="value">Cook time: {{ recipe.cook_time }}</span>
-						<span class="title">Mins</span>
-					</div>
-					<div>
-						<span class="title">Serves</span>
-						<span class="value">{{ recipe.servings }}</span>
-					</div>
-					<div class="row">
-						<div class="col">
-							{% if recipe.recipe_url %}
-							<p class="recipe-url">
-								Original Recipe <a href="{{ recipe.recipe_url }}" target="_blank">Here</a>
-							</p>
-							{% endif %}
-						</div>
-					</div>
-					<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>					
-				</div>
-				<!-- where edit and delete buttons were -->
-				
-				
-				<!-- emply col -->
-				<div class="col-md-1"></div>
-
-				<!-- image col -->
-				<div class="col-md-7 d-md-block masthead-image gy-5">
-					
-					{% if "placeholder" in recipe.image_url.url %}
-					<img class="recipe-img" src="/static/css/images/burger-img.jpg" width="100%">
-					{% else %}
-					<img class="recipe-img" src=" {{ recipe.image_url.url }}" width="100%">
+				<div class="col">
+					{% if recipe.recipe_url %}
+					<p class="recipe-url">
+						Original Recipe <a href="{{ recipe.recipe_url }}" target="_blank">Here</a>
+					</p>
 					{% endif %}
 				</div>
-				
 			</div>
-			<br>
-			<!-- edit/delete buttons -->
-			{% if user.is_authenticated and user == recipe.author %}
-			<div class="row btn-row-recipe">
-				<!-- <div class="col"> -->
-					<div class="col-md-4 col-sm-6 text-center d-md-block">
-						<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i
-								class="fas fa-edit"></i></a>
-						<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-								class="fas fa-trash-alt"></i></a>
-						{% elif user.is_superuser %}
-						<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-								class="fas fa-trash-alt"></i></a>
-					</div>
-				<!-- </div> -->
-			</div>
-			{% endif %}
+			<p class="recipe-subtitle">Added by: {{ recipe.author }} | {{ recipe.created_on }}</p>
+		</div>
+		<!-- emply col -->
+		<div class="col-md-1"></div>
 
+		<!-- image col -->
+		<div class="col-md-7 d-md-block masthead-image gy-5">
+			{% if "placeholder" in recipe.image_url.url %}
+			<img class="recipe-img" src="/static/css/images/burger-img.jpg" width="100%">
+			{% else %}
+			<img class="recipe-img" src=" {{ recipe.image_url.url }}" width="100%">
+			{% endif %}
+		</div>
+	</div>
+	<br>
+	<!-- edit/delete buttons -->
+	{% if user.is_authenticated and user == recipe.author %}
+	<div class="row btn-row-recipe">		
+		<div class="col-md-4 col-sm-6 text-center d-md-block">
+			<a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i class="fas fa-edit"></i></a>
+			<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+					class="fas fa-trash-alt"></i></a>
+			{% elif user.is_superuser %}
+			<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+					class="fas fa-trash-alt"></i></a>
+		</div>		
+	</div>
+	{% endif %}
 </div>
 
 <section>
@@ -83,7 +74,6 @@
 				</div>
 			</div>
 			<div class="col-md-1"></div>
-
 			<div class="col-md-7 col-sm-6 mb4 Recipe-detail-card mt-3">
 				<div class="card-body">
 					<!-- The recipe method -->
@@ -97,7 +87,7 @@
 	</div>
 </section>
 <br>
-
+{% if user.is_authenticated %}
 <!-- Comments -->
 <section>
 	<div class="container">
@@ -121,8 +111,8 @@
 					{% endfor %}
 				</div>
 			</div>
-			<div class="col-md-1"></div>
-
+			<div class="col-md-1">
+			</div>
 			<!-- Leave a comment -->
 			<div class="col-md-4 Recipe-detail-card mb-4  mt-3 ">
 				<div class="card-body">
@@ -131,7 +121,6 @@
 						Your comment is awaiting approval
 					</div>
 					{% else %}
-					{% if user.is_authenticated %}
 					<h3>Leave a comment:</h3>
 					<p>Posting as: {{ user.username }}</p>
 					<form method="post" style="margin-top: 1.3em;">
