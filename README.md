@@ -39,10 +39,10 @@ It is a community based experience that allows casual, one-time users to browse 
 10. [Technical Support](#Technical-Support)
 ***
 
-### Project Goals
-The primary goal of Lets Cook It! is to allow the users to create, save, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly design.
+## Project Goals
+The primary goal of Lets Cook It! is to allow the users to create, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly design.
 
-### User Stories
+## User Stories
 **As a Casual User, I want to:**
 
 1. Easily find recipes on the database. 
@@ -69,6 +69,9 @@ The primary goal of Lets Cook It! is to allow the users to create, save, search,
 4. Approve user's uploaded recipes for public view.
 5. Add and edit and delete recipe categories.
 
+## Project Planning
+
+ Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project. As the methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application. I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the user of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
 
 ### Strategy Plane
 
@@ -98,7 +101,7 @@ Below are the additional functions that can improve the website, however, these 
 | “Like” Reaction By Other Users          |     3      |            2            |
 
 > **Note:**<br>
-> During the project, decide to add pagination as it makes the website much neater so it is implemented in the current project
+> During the project, decide to add ..........................................................................
 
 ### Scope Plane
 
