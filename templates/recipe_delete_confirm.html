@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
@@ -9,25 +9,19 @@
             <h1 class="delete-pg-title"> Delete Recipe </h1>
         </div>
     </div>
-
     <div class="row">
-        <div class="col delete-body text-center m-5 py-5">    
+        <div class="col delete-body text-center centered m-5 py-5">
             <form method="post">
                 {% csrf_token %}
-
-                <p><strong>{{ user.username }}</strong> 
+                <p><strong>{{ user.username }}</strong>
                     <br> are you sure you want to delete
                     <br>
-                    <strong> {{ recipe.title }}?</strong></p>
-
-                <!-- <input type="submit" value="confirm">             -->
-            
-                <a href="{% url 'profile' %}" class="btn btn-success">Back</a>
-                <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-danger">Delete</a>
-            </form>           
+                    <strong> {{ recipe.title }}?</strong>
+                </p>
+                <a href="{% url 'profile' %}" class="btn btn-success">Cancel</a>
+                <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-danger">Confirm</a>
+            </form>
         </div>
     </div>
-    
-
 </div>
 {% endblock %}
