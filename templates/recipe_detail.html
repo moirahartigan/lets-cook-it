@@ -89,10 +89,10 @@
 <br>
 {% if user.is_authenticated %}
 <!-- Comments -->
-<section>
-	<div class="container">
+<section class="mt-5 p-0">
+	<div class="container p-0">
 		<div class="row">
-			<div class="col-md-7 card Recipe-detail-card mb-4 mt-3">
+			<div class="col-md-7 card Recipe-detail-card mb-4 mt-3 bg-light">
 				<h3 class="mt-3">Comments:</h3>
 				<div class="card-body">
 					{% for comment in comments %}
@@ -111,10 +111,10 @@
 					{% endfor %}
 				</div>
 			</div>
-			<div class="col-md-1">
+			<div class="col-md-1 p-0">
 			</div>
 			<!-- Leave a comment -->
-			<div class="col-md-4 Recipe-detail-card mb-4  mt-3 ">
+			<div class="col-md-4 Recipe-detail-card mb-4 mt-3 bg-light">
 				<div class="card-body">
 					{% if commented %}
 					<div class="alert alert-success" role="alert">
@@ -126,7 +126,7 @@
 					<form method="post" style="margin-top: 1.3em;">
 						{{ comment_form | crispy }}
 						{% csrf_token %}
-						<button type="submit" class="btn btn-signup btn-lg">Submit</button>
+						<button type="submit" class="btn btn-success submit btn-sm">Submit</button>
 					</form>
 					{% endif %}
 					{% endif %}

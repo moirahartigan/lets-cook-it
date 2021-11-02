@@ -1,5 +1,3 @@
-{% load static %}
-
 // js for message to dismiss itself
 setTimeout(function() {
     let messages = document.getElementById("msg");

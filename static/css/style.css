@@ -123,6 +123,11 @@ body {
     position: relative;
 }
 
+.btn-success {
+    border-radius: 5px;
+    box-shadow: -1px 15px 30px -10px black;
+    /* margin: 5px; */
+}
 
 .card{
     box-shadow: -1px 15px 30px -10px black;
@@ -295,7 +300,6 @@ border-right: none;
 
 /* Recipe view page */
 
-
 .recipe-title {
     font-family: 'Gloria Hallelujah', cursive;
 }
@@ -322,6 +326,12 @@ border-right: none;
     padding-right: 0px;
 }
 
+.submit {
+    border-radius: 5px;
+    box-shadow: -1px 15px 30px -10px black;
+    margin: 5px;
+}
+
 .recipe-img {
     object-fit: cover;
     height: 400px;
@@ -332,6 +342,24 @@ border-right: none;
 
 .edit-form {
     width: 60%;
+}
+
+.summernote-div {
+    width: 70vw;
+    
+}
+
+#id_ingredients_iframe {
+    width: 70vw;
+    margin-right: 0;
+}
+
+#id_method_iframe {
+    width: 70vw;
+}
+
+.panel-heading {
+    width: 70vw;
 }
 
 /* delete Recipe */
@@ -370,12 +398,3 @@ border-right: none;
     height: 200px;
     border-radius: .25rem;
 }
-
-/* .masthead-image {
-    display: flex;
-    flex-direction: column;
-  }
-
-.masthead-text {
-    order: 2;
-  }  */

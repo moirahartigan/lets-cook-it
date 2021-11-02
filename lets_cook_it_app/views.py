@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-# from django.db import models
+from django.db import models
 from django.urls import reverse_lazy
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe, Categories
 from .forms import RecipeCommentForm, CategoryForm, RecipeForm
@@ -28,7 +28,7 @@ class RecipeList(generic.ListView):
 class CategoryView(generic.ListView):
     model = Categories
     queryset = Recipe.objects.values('categories').distinct()
-    template_name = 'categories.html'
+    template_name = 'recipes.html'
 
 
 # CRUD - Read functionality
@@ -39,9 +39,9 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
             approved=True).order_by("-created_on")
-        liked = False
-        if recipe.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        # likes = False
+        # if recipe.liked.filter(id=self.request.user.id).exists():
+        #     likes = True
 
         return render(
             request,
@@ -50,7 +50,7 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "commented": False,
-                "liked": liked,
+                # "liked": liked,
                 'comment_form': RecipeCommentForm()
             },
         )
@@ -60,9 +60,9 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
             approved=True).order_by("-created_on")
-        liked = False
-        if recipe.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        # likes = False
+        # if recipe.liked.filter(id=self.request.user.id).exists():
+        #     likes = True
 
         comment_form = RecipeCommentForm(data=request.POST)
 
@@ -82,22 +82,22 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "commented": True,
-                "liked": liked,
+                # "likes": likes,
                 'comment_form': RecipeCommentForm()
             },
         )
 
 
-class RecipeLike(View):
+# class RecipeLike(View):
 
-    def recipe(self, request, slug):
-        recipe = get_object_or_404(Recipe, slug=slug)
-        if recipe.likes.filter(id=request.user.id).exists():
-            recipe.likes.remove(request.user)
-        else:
-            recipe.likes.add(request.user)
+#     def recipe(self, request, slug):
+#         recipe = get_object_or_404(Recipe, slug=slug)
+#         if recipe.liked.filter(id=request.user.id).exists():
+#             recipe.liked.remove(request.user)
+#         else:
+#             recipe.liked.add(request.user)
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+#         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 # CRUD - Create functionality
@@ -165,13 +165,11 @@ class ProfileRecipes(View):
 
     def get(self, request):
         published_list = Recipe.objects.filter(status=1, author=request.user)
-        draft_list = Recipe.objects.filter(status=0, author=request.user)
 
         return render(
             request,
             'profile.html',
             {
                 'published_list': published_list,
-                'draft_list': draft_list
             }
         )
