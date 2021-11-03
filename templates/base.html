@@ -26,9 +26,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-
-</head>
-
 <title>Lets Cook It</title>
 </head>
 
@@ -78,8 +75,7 @@
     <div>
       {% if user.is_authenticated %}
       <em class="welcome-msg-main">Welcome {{ request.user }}</em>
-      {% endif %}
-  
+      {% endif %}  
       <!-- Pop up message alert -->
       <div class="container">
         <div class="row">
@@ -95,7 +91,7 @@
         </div>
       </div>
     </div>
-
+    
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}

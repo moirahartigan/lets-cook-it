@@ -345,7 +345,7 @@ border-right: none;
 /* Edit Recipe */
 
 .edit-form {
-    width: 60%;
+    width: 70vh;
 }
 
 .summernote-div {
@@ -356,6 +356,7 @@ border-right: none;
 #id_ingredients_iframe {
     width: 70vw;
     margin-right: 0;
+    display:flex;
 }
 
 #id_method_iframe {
