@@ -26,6 +26,9 @@
               {% else %}
               <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
               {% endif %}
+              <p class="image-flash">
+                  <span class="card-cat">{{ recipe.categories }}</span>
+               </p>
               <div class="card-body">
                  <h5 class="card-title">{{ recipe.title }}</h5>
                  <p class="card-text">Added by: {{ recipe.author }}</p>

@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<section class="py-5 bg-light">
+<section class="py-5 container account-container">
     <div class="container">
         <div class="row login g-0">
             <div class="d-none d-lg-block col-lg-5">
@@ -18,8 +18,8 @@
 
                 <div class="py-3 pt-3">
                     <h3>{% trans "Sign In" %}</h3>
-                    <p>{% blocktrans %}Don't have an account?
-                    <a class="link" href="{{ signup_url }}">Register here</a> first.{% endblocktrans %}</p>
+                    <p>{% blocktrans %}Don't have an account?</p>
+                    <p><a class="link" href="{{ signup_url }}">Register here</a> first.{% endblocktrans %}</p>
      
                     <form method="POST" action="{% url 'account_login' %}">
                         <div class="form-row py-3 pt-5">

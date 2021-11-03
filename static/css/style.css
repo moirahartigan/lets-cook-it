@@ -1,12 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Gloria+Hallelujah&family=Lato:wght@400;900&display=swap');
 
-
+/* general styling for all pages */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: none;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Lato, sans-serif;
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635709109/Recipe%20images/augustine-wong-li0iC0rjvvg-unsplash_a2toce.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .navbar-brand {
@@ -22,60 +31,10 @@
     margin: 20px;
 }
 
-/* Credit: Codepen CSS Bouncing Arrow @ https://codepen.io/bitstarr/pen/XjaJGz */
-/* .arrow {
-    height: 3rem;
-    left: 50%;
-    margin-left: -1rem;
-    position: relative;
-    width: 2.5rem;
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635794754/Recipe%20images/pngegg_2_punwhd.png);
-    background-size: contain;
+.btn-success {
+    border-radius: 5px;
+    box-shadow: -1px 15px 30px -10px black;
 }
-
-.bounce {
-    -webkit-animation: bounce 4s infinite;
-    animation: bounce 4s infinite;
-}
-
-@-webkit-keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        -webkit-transform: translateY(-30px);
-        transform: translateY(-30px);
-    }
-    60% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    40% {
-        -webkit-transform: translateY(-30px);
-        transform: translateY(-30px);
-    }
-    60% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
-    }
-} */
-/* /End of Credit */
 
 /* Index page */
 
@@ -103,7 +62,6 @@
     padding-right: 60px;
 }
 
-
 .heading-line {
     width: 50%;
     margin: auto;
@@ -111,23 +69,6 @@
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
   }
-
-/* general styling for all pages */
-
-body {
-    min-height: 100vh;
-    font-family: Lato, sans-serif;
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635709109/Recipe%20images/augustine-wong-li0iC0rjvvg-unsplash_a2toce.jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-
-.btn-success {
-    border-radius: 5px;
-    box-shadow: -1px 15px 30px -10px black;
-    /* margin: 5px; */
-}
 
 /* .card-body {
     background: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635930105/Recipe%20images/max-delsid-8I6OcgjAOGg-unsplash_ljdk1r.jpg);
@@ -188,16 +129,23 @@ border-right: none;
     font-size: 1.3em;
     padding: 5px 10px;
     border-top-right-radius: 10px;
-    background-color: #fff;
+    background-color: #ecf8f8
 }
 
 .image-flash {
     position: absolute;
     bottom: 33%;
     min-width: 30%;
+    margin-bottom: 15px;
 }
 
-/* login */
+/* login page */
+
+.account-container {
+    background-color: transparent;
+    /* height: 100vh; */
+}
+
 .login {
     background: #fff;
     background-position: center;
@@ -205,8 +153,7 @@ border-right: none;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 30px;
-    box-shadow: 12px 12px 22px;
-    
+    box-shadow: 12px 12px 22px;    
 }
 
 .login img {
@@ -214,7 +161,6 @@ border-right: none;
     border-bottom-left-radius: 30px;
     height: auto;
 }
-
 
 .btn1{
     height: 50px;
@@ -226,8 +172,10 @@ border-right: none;
     background: rgb(226, 48, 48);
 }
 
+/* Register page */
+
 .register {
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
 }
 
 .register input {
@@ -238,8 +186,7 @@ border-right: none;
     height: 50px;
     border:none;
     outline: none;
-    box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);
-    
+    box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);    
 }
 
 .register label {
@@ -247,6 +194,7 @@ border-right: none;
   }
 
 /* search box */
+
 .search {
     position: relative;
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)
@@ -271,16 +219,7 @@ border-right: none;
     left: 16px
 }
 
-.search button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 110px;
-    background: white
-}
-
-/* recipe list page */
+/* Recipe list page */
 
 .page-links {
     width: 60vw;
@@ -321,13 +260,11 @@ border-right: none;
     font-family: 'Lato', sans-serif;;
 }
 
-
 .Recipe-detail-card {
     margin-top: 40px;
     box-shadow: -1px 15px 30px -10px black;
     border-radius: .30rem;
     background: rgb(235, 238, 235);
-    /* background-color: rgb(194, 187, 187); */
     background-position: center;
     background-size: cover;
     position: relative;
@@ -356,8 +293,7 @@ border-right: none;
 /* Edit Recipe */
 
 .summernote-div {
-    width: 70vw;
-    
+    width: 70vw;    
 }
 
 #id_ingredients_iframe {
@@ -381,18 +317,17 @@ border-right: none;
 }
 
 .delete-body {
-    background-color: rgb(245, 228, 212);
+    background-color: #a1a499;
     border-radius: 25px;
 }
 
 .delete-message {
     height: 100vh;
     font-size: 150%;
-    
-
 }
 
-/* add media query for this */
+/* Media query */
+
 @media (max-width: 575.98px) {
 .masthead-image {
     display: flex;
@@ -409,5 +344,12 @@ border-right: none;
     object-fit: cover;
     height: 200px;
     border-radius: .25rem;
+}
+}
+
+@media (min-width: 768px) {
+.account-container {
+    background-color: transparent;
+    height: 79vh;
 }
 }
