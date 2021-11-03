@@ -10,11 +10,8 @@
             <div class="card">
                {% csrf_token %}
                <div class="card-body">
-                  <!-- <fieldset class="form-group"> -->
-                  <!-- <legend class="border-bottom mb-4">Create Recipe</legend> -->
-                  {{ form|crispy }}
-                  <!-- </fieldset> -->
-               </div>
+                {{ form|crispy }}
+                 </div>
             </div>
             <br>
             <div class="text-center">
