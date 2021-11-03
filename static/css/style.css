@@ -129,6 +129,10 @@ body {
     /* margin: 5px; */
 }
 
+.card-body {
+    background-color: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635930092/Recipe%20images/mockaroon-YqUeLG7fMr4-unsplash_1_xsuiyk.jpg);
+}
+
 .card{
     box-shadow: -1px 15px 30px -10px black;
     border-radius: .25rem;    
