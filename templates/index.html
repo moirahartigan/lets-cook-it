@@ -29,7 +29,7 @@
              <div class="card border-warning card-wr-bg">
                 <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
                 {% if "placeholder" in recipe.image_url.url %}
-                <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg" alt="placeholder image">
+                <img class="card-img-top" src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg" alt="placeholder image">
                 {% else %}
                 <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
                 {% endif %}

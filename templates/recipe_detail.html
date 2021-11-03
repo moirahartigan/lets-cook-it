@@ -38,7 +38,7 @@
 	   <!-- image col -->
 	   <div class="col-md-7 d-md-block masthead-image gy-5">
 		  {% if "placeholder" in recipe.image_url.url %}
-		  <img class="recipe-img" src="/static/css/images/burger-img.jpg" alt="placeholder image">
+		  <img class="recipe-img" src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg" alt="placeholder image">
 		  {% else %}
 		  <img class="recipe-img" src=" {{ recipe.image_url.url }}" alt="recipe image">
 		  {% endif %}
