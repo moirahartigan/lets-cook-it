@@ -12,7 +12,7 @@
 body {
     min-height: 100vh;
     font-family: Lato, sans-serif;
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635709109/Recipe%20images/augustine-wong-li0iC0rjvvg-unsplash_a2toce.jpg);
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635980113/Recipe%20images/augustine-wong-li0iC0rjvvg-unsplash_a2toce_1_dfnj3c.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -39,7 +39,7 @@ body {
 /* Index page */
 
 .hero {
-    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635156815/Recipe%20images/vegetables-set-left-black-slate_1_sk0ubb.jpg);
+    background-image: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635977035/Recipe%20images/hero-img-3_ckvc0g.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

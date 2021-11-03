@@ -55,8 +55,10 @@
 		  <a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
 			 class="fas fa-trash-alt"></i></a>
 		  {% elif user.is_superuser %}
-		  <a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
-			 class="fas fa-trash-alt"></i></a>
+		  	<div class="col-md-4 col-sm-6 text-center d-md-block">
+		  		<a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
+			 		class="fas fa-trash-alt"></i></a>
+			</div> 
 	   </div>
 	</div>
 	{% endif %}
