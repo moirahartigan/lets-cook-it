@@ -4,22 +4,20 @@
 {% block content %}
 
 <h1 class="text-center">Edit Recipe</h1>
-
-<form class="edit-form" method="POST">
-    {% csrf_token %}
-    <div class="mb-3 card">
-        <div class="mb-3 card-header">
-            <div class="mb-3 card-body">
-                Edit Recipe
+<div class="container">
+    <div class="row">
+        <form method="POST" class="edit-form">
+            <div class="card">
+                {% csrf_token %}
+                <div class="card-body">
+                    {% crispy form %}
+                </div>
             </div>
-            <div class="">
-                {% crispy form %}
+            <br>
+            <div class="text-center">
+                <button class="btn btn-success" type="submit">Upload</button>
             </div>
-        </div>
-        <input class="btn btn-success" type="submit" value="Submit">
+        </form>
     </div>
-</form>
-
-
-
+</div>
 {% endblock %}

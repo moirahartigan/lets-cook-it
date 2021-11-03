@@ -5,48 +5,43 @@
 <!-- Home page hero image -->
 <section class="hero">
     <div class="container">
-        <div id="hero-text">
-            <div class="d-flex flex-column text-light justify-content-center">
-                <h1><strong>Lets Cook It!</strong></h1>
-            </div>
-            <div class="d-flex flex-column text-light justify-content-center">
-                <h2>Keep all your <span class="text-warning">favourite Recipes</span> in one place</h2>
-                <!-- <a class="arrow-link" href="#section-carousel" aria-label="Arrow">
-                    <div class="arrow bounce"></div> -->
-                </a>
-            </div>
-        </div>
+       <div id="hero-text">
+          <div class="d-flex flex-column text-light justify-content-center">
+             <h1><strong>Lets Cook It!</strong></h1>
+          </div>
+          <div class="d-flex flex-column text-light justify-content-center">
+             <h2>Keep all your <span class="text-warning">favourite Recipes</span> in one place</h2>
+          </div>
+       </div>
     </div>
-</section>
-
-
-<!-- owl carousel -->
-<section class="carousel">
-    <div class="container-fluid py-5">
-        <hr class="heading-line">
-        <h3 class="text-center p-2">Recipes</h3>
-        <hr class="heading-line">
-        <div class="row d-flex justify-content-center mt-5">
-            <div class="owl-carousel owl-theme">
-                {% for recipe in recipe_list %}
-                <div class="item mb-4">
-                <!-- recipe card -->
-                <div class="card border-warning card-wr-bg">
-                    <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
-                    {% if "placeholder" in recipe.image_url.url %}
-                    <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg">
-                    {% else %}
-                    <img class="card-img-top" src="{{ recipe.image_url.url }}">
-                    {% endif %}
-                    <div class="card-body d-grid gap-5">
-                        <h5 class="card-title text-center text-capitalize">{{ recipe.title }}</h5>
-                        <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link"><h2 class="btn btn-outline-success">View Recipe</h2></a>
-                    </div>
+ </section>
+ <!-- owl carousel -->
+ <div class="container-fluid py-5">
+    <hr class="heading-line">
+    <h3 class="text-center p-2">Recipes</h3>
+    <hr class="heading-line">
+    <div class="row d-flex justify-content-center mt-5">
+       <div class="owl-carousel owl-theme">
+          {% for recipe in recipe_list %}
+          <div class="item mb-4">
+             <!-- recipe card -->
+             <div class="card border-warning card-wr-bg">
+                <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
+                {% if "placeholder" in recipe.image_url.url %}
+                <img class="card-img-top" src="/static/css/images/woman-in-chef-hat.jpg" alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
+                {% endif %}
+                <div class="card-body d-grid gap-5">
+                   <h5 class="card-title text-center text-capitalize">{{ recipe.title }}</h5>
+                   <a class="recipe-card-image recipe-link" href="{% url 'recipe_detail' recipe.slug %}">
+                      <h2 class="btn btn-outline-success">View Recipe</h2>
+                   </a>
                 </div>
-            </div>
-            {% endfor %}
-        </div>
+             </div>
+          </div>
+          {% endfor %}
+       </div>
     </div>
-</section>
-
-{% endblock %}
+ </div>
+ {% endblock %}

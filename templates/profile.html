@@ -5,48 +5,38 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 pt-5 text-center text-capitalize">
-      <h1> {{ user.username }}'s Recipe Page </h1>
-    </div>
+     <div class="col-12 pt-5 text-center text-capitalize">
+        <h1> {{ user.username }}'s Recipe Page </h1>
+     </div>
   </div>
-
   <div class="row">
-    <div class="col text-center py-5">
-      <a href="{% url 'create' %}" class="btn btn-success">Add Recipe <i class="fas fa-plus-square"></i></a>
-    </div>
+     <div class="col text-center py-5">
+        <a href="{% url 'create' %}" class="btn btn-success">Add Recipe <i class="fas fa-plus-square"></i></a>
+     </div>
   </div>
 </div>
-
-
 <section>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% for recipe in published_list %}
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card mb-3">
-          {% if "placeholder" in recipe.image_url.url %}
-          <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="...">
-          {% else %}
-          <img class="card-img-top" src="{{ recipe.image_url.url }}">
-          {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ recipe.title }}</h5>
-            <p class="card-text">Added by: {{ recipe.author }}</p>
-
-            <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
-            <a href="{% url 'recipe_edit' recipe.slug %}" class="btn btn-outline-success" id="bt2">Edit</a>
-            <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-outline-success" id="bt3">Delete</a>
-
-
-          </div>
+     <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for recipe in published_list %}
+        <div class="col-md-6 col-lg-4">
+           <div class="card mb-3">
+              {% if "placeholder" in recipe.image_url.url %}
+              <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="placeholder image">
+              {% else %}
+              <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
+              {% endif %}
+              <div class="card-body">
+                 <h5 class="card-title">{{ recipe.title }}</h5>
+                 <p class="card-text">Added by: {{ recipe.author }}</p>
+                 <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success">View</a>
+                 <a href="{% url 'recipe_edit' recipe.slug %}" class="btn btn-outline-success">Edit</a>
+                 <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-outline-success">Delete</a>
+              </div>
+           </div>
         </div>
-      </div>
-      {% endfor %}
-    </div>
+        {% endfor %}
+     </div>
   </div>
 </section>
-
-
-
 {% endblock %}
