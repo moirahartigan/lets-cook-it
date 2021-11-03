@@ -139,6 +139,10 @@ border-right: none;
     margin-bottom: 15px;
 }
 
+.footer {
+    background-color: transparent;
+}
+
 /* login page */
 
 .account-container {
