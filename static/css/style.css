@@ -129,11 +129,15 @@ body {
     /* margin: 5px; */
 }
 
-.card-body {
-    background-color: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635930092/Recipe%20images/mockaroon-YqUeLG7fMr4-unsplash_1_xsuiyk.jpg);
-}
+/* .card-body {
+    background: url(https://res.cloudinary.com/cloudmoira/image/upload/v1635930105/Recipe%20images/max-delsid-8I6OcgjAOGg-unsplash_ljdk1r.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+} */
 
-.card{
+.card{ 
+    background: transparent;
     box-shadow: -1px 15px 30px -10px black;
     border-radius: .25rem;    
 }
@@ -240,9 +244,6 @@ border-right: none;
 
 .register label {
     display: none;
-    /* display: block; */
-    /* padding-bottom: 15px;
-    font-weight: 700; */
   }
 
 /* search box */
@@ -282,7 +283,7 @@ border-right: none;
 /* recipe list page */
 
 .page-links {
-    width: 20vw;
+    width: 60vw;
     margin: 0 auto 2vh auto;
     text-align: center;
   }
@@ -297,7 +298,7 @@ border-right: none;
   }
   
   .page-links a:hover {
-    color: rgb(212, 107, 107);
+    color: rgb(5, 77, 41);
     font-weight: bold;
   }
 
@@ -310,7 +311,6 @@ border-right: none;
 
 .recipe-heading {
     font-family: 'Gloria Hallelujah', cursive;
-    /* padding-bottom: 20px; */
 }
 
 .recipe-method {
@@ -325,8 +325,9 @@ border-right: none;
 .Recipe-detail-card {
     margin-top: 40px;
     box-shadow: -1px 15px 30px -10px black;
-    border-radius: .25rem;
-    background-color: rgb(194, 187, 187);
+    border-radius: .30rem;
+    background: rgb(235, 238, 235);
+    /* background-color: rgb(194, 187, 187); */
     background-position: center;
     background-size: cover;
     position: relative;
@@ -408,4 +409,5 @@ border-right: none;
     object-fit: cover;
     height: 200px;
     border-radius: .25rem;
+}
 }

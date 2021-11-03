@@ -6,6 +6,7 @@ setTimeout(function() {
 },3000);
 
 // owl-carousel jquery
+// https://htmlcss3tutorials.com/owl-carousel-slider-bootstrap-5-example/
 $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,

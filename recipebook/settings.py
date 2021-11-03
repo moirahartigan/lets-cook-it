@@ -71,7 +71,7 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert-info',
     messages.SUCCESS: 'alert-success',
     messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger', 
+    messages.ERROR: 'alert-danger',
 }
 
 MIDDLEWARE = [
