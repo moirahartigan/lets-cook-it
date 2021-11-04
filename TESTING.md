@@ -182,14 +182,65 @@ From the admin page, the admin can select the comments and review and approve th
 
  All pages passed all checks with the exception of those pages containing recipes copied and pasted directly from another website
 
+<details>
+<summary>Show validators</summary>
+<details>
+<summary>Home Page</summary>
 
+![home page](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/Home-page-validation.png)
+</details> 
+<details>
+<summary>Home Page</summary>
+
+The errors shown relate to the summer note editor
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/add-recipe-page-validation.png)
+</details> 
+<details>
+<summary>Add Recipe</summary>
+
+Again here the errors shown relate to the sunner note editor
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/edit-recipe-page-validation.png)
+</details> 
+<details>
+<summary>Edit Recipe</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/login-page-validation.png)
+</details> 
+<details>
+<summary>login page</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/logout-page-validation.png)
+</details> 
+<details>
+<summary>Logout page</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipes-page-validation.png)
+</details> 
+<details>
+<summary>Recipe page</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/profile-page-validation.png)
+</details> 
+<details>
+<summary>Profile page</summary>
+
+Again here the errors shown relate to the sunner note editor
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipe-detail-page-validation.png)
+</details> 
+<details>
+<summary>Recipe detail page</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/register-page-validation.png)
+</details> 
+<details>
+<summary>Register Recipe</summary>
 
 
 ### **CSS**
 
 I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
 
-
+![css validator](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/css-validation.png)
 
 ### **JavaScript**
 
@@ -208,9 +259,9 @@ The code passed all checks.
 
 
 
-![mobile lighthouse score](lighthouse)
+![mobile lighthouse score](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/lighthouse-mobile.png)
 
-![desktop lighthouse score](lighthouse)
+![desktop lighthouse score](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/lighthouse-desktop.png)
 
 ---
 ---
