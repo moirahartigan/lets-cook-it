@@ -29,7 +29,7 @@ And also on the recipes page:
 
 From the recipes page, the user can use the search bar:
 
-![testing user stories](search-box)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/search.png)
 
 The words searched will come from the full ingredients list. 
 
