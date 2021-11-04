@@ -171,3 +171,46 @@ From the admin page, the admin can select the comments and review and approve th
 ![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-approve-comments.png)
 
 ---
+---
+
+## Validator Testing
+### **HTML**
+
+ I checked all of the HTML pages using [W3C Markup Validation Service](https://validator.w3.org/)
+
+ Because of the presence of Django within the code, I had to check from the live site by right clicking each page, selecting View Page Source and running that generated code through the validator.
+
+ All pages passed all checks with the exception of those pages containing recipes copied and pasted directly from another website
+
+
+
+
+### **CSS**
+
+I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
+
+
+
+### **JavaScript**
+
+I checked the script.js file using [JSHint](https://jshint.com/)
+
+
+
+### **Python**
+I checked the app.py file using [PEP8 online](http://pep8online.com/)
+
+The code passed all checks.
+
+---
+---
+## Lighthouse Testing
+
+
+
+![mobile lighthouse score](lighthouse)
+
+![desktop lighthouse score](lighthouse)
+
+---
+---
