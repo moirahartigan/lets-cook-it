@@ -196,25 +196,6 @@ The background image selected is to imitate a marble kitchen countertop and the 
 — **Typography** —
 
 
-
-## WEBSITE CONSTRUCTION PLANS
-
-This project contains both front-end and back-end so well-structured planning is required to do the work efficiently. Below is a summary of the plans.
-
-1. Creating Database in Django
-1. Installing necessary Python frameworks, creating a Python file for the app and testing functions
-1. Deploying the website in Heroku
-1. Connecting Database and App
-1. Creating base HTML template with common sections e.g. header & footer
-1. Creating *Register*, *Login*, *Profile* pages
-1. Creating *Add*, *Edit* recipe pages
-1. Creating an individual *Recipe* page
-1. Creating a *Delete confirmation* page
-1. Creating *404* page
-
-Some testing is also done during the above process
-
-
 ## FEATURES
 
 ### Existing Features
