@@ -7,7 +7,7 @@ It is a community based experience that allows casual, one-time users to browse 
 
 [View the Live Website Here]()
 
-<img src="https://github.com/moirahartigan/Ms1-Schools-Out-Childcare/blob/master/readme/am-i-responsive.png">
+<img src="https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/i-am-responsive.png">
 
 
 ### Table of contents

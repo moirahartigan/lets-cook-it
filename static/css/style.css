@@ -224,6 +224,16 @@ border-right: none;
     left: 16px
 }
 
+.no-search {
+    margin-bottom: 61vh;
+    background-color: #a1a499;
+    border-radius: 25px;
+    padding:20px;
+    align-content: center;
+    width: 100%;
+ }
+
+  
 /* Recipe list page */
 
 .page-links {
