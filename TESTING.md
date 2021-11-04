@@ -82,19 +82,11 @@ Once they have clicked it, they will be redirected to the add a new recipe page:
 
 ---
 
-+ *I want to be able to add a recipe to the pre-determined category.*
-
-Once the user has been directed to the add recipe page, the they will have the option to choose which category they would like their recipe to be added to:
-
-![testing user stories](add-recipe-to-a-categore)
-
----
-
 + *I want to have ease of access to any recipes that I have already added.*
 
 From their account page, the user will be able to view all recipes that they have added:
 
-![testing user stories](profile-page)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/profile-page.png)
 
 ---
 
@@ -102,26 +94,26 @@ From their account page, the user will be able to view all recipes that they hav
 
 From the account page, a logged in user has access to all of their recipes. From there, the user have a button choice to view, edit or delete any recipe:
 
-![testing user stories](view-edit-delete-buttons)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/view-edit-delete-buttons.png)
 
 **EDIT:**
 if the user presses the edit button, the page reloads to the edit page which is a essentially a duplication of the add a new recipe page. However, the input fields will be populated with their original input:
 
-![testing user stories](edit-recipe)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/edit-recipe-form.png)
 
 Once the user has made the necessary changes, they can save them at the bottom of the page. 
 
 **Delete:** if the user chooses the delete button, they will be presented with a message to either confirm or cancel the deletion: 
 
-![testing user stories](delete-confirmation)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/delete-confirm.png)
 
 ---
 
-+ *I want to be able to add a comments to other recipes.*
++ *I want to be able to add a comment to other recipes.*
 
 logged in users can view and add comments to all other recipes, this feature is not available to casual users:
 
-![testing user stories](comments)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/registered-user-comments.png)
 
 ---
 
@@ -130,15 +122,15 @@ logged in users can view and add comments to all other recipes, this feature is 
 
 From the back end Django admin planel a superuser such as admin has the ability to log in:
 
-![testing user stories](admin-login)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin%20login.png)
 
 Once they're logged in admin can add new recipes in a simular format as the front end user:
 
-![testing user stories](admin-panel)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-recipe-panel.png)
 
 Once they click add recipe, they'll be redirected to the upload page where they can fill in all of the recipe information. The summernote editor has been used here to allow admin to style the layout as they wish:
 
-![testing user stories](admin-add-recipe)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-add-recipe.png)
 
 Once all of the inputs have been filled in correctly, the user can use the 'save' button at the bottom of the page to add it to the database:
 
