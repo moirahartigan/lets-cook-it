@@ -134,7 +134,7 @@ Once they click add recipe, they'll be redirected to the upload page where they 
 
 Once all of the inputs have been filled in correctly, the user can use the 'save' button at the bottom of the page to add it to the database:
 
-![testing user stories](admin-save-button)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-save-button.png)
 
 ---
 
@@ -142,17 +142,25 @@ Once all of the inputs have been filled in correctly, the user can use the 'save
 
 From the admin page, the admin can select any recipe they wish to edit it:
 
-![testing user stories](admin-edit)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-edit-recipe.png)
 
 This will redirect them to the edit page where they can update whatever information they want:
 
 ---
 
++ *I want to be able to approve any recipe.*
+
+From the admin page, the admin can select new recipes recently added by a registered user and make them available for casual users:
+
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-approve-recipes.png)
+
+---
+
 + *I want to be able to delete any recipe.*
 
-From the admin page, the admin can  select any recipe they wish to edit it:
+From the admin page, the admin can select any recipe to delete it:
 
-![testing user stories](admin-delete)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-delete.png)
 
 ---
 
@@ -160,6 +168,6 @@ From the admin page, the admin can  select any recipe they wish to edit it:
 
 From the admin page, the admin can select the comments and review and approve the comments as the are made:
 
-![testing user stories](admin-comments)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-approve-comments.png)
 
 ---
