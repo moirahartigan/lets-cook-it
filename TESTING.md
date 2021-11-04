@@ -35,11 +35,11 @@ The words searched will come from the full ingredients list.
 
 If there were any results, the user will see just them:
 
-![testing user stories](search-results)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/search-results.png)
 
 If there were no input in the search box, the user will be shown a message informing them:
 
-![testing user stories](no-search-results)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/search-no-input.png)
 
 The user can then use the use the back button to revert back to seeing all recipes. 
 
@@ -49,7 +49,7 @@ The user can then use the use the back button to revert back to seeing all recip
 
 From the navigation bar, the user can go to the registration page. From there, they can choose a username and password:
 
-![testing user stories](registration)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/register-pg.png)
 
 ---
 
@@ -57,7 +57,7 @@ From the navigation bar, the user can go to the registration page. From there, t
 
 Pagination has been added to the recipe page to enhance the user experience and allow them to easily move from page to page when viewing the recipes:
 
-![testing user stories](page-pagination)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/page-pagination.png)
 
 ---
 
@@ -66,7 +66,7 @@ Pagination has been added to the recipe page to enhance the user experience and 
 
 As long as the user has registered for an account, they can use the log in page from the navigation bar to access their account:
 
-![testing user stories](login-page)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/login%20pg.png)
 
 ---
 
@@ -74,11 +74,11 @@ As long as the user has registered for an account, they can use the log in page 
 
 From their account page, the user will see the add recipe button towards the top of the page:
 
-![testing user stories](add-recipe-button)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/add-recipe-button.png)
 
 Once they have clicked it, they will be redirected to the add a new recipe page:
 
-![testing user stories](add-a-new-recipe-page)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/add-recipe-form.png)
 
 ---
 
