@@ -149,14 +149,14 @@ Recipe cards and full recipes are accessible by any users. Recipe cards are avai
 
 <br>
 
-— **Back-end** —<br>
+— **Back-end** —<br> 
+### Database
 
 The database was built with postgres and was used both locally in gitpod and deployed to a live site by heroku.
 Cloudinary is used to for all images both by the superuser and a standard user for all images uploaded to the website.
 
 The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model liked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it only. 
 
-#### Database
 
 Below is the chart of the custom data model used.
 
@@ -199,35 +199,88 @@ The background image selected is to imitate a marble kitchen countertop and the 
 ## FEATURES
 
 ### Existing Features
+### **Navigation menu displayed across all pages**
 
-- 
+The navigation menu will help the user move easily across all pages.
 
-### Features Left To Implement
+The navigation buttons update depending on whether a user is logged in, and whether that user is the admin:
 
-- **Resetting Password When Users Forget It:** To achieve this, an e-mail address is probably required for creating an account. The current primary purpose of the website is to provide easy access to the platform so do not ask e-mail address to create an account. In addition, do not know how to implement this with my current skills, decide to leave this out
+| Nav Link              |Not logged in  |Logged in as user
+|:-------------         |:------------- |:------------- 
+|Home                   |&#9989;        |&#9989;        
+|Recipes                |&#9989;        |&#9989;        
+|Register               |&#9989;        |&#10060;        
+|Profile                |&#10060;       |&#9989;        
+|Log Out                |&#10060;       |&#9989;             
+|Log In                 |&#9989;        |&#10060;       
 
-- **“Like” Reaction By Other Users:** Do not have time to learn so decide to leave this out
+### **Carousel displayed on home page for browsing the various 'recipes'** 
 
+The carousel will allow the user to browse through the different recipes. This adds a more visual element rather than static images. All of the carousel images will link the user to the recipe page of their choosing. 
+
+### **All recipes accessible to users who don't want to make an account**
+
+As someone who doesn't particularly like to sign up to websites that I don't plan on adding to but like to view, I wanted to make all of the recipes accessible to a casual viewer. But in order to interact with the site, they Do have to have an account. Without one, the option to upload anything isn't available. 
+
+### **Users can search for recipes based on an ingredients**
+
+Searching by ingredient is an important feature for any recipe website so that was something that I wanted to include.  
+
+### **Pagination on recipe pages**
+
+At the moment, the database is relatively small. But if this were a site that was going into full production, the recipes list would be much more extensive. As a result, the number of recipes displyed to the user could become overwhelming very quickly. I've limited to number of recipes per page - there's still a good amount displayed to the user without being too much. This will also help reduce loading times, especially on mobile devices. 
+
+
+### **User account management**
+
+Anyone is able to make an account through the 'Register' page. They have to choose a username and a password. Users cannot choose a username that is already taken and they cannot use just whitespace.
+
+Once their account is made, they will be able to log in an out when needed. 
+
+### **User recipe management**
+
+A registered user is able to upload recipes to the site. Once they have recipes that they have added, all recipe management can be done from their account page. This includes editing a deleting.  
+
+  + **Deleting**: there is a confirmation message in place to assure the user doesn't accidentally delete the recipe. 
+
+### **Recipe Images**
+
+When uploading a recipe, the user needs to add an image alongside the recipe information. This image will be used on both the recipe card and on the full recipe page. But because the image is added via a url, there are some people who don't was to go to have to do this, or they simply can't on their device. As a result of that I have added a placeholder image url that the user can use in place of their own. It's a stylish image that was found on [Unsplash](https://unsplash.com/) that looks good with the overall feel of the site. 
+
+
+### **Admin  management**
+
+Admin manages all its CRUD functionality from the backend.
+
+## Possible Future Features
++ A rating system that allows users to rate each others recipes. 
+  + This could lead to sorting by top-rated recipes.
++ Ability to 'save' recipes to a users own account to refer back to.
++ Users ability to update username. 
++ Users ability to delete their account. 
+  + This could allow the user to either leave their recipes on the site or delete them along with the account 
++ Resetting Password When Users Forget It.
++ “Like” Reaction By Other Users. I ran out of time to implement this feature and decided to leave it out
 
 
 ## TECHNOLOGIES USED
 
+- [Django3](https://www.djangoproject.com/)
 - [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
 - [CSS3](https://en.wikipedia.org/wiki/CSS) for style
-- [Material Design for Bootstrap 5 & 4](https://mdbootstrap.com/) &#40;an open-source toolkit based on Bootstrap for developing Material Design&#41; for the mainframe of the website
+- [Postgressql](https://www.postgresql.org/) for the database
+- [Bootstrap 5 ](https://mdbootstrap.com/) for the mainframe of the website
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction
 - [Python3](https://www.python.org/) as a backend programming language
-- [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as the main framework of Python
 - [Google Fonts](https://fonts.google.com/) for fonts
 - [Font Awesome](https://fontawesome.com/) for icons
-- [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#41;
+- [Cloudinary](https://cloudinary.com/) for images
+- [Summernote](https://summernote.org/) editor for adding and editing the recipes
+- [Gitpod](https://www.gitpod.io/) as Integrated Development Environment
 - [Git](https://git-scm.com/) for local version control, keeping the files & documents
 - [GitHub](https://github.com/) for online version control and keeping the files & documents
 - [Heroku](https://www.heroku.com/) for deploying the website
 
-
-
-## RESOURCES
 
 ### General Resources
 
@@ -240,34 +293,13 @@ The background image selected is to imitate a marble kitchen countertop and the 
 ### Tools
 
 - [Balsamiq](https://balsamiq.com/) for wireframes
-- [Adobe](https://www.adobe.com/ie/photoshop/online/resize-image.html) for resizing images
-- [PNG to ICO](https://hnet.com/png-to-ico/) for converting png to ico for favicon
-- [removebg](https://www.remove.bg/) for removing background images
-- [Transparent Textures](https://www.transparenttextures.com/) for creating background image
-- [Canva](https://www.canva.com/) for creating logos and some images
-- [Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/index.php) for mockup
-- [Autoprefixer](https://autoprefixer.github.io/) for parsing CSS and add vendor prefixes
+- [Tinypng](https://tinypng.com/) for resizing images
+- [Tinypng](https://tinypng.com/) for resizing images
 - [W3C Markup Validation Service](https://validator.w3.org/) for testing HTML code
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for testing CSS code
 - [jshint](https://jshint.com/) for testing JavaScript code
 - [PEP8 Online](http://pep8online.com/) for checking Python code compliance
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ***
 
@@ -302,7 +334,7 @@ This site was deployed through GitHub Pages using the following steps:
     * [unsplash](https://unsplash.com)
     * [pexels](https://www.pexels.com)
     * [pixabay](https://pixabay.com/)
- * The site logo image was designed by myself Moira Hartigan with the use of [Free Logo Maker](https://logomakr.com/)
+ * The recipe images were all taken from the original recipes which have been linked on the site in each recipe
 
 ### Acknowledgements
 * I would like to thank the Slack Community for their endless support.
