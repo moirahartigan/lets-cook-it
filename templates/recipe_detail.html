@@ -50,7 +50,7 @@
  {% if user.is_authenticated and user == recipe.author %}
  <div class="container">
 	<div class="row btn-row-recipe">
-	   <div class="col-md-4 col-sm-6 text-center d-md-block">
+	   <div class="col-md-4 col-sm-6 col-lg-3 text-center d-md-block">
 		  <a class="btn btn-success" href="{% url 'recipe_edit' recipe.slug %}">Edit <i class="fas fa-edit"></i></a>
 		  <a class="btn btn-success" href="{% url 'recipe_delete' recipe.slug %}">Delete <i
 			 class="fas fa-trash-alt"></i></a>

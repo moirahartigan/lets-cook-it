@@ -40,7 +40,7 @@ It is a community based experience that allows casual, one-time users to browse 
 ***
 
 ## Project Goals
-The primary goal of Lets Cook It! is to allow the users to create, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly design.
+The primary goal of Lets Cook It! is to allow the users to create, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly layout.
 
 ## User Stories
 **As a Casual User, I want to:**

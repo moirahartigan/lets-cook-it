@@ -307,6 +307,10 @@ border-right: none;
 
 /* Edit Recipe */
 
+/* .edit-form {
+    background: rgb(235, 238, 235);
+} */
+
 .summernote-div {
     width: 70vw;    
 }

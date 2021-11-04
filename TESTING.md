@@ -15,181 +15,153 @@
 
 Even without being logged in, a user is able to browse through all the recipe cards, choose one and view the full recipe:
 
-![testing from user stories]([#4](https://github.com/moirahartigan/lets-cook-it/issues/4))
-[[#4](https://github.com/moirahartigan/lets-cook-it/issues/4)]
+![testing user stories](casual-user-view-page)
 ---
 
-+ *I want to be able to search for specific recipes.*
++ *I want to be able to search through the recipes on the site.*
 + *I want to be able to search for recipes that have a specific ingredient.*
 
-From the recipes page, the user can use the search bar for specifics:
+From the recipes page, the user can use the search bar:
 
-![testing from user stories](static/images/README/Testing/testing-02.png)
+![testing user stories](search-box)
 
-The words searched will come from the cocktail name, main ingredient and full ingredients list. 
+The words searched will come from the full ingredients list. 
 
 If there were any results, the user will see just them:
 
-![testing from user stories](static/images/README/Testing/testing-02-a.png)
+![testing user stories](search-results)
 
-If there were no matches, the user will be shown a message informing them:
+If there were no input in the search box, the user will be shown a message informing them:
 
-![testing from user stories](static/images/README/Testing/testing-02-b.png)
+![testing user stories](no-search-results)
 
-The user can then use the use the clear button to revert back to seeing all recipes. 
-
----
-
-+ *I want to have a varied range of cocktails.*
-
-The recipes page gives the user the ability to browse through all of the recipes on the site, regardless of which collection it belongs to:
-
-![testing from user stories](static/images/README/Testing/testing-03.png)
+The user can then use the use the back button to revert back to seeing all recipes. 
 
 ---
 
-+ *I want to have a some cocktail suggestions when I'm not sure what to look for.*
-
-On the home page, the carousel will give the user various collections to scroll through. Each image is a link to the appropriate collection page:
-
-![testing from user stories](static/images/README/Testing/testing-04.png)
-
----
-
-+ *I want to have the option to register an account if I want to come back at a later date.*
++ *I want to be able to register for an account if I want to come back at a later date.*
 
 From the navigation bar, the user can go to the registration page. From there, they can choose a username and password:
 
-![testing from user stories](static/images/README/Testing/testing-05.png)
+![testing user stories](registration)
 
- If their chosen username has already been taken, they will be informed and can choose another:
+---
 
- ![testing from user stories](static/images/README/Testing/testing-05-a.png)
++ *I want to be able to able to view a specific number of recipe cards on the recipe page so that only a number of recipe card appear at a time on the page.*
+
+Pagination has been added to the recipe page to enhance the user experience and allow them to easily move from page to page when viewing the recipes:
+
+![testing user stories](page-pagination)
 
 ---
 
 ### As a returning user: 
 + *I want to be able to log into my account.*
 
-As long as the user has been through the registration process, they can use the long in page from the navigation bar to access their account:
+As long as the user has registered for an account, they can use the log in page from the navigation bar to access their account:
 
-![testing from user stories](static/images/README/Testing/testing-06.png)
-
-If they use the wrong username or password, they will be informed and can retry:
-
-![testing from user stories](static/images/README/Testing/testing-06-a.png)
+![testing user stories](login-page)
 
 ---
 
 + *I want to be able to upload a recipe.*
 
-From their account page, the use will see the upload button towards the top of the page:
+From their account page, the user will see the add recipe button towards the top of the page:
 
-![testing from user stories](static/images/README/Testing/testing-07.png)
+![testing from user stories](add-recipe-button)
 
-Once they have clicked it, they will be redirected to the upload page:
+Once they have clicked it, they will be redirected to the add a new recipe page:
 
-![testing from user stories](static/images/README/Testing/testing-08.png)
-
----
-
-+ *I want to be able to add a recipe to the pre-determined collections.*
-
-Once the user has been directed to the upload page, the first option is to choose which categories they would like their recipe to be added to:
-
-![testing from user stories](static/images/README/Testing/testing-09.png)
+![testing from user stories](add-a-new-recipe-page)
 
 ---
 
-+ *I want to have ease of access to any recipes that I have already uploaded.*
++ *I want to be able to add a recipe to the pre-determined category.*
 
-From their account page, the user will be able to view all recipes that they have uploaded:
+Once the user has been directed to the add recipe page, the they will have the option to choose which category they would like their recipe to be added to:
 
-![testing from user stories](static/images/README/Testing/testing-10.png)
+![testing from user stories](add-recipe-to-a-categore)
 
 ---
 
-+ *I want to be able to edit or delete any recipes that I have already uploaded.*
++ *I want to have ease of access to any recipes that I have already added.*
 
-From the account page, a logged in user has access to all of their recipes. From there, the user can hover over any of the recipes and they are presented with the edit or delete options:
+From their account page, the user will be able to view all recipes that they have added:
 
-![testing from user stories](static/images/README/Testing/testing-11.png)
+![testing from user stories](profile-page)
+
+---
+
++ *I want to be able to view, edit or delete any recipes that I have already added.*
+
+From the account page, a logged in user has access to all of their recipes. From there, the user have a button choice to view, edit or delete any recipe:
+
+![testing from user stories](view-edit-delete-buttons)
 
 **EDIT:**
-if the user presses the edit button, the page reloads to the edit page which is a visual duplication of the upload page. However, the input fields will be populated with their original input:
+if the user presses the edit button, the page reloads to the edit page which is a essentially a duplication of the add a new recipe page. However, the input fields will be populated with their original input:
 
-![testing from user stories](static/images/README/Testing/testing-12.png)
+![testing from user stories](edit-recipe)
 
-Once the user has made the necessary changes, they can save them at the bottom of the page. Alternatively, they can cancel all changes they've made. Both buttons lead back to their account page:
+Once the user has made the necessary changes, they can save them at the bottom of the page. 
 
-![testing from user stories](static/images/README/Testing/testing-13.png)
+**Delete:** if the user chooses the delete button, they will be presented with a message to either confirm or cancel the deletion: 
 
-**Delete:** if the user chooses the delete button, they will be presented with a modal to either confirm or cancel the deletion: 
+![testing from user stories](delete-confirmation)
 
-![testing from user stories](static/images/README/Testing/testing-14.png)
+---
+
++ *I want to be able to add a comments to other recipes.*
+
+logged in users can view and add comments to all other recipes, this feature is not available to casual users:
+
+![testing from user stories](comments)
 
 ---
 
 ### As the site owner/admin:
-+ *I want to be able to add new collections to the site.*
++ *I want to be able to add new recipes to the site.*
 
-The admin will be able to log into their account as every other user does. However, they will have the 'Manage Collections' link in the nav bar:
+From the back end Django admin planel a superuser such as admin has the ability to log in:
 
-![testing from user stories](static/images/README/Testing/testing-15.png)
+![testing from user stories](admin-login)
 
-Once they're on the 'Manage Collections' page, they'll have access to the 'Add Collection' button:
+Once they're logged in admin can add new recipes in a simular format as the front end user:
 
-![testing from user stories](static/images/README/Testing/testing-16.png)
+![testing from user stories](admin-panel)
 
-Once they click that, they'll be redirected to the upload page where they can fill in all of the collection information. The tool tips will give them information about the input elements:
+Once they click add recipe, they'll be redirected to the upload page where they can fill in all of the recipe information. The summernote editor has been used here to allow admin to style the layout as they wish:
 
-![testing from user stories](static/images/README/Testing/testing-17.png)
+![testing from user stories](admin-add-recipe)
 
-Once all of the inputs have been filled in correctly, the user can use the 'Add Collection' button at the bottom of the page to add it to the database:
+Once all of the inputs have been filled in correctly, the user can use the 'save' button at the bottom of the page to add it to the database:
 
-![testing from user stories](static/images/README/Testing/testing-18.png)
-
----
-
-+ *I want the new collection to be added to the appropriate site areas.*
-
-The new collection is added to the nav bar (and side nav):
-
-![testing from user stories](static/images/README/Testing/testing-19.png)
-
-The new collection is added to the home page carousel:
-
-![testing from user stories](static/images/README/Testing/testing-20.png)
-
-The new collection has its own page created:
-
-![testing from user stories](static/images/README/Testing/testing-21.png)
+![testing from user stories](admin-save-button)
 
 ---
 
-+ *I want to be able to edit the pre-existing collections.*
++ *I want to be able to edit the pre-existing recipes.*
 
-From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Edit' button:
+From the admin page, the admin can select any recipe they wish to edit it:
 
-![testing from user stories](static/images/README/Testing/testing-22.png)
+![testing from user stories](admin-edit)
 
-This will redirect them to the edit page where they can update whatever information they want. The only thing they can't update is the collection name:
-
-![testing from user stories](static/images/README/Testing/testing-23.png)
-
-Once the user has updated the information, they can access they buttons at the bottom of the form. If they click 'Edit Collection', the changed will be sent to the database and be updated across the site. They also have the option to 'Cancel' which will ignore any changes and redirect them to the 'Manage Collections' page:
-
-![testing from user stories](static/images/README/Testing/testing-24.png)
+This will redirect them to the edit page where they can update whatever information they want:
 
 ---
 
-+ *I want to be able to delete any collections.*
++ *I want to be able to delete any recipe.*
 
-From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Delete' button:
+From the admin page, the admin can  select any recipe they wish to edit it:
 
-![testing from user stories](static/images/README/Testing/testing-25.png)
+![testing from user stories](admin-delete)
 
-A modal will appear asking the admin to confirm that they want to delete the collection. They also have the option to 'Cancel' which will close the modal with no changes made:
+---
 
-![testing from user stories](static/images/README/Testing/testing-26.png)
++ *I want to be able to approve comments left by registered users.*
 
+From the admin page, the admin can select the comments and review and approve the comments as the are made:
+
+![testing from user stories](admin-comments)
+
+---
