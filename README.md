@@ -15,28 +15,20 @@ It is a community based experience that allows casual, one-time users to browse 
      1. [Project Goals](#Project-Goals)
      2. [User Stories](#User-Stories)
      3. [Project Planning](#Project-Planning)
-2. [Data Schema](#Data-Schema)
-     1. [Users Collection](#Users-Collection)
-     2. [Recipes Collection](#Recipes-Collection)
-     3. [Categories Collection](#Categories-Collection)
-3. [Features](#Features)
-     1. [Design Features](#Design-Features) 
-     2. [Existing Features](#Existing-Features)
-     3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
-4. [Issues and Bugs](#Issues-and-Bugs)
-5. [Technologies Used](#Technologies-Used)
+2. [Features](#Features) 
+     1. [Existing Features](#Existing-Features)
+     2. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+3. [Technologies Used](#Technologies-Used)
      1. [Languages](#Languages)
      2. [Tools](#Tools)
      3. [Libraries](#Libraries)
-     4. [Database Management](#Database-Management)
-6. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
-7. [Deployment](#Deployment)
+4. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
+5. [Deployment](#Deployment)
      1. [1. Database Creation](#1-Database-Creation)
      2. [2. Local Copy Creation](#2-Local-Copy-Creation)
      3. [3. Heroku App Creation](#3-Heroku-App-Creation)
-8. [Credits](#Credits)
-9. [Acknowledgements](#Acknowledgements)
-10. [Technical Support](#Technical-Support)
+6. [Credits](#Credits)
+
 ***
 
 ## Project Goals
@@ -71,7 +63,9 @@ The primary goal of Lets Cook It! is to allow the users to create, search, and v
 
 ## Project Planning
 
- Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project. As the methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application. I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the user of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
+ Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project. As the methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application. 
+ <br>
+ I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the use of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
 
 ### Strategy Plane
 
@@ -162,11 +156,11 @@ Cloudinary is used to for all images both by the superuser and a standard user f
 
 The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model liked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it only. 
 
-<!-- Registered users can leave comments on any recipe and the comment will display their username. A registered user can choose to publish recipes so they are displayed on the public recipe page, or leave them as drafts so they will only be visible on their own profile page. -->
+#### Database
 
 Below is the chart of the custom data model used.
 
-![image]()<br>
+![database](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/database%20models.png)<br>
 
 
 ### Skeleton Plane
@@ -192,31 +186,15 @@ It is a mobile-first website because people usually cook with a recipe so a good
 - [Wireframes: Edit Recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Edit-recipe-page.png)
 
 
-
-
-
-
 ### Surface Plane
 
 — **Colour** —
 
 As this is a recipes website, I kept the colour scheme simple as I wanted to main focus to be on the recipe images
-
-![image]()
+The background image selected is to imitate a marble kitchen countertop and the recipe images do all the work as they are the main focus. All the images used are the original recipe images.
 
 — **Typography** —
 
-**Amatic SC** is used for the main heading “Uncle Jam’s Baking Recipes” &#40;h1&#41; and headings of other pages &#40;h2&#41; because this handwritten type of font links with recipes (hand made) very well.
-
-![image]()
-
-**Balsamiq Sans**, which is also another type of handwritten font, is used for menu and other headings &#40;h3 - h6&#41; as it matches the image of the website well.
-
-![image]()
-
-**Nunito**, which is Sans Serif type font, is used for texts on the body to give users maximum readability.
-
-![image]()
 
 
 ## WEBSITE CONSTRUCTION PLANS
@@ -247,7 +225,7 @@ Some testing is also done during the above process
 
 - **Resetting Password When Users Forget It:** To achieve this, an e-mail address is probably required for creating an account. The current primary purpose of the website is to provide easy access to the platform so do not ask e-mail address to create an account. In addition, do not know how to implement this with my current skills, decide to leave this out
 
-- **“Like” Reaction By Other Users:** Do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
+- **“Like” Reaction By Other Users:** Do not have time to learn so decide to leave this out
 
 
 
@@ -259,7 +237,6 @@ Some testing is also done during the above process
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction
 - [Python3](https://www.python.org/) as a backend programming language
 - [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as the main framework of Python
-- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/) as database
 - [Google Fonts](https://fonts.google.com/) for fonts
 - [Font Awesome](https://fontawesome.com/) for icons
 - [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#41;
@@ -312,36 +289,10 @@ Some testing is also done during the above process
 
 
 ***
+
 # Testing
-### Validator Testing
-At the completion or heavy editing of sections, I used the following to check my code for syntax errors:
+Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/moirahartigan/lets-cook-it/blob/main/TESTING.md). 
 
-
-#### <em>HTML Validator</em>
-
-  <p align="center">  
- <img src=""> 
- </p>
-  
-  
-* The warning returned from the html validator identified the navigation section was lacking a heading - however a business logo was used in place of a heading for this section. 
-#### <em>CSS Validator</em>
-
-  <p align="center">  
-  <img src="
-  ">
- </p>
-    
-    
-* All pages came back with no errors.
- 
-### Lighthouse Testing
-I used Chromes Lighthouse tools to test the site's performance. I made sure to check both desktop and mobile performances. Below are the screenshots from both tests:
-#### <em>lighthouse Mobile</em>
-![Mobile]()
-#### <em>lighthouse Desktop</em>
-![Desktop]()
-***
 # Deployment
 ### Deployment through GitHub Pages
 This site was deployed through GitHub Pages using the following steps:
