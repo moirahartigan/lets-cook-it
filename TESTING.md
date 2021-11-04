@@ -16,11 +16,11 @@
 Even without being logged in, a user is able to browse through all the recipe cards, choose one and view the full recipe
 users can brouse recipes either on the home page carousel:
 
-![testing user stories](carousel)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/carousel.png)
 
 And also on the recipes page: 
 
-![testing user stories](casual-user-view-page)
+![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/casual-user-recipe-page.png)
 
 ---
 
