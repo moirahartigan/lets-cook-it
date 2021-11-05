@@ -255,9 +255,9 @@ The code passed all checks.
 
 ---
 ---
+
+
 ## Lighthouse Testing
-
-
 
 ![mobile lighthouse score](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/lighthouse-mobile.png)
 
