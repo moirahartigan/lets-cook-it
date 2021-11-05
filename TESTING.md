@@ -321,8 +321,8 @@ The code passed all checks.
 | **Add Recipe Btn**        |                   |                                   |    |
 |Add Recipe Button          |Click              |Redirect to recipe add recipe page |Pass|
 | **Recipe Card**           |                   |                                   |    |
-|Recipe Card                |None               |Display recipe action buttons      |Pass|
-|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
+|Recipe Card                |On page open       |Display recipe action buttons      |Pass|
+|View recipe btn            |Click              |Redirect to full recipe            |Pass|
 |Edit recipe btn            |Click              |Redirect to edit recipe page       |Pass|
 |Delete recipe btn          |Click              |Open delete confirmation modal     |Pass|
 |Delete msg - confirm btn   |Click              |Delete selected recipe             |Pass|
@@ -341,6 +341,11 @@ The code passed all checks.
 |:-------------             |:-------------     |:-----                             |:-----|
 | **Form**                  |                   |                                   |    |
 |Text input fields          |Type into          |Text appears,                      |Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Categories choice          |Dropdown list      |list of categories appear          |Pass|
+|Summernote editor          |Click              |Text can be edited/formated        |Pass|
+|Upload btn                 |Click              |Recipe appears on profile page     |Pass|
+|                           |                   |Redirect to Profile page           |Pass|
 
 ---
 ### **edit_recipe.html**
@@ -349,8 +354,72 @@ The code passed all checks.
 |:-------------             |:-------------     |:-----                             |:-----|
 | **Form**                  |                   |                                   |    |
 |All fields                 |On page open       |Pre-populated with previous inputs |Pass|
-|Text input fields          |Type into          |Text appears,                      |Pass|
-|Submit btn                 |Click              |Recipe appears on profile page     |Pass|
-|                           |                   |Redirect to profile page           |Pass|
+|Text input fields          |Type into          |Text appears                       |Pass|
+|Upload btn                 |Click              |Recipe appears on profile page     |Pass|
+|                           |                   |Redirect to recipe page            |Pass|
 
+---
+
+### **full_recipe.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|Edit button                |Click              |displayed if user is recipe owner  |Pass|
+|Delete button              |Click              |displayed if user is recipe owner  |Pass|
+|Recipe image               |On page open       |Recipe image displayed properly    |Pass|
+|Recipe ingredients list    |On page open       |Recipe ingredients list displayed properly |Pass|
+|Recipe method list         |On page open       |Recipe method list displayed properly  |Pass|
+|Comments                   |On page open       |only if user is registered/logged in   |Pass|
+
+
+---
+### **login.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Form**                   |                   |                                   |    |
+|Username                   |Text input         |Text displayed to user             |Pass|
+|Password                   |Text input         |Password hidden to user            |Pass|
+|Submit btn (fields correct)|Click              |Redirect to profile page           |Pass|
+|Submit btn (fields incorrect)|Click            |error message to try again         |Pass|
+|**Redirect Link**          |                   |                                   |    |
+|'Register here' link       |Click              |Redirect to registration page      |Pass|
+
+---
+### **recipes.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Search**                 |                   |                                   |    |
+|Text input                 |Text input         |Text displayed to user             |Pass|
+
+| **Recipe Card**           |                   |                                   |    |
+|Recipe Card                |On page open       |Reveal recipe action buttons       |Pass|
+|View recipe btn            |Click              |Redirect to full recipe            |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific recipes page number       |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+
+---
+### **register.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Form**                   |                   |                                   |    |
+|Username                   |Text input         |Text displayed to user             |Pass|
+|Email address              |Text input         |Text displayed to user             |Pass|
+|Password                   |Text input         |Password hidden to user            |Pass|
+|Password (again)           |Text input         |Password hidden to user            |Pass|
+
+
+|**Register btn**           |                   |                                   |    |
+|Fields correct             |Click              |New user added to database         |Pass|
+|                           |                   |Redirect to home page              |Pass|
+|Fields incorrect format    |Click              |Fields highlighted red, user prompted to change format |Pass|
+|Username already in use    |Click              |Reload register page, error message to user    |Pass|
+|**Redirect Link**          ||||
+|'Log in here' link         |Click              |Redirect to log in page            |Pass|
+
+---
 ---
