@@ -10,9 +10,8 @@ from .models import Recipe, Categories
 from .forms import RecipeCommentForm, CategoryForm, RecipeForm
 
 
-# debug=False must be set for 404 to run
 def page_not_found(request, exception):
-    return render(request, 'page-not-found.html')
+    return render(request, 'not-found.html')
 
 
 class HomeList(generic.ListView):

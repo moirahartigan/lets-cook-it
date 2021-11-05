@@ -23,3 +23,6 @@ urlpatterns = [
     path('', include('lets_cook_it_app.urls'), name='lets_cook_it_app_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+
+handler404 = 'lets_cook_it_app.views.page_not_found'
