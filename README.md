@@ -24,13 +24,14 @@ It is a community based experience that allows casual, one-time users to browse 
      3. [Libraries](#Libraries)
 4. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
 5. [Deployment](#Deployment)
-     1. [1. Database Creation](#1-Database-Creation)
-     2. [2. Local Copy Creation](#2-Local-Copy-Creation)
-     3. [3. Heroku App Creation](#3-Heroku-App-Creation)
+     1. [1.Deployment through GitHub Pages](#1-Deployment-through-GitHub-Pages)
+     2. [2. Heroku Deployment](#2-Heroku-Deployment)
+     3. [2. Forking the Repository](#2-Forking-the-Repository)
+     4. [3. Making a Local Clone](#3-Making-a-Local-Clone)
 6. [Credits](#Credits)
 
 ***
-
+# UX
 ## Project Goals
 The primary goal of Lets Cook It! is to allow the users to create, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly layout.
 
@@ -60,6 +61,10 @@ The primary goal of Lets Cook It! is to allow the users to create, search, and v
 3. Approve recipe comments from registered users.
 4. Approve user's uploaded recipes for public view.
 5. Add and edit and delete recipe categories.
+
+<br>
+[^ back to top ^](#table-of-contents)
+<br>
 
 ## Project Planning
 
@@ -192,11 +197,14 @@ The background image selected is to imitate a marble kitchen countertop and the 
 
 — **Typography** —
 
+<br>
+[^ back to top ^](#table-of-contents)
+<br>
 
-## FEATURES
+# FEATURES
 
-### Existing Features
-### **Navigation menu displayed across all pages**
+## Existing Features
+#### **Navigation menu displayed across all pages**
 
 The navigation menu will help the user move easily across all pages.
 
@@ -211,45 +219,49 @@ The navigation buttons update depending on whether a user is logged in, and whet
 |Log Out                |&#10060;       |&#9989;             
 |Log In                 |&#9989;        |&#10060;       
 
-### **Carousel displayed on home page for browsing the various 'recipes'** 
+#### **Carousel displayed on home page for browsing the various 'recipes'** 
 
 The carousel will allow the user to browse through the different recipes. This adds a more visual element rather than static images. All of the carousel images will link the user to the recipe page of their choosing. 
 
-### **All recipes accessible to users who don't want to make an account**
+#### **All recipes accessible to users who don't want to make an account**
 
 As someone who doesn't particularly like to sign up to websites that I don't plan on adding to but like to view, I wanted to make all of the recipes accessible to a casual viewer. But in order to interact with the site, they Do have to have an account. Without one, the option to upload anything isn't available. 
 
-### **Users can search for recipes based on an ingredients**
+#### **Users can search for recipes based on an ingredients**
 
 Searching by ingredient is an important feature for any recipe website so that was something that I wanted to include.  
 
-### **Pagination on recipe pages**
+#### **Pagination on recipe pages**
 
 At the moment, the database is relatively small. But if this were a site that was going into full production, the recipes list would be much more extensive. As a result, the number of recipes displyed to the user could become overwhelming very quickly. I've limited to number of recipes per page - there's still a good amount displayed to the user without being too much. This will also help reduce loading times, especially on mobile devices. 
 
 
-### **User account management**
+#### **User account management**
 
 Anyone is able to make an account through the 'Register' page. They have to choose a username and a password. Users cannot choose a username that is already taken and they cannot use just whitespace.
 
 Once their account is made, they will be able to log in an out when needed. 
 
-### **User recipe management**
+#### **User recipe management**
 
 A registered user is able to upload recipes to the site. Once they have recipes that they have added, all recipe management can be done from their account page. This includes editing a deleting.  
 
   + **Deleting**: there is a confirmation message in place to assure the user doesn't accidentally delete the recipe. 
 
-### **Recipe Images**
+#### **Recipe Images**
 
 When uploading a recipe, the user needs to add an image alongside the recipe information. This image will be used on both the recipe card and on the full recipe page. But because the image is added via a url, there are some people who don't was to go to have to do this, or they simply can't on their device. As a result of that I have added a placeholder image url that the user can use in place of their own. It's a stylish image that was found on [Unsplash](https://unsplash.com/) that looks good with the overall feel of the site. 
 
 
-### **Admin  management**
+#### **Admin  management**
 
 Admin manages all its CRUD functionality from the backend.
 
-## Possible Future Features
+#### **404 page**
+
+Should a user request a page that does not exist they will receive a 404 message and be redirected back to the home page.
+
+## Features to Implement in the future
 + A rating system that allows users to rate each others recipes. 
   + This could lead to sorting by top-rated recipes.
 + Ability to 'save' recipes to a users own account to refer back to.
@@ -259,8 +271,11 @@ Admin manages all its CRUD functionality from the backend.
 + Resetting Password When Users Forget It.
 + “Like” Reaction By Other Users. I ran out of time to implement this feature and decided to leave it out
 
+<br>
+[^ back to top ^](#table-of-contents)
+<br>
 
-## TECHNOLOGIES USED
+# Technologies Used
 
 - [Django3](https://www.djangoproject.com/)
 - [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
@@ -299,6 +314,10 @@ Admin manages all its CRUD functionality from the backend.
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
 
 ***
+
+<br>
+[^ back to top ^](#table-of-contents)
+<br>
 
 # Testing
 Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/moirahartigan/lets-cook-it/blob/main/TESTING.md). 
@@ -488,6 +507,10 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Type ```git clone``` in the CLI and then paste the URL you copied earlier.
 + Press Enter to create your local clone.
 
+<br>
+[^ back to top ^](#table-of-contents)
+<br>
+
 # Credits
 ### Code
 * The Code Institute material was the main source of information used to create this project.
@@ -502,10 +525,10 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 * [codeamemy.com](https://www.youtube.com/watch?v=m3efqF9abyg&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=4) Tutorial was used to better understand how views and urls work.
 
 ### Media
-* Images were sourced from the following:
-    * [unsplash](https://unsplash.com)
-    * [pexels](https://www.pexels.com)
-    * [pixabay](https://pixabay.com/)
+* The Hero image was sourced from the following:
+     * [unsplash](https://unsplash.com)
+* The 404 page error image was sourced from the following:
+     * [unsplash](https://www.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_7906233.htm#page=1&query=404&position=24&from_view=search)
  * The recipe images were all taken from the original recipes which have been linked on the site in each recipe.
  * Each recipe is referenced to it source via the recipe_url and is available to all users from the redipe detail page
 
