@@ -188,52 +188,63 @@ From the admin page, the admin can select the comments and review and approve th
 <summary>Home Page</summary>
 
 ![home page](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/Home-page-validation.png)
-</details> 
+</details>
+
 <details>
-<summary>Home Page</summary>
+<summary>Add Recipee</summary>
 
 The errors shown relate to the summer note editor
 ![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/add-recipe-page-validation.png)
 </details> 
+
 <details>
-<summary>Add Recipe</summary>
+<summary>Edit Recipe</summary>
 
 Again here the errors shown relate to the sunner note editor
 ![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/edit-recipe-page-validation.png)
 </details> 
-<details>
-<summary>Edit Recipe</summary>
 
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/login-page-validation.png)
-</details> 
 <details>
 <summary>login page</summary>
 
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/logout-page-validation.png)
-</details> 
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/login-page-validation.png)
+</details>
+
 <details>
 <summary>Logout page</summary>
 
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipes-page-validation.png)
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/logout-page-validation.png)
 </details> 
+
 <details>
 <summary>Recipe page</summary>
 
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/profile-page-validation.png)
-</details> 
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipes-page-validation.png)
+</details>
+
 <details>
 <summary>Profile page</summary>
 
-Again here the errors shown relate to the sunner note editor
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipe-detail-page-validation.png)
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/profile-page-validation.png)
 </details> 
+
 <details>
 <summary>Recipe detail page</summary>
 
-![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/register-page-validation.png)
-</details> 
+Again here the errors shown relate to the sunner note editor
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/recipe-detail-page-validation.png)
+</details>
+
 <details>
 <summary>Register Recipe</summary>
+
+![add recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/register-page-validation.png)
+</details>
+</details>  
+<br>
+
+ ---
+ ---
 
 
 ### **CSS**
@@ -314,7 +325,7 @@ The code passed all checks.
 
 ---
 
-### **Profile.html**
+### **profile.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
@@ -335,7 +346,7 @@ The code passed all checks.
 
 ---
 
-### add_recipe.html
+### **recipe_form.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
@@ -348,7 +359,7 @@ The code passed all checks.
 |                           |                   |Redirect to Profile page           |Pass|
 
 ---
-### **edit_recipe.html**
+### **recipe_edit_form.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
@@ -360,7 +371,7 @@ The code passed all checks.
 
 ---
 
-### **full_recipe.html**
+### **recipe_detail.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
@@ -392,14 +403,13 @@ The code passed all checks.
 |:-------------             |:-------------     |:-----                             |:-----|
 |**Search**                 |                   |                                   |    |
 |Text input                 |Text input         |Text displayed to user             |Pass|
-
 | **Recipe Card**           |                   |                                   |    |
 |Recipe Card                |On page open       |Reveal recipe action buttons       |Pass|
 |View recipe btn            |Click              |Redirect to full recipe            |Pass|
 | **Pagination**            |                   |                                   |    |
-|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
+|Last btn                   |Click              |Reveal 'previous' recipes          |Pass|
 |Pagination number          |Click              |Specific recipes page number       |Pass|
-|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+|Next btn                   |Click              |Reveal 'next' recipes              |Pass|
 
 ---
 ### **register.html**
@@ -411,11 +421,9 @@ The code passed all checks.
 |Email address              |Text input         |Text displayed to user             |Pass|
 |Password                   |Text input         |Password hidden to user            |Pass|
 |Password (again)           |Text input         |Password hidden to user            |Pass|
-
-
 |**Register btn**           |                   |                                   |    |
 |Fields correct             |Click              |New user added to database         |Pass|
-|                           |                   |Redirect to home page              |Pass|
+|                           |                   |Redirect to account page           |Pass|
 |Fields incorrect format    |Click              |Fields highlighted red, user prompted to change format |Pass|
 |Username already in use    |Click              |Reload register page, error message to user    |Pass|
 |**Redirect Link**          ||||
