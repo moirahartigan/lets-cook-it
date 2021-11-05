@@ -496,14 +496,16 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 * [MND Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) was used as a general source of knowledge.
 * [youtube](https://www.youtube.com/watch?v=44axq8Absis) This tutorial was used to learn how to achieve a transparent navigation bar.
 * [Stack Overflow](https://stackoverflow.com/) was used to assist during debugging.
-* [github docs](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) was used to create the 404 page.
+* [github docs](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) and (https://www.youtube.com/watch?v=3SKjPppM_DU) was used to create the 404 page.
+* [geeksforgeeks](https://www.geeksforgeeks.org/) Many tutorials were followed using , django documentation and youtube for learning about building the django app (views - urls - template). Especially the generic views (CreateView, DeleteView, UpdateView)
 
 ### Media
 * Images were sourced from the following:
     * [unsplash](https://unsplash.com)
     * [pexels](https://www.pexels.com)
     * [pixabay](https://pixabay.com/)
- * The recipe images were all taken from the original recipes which have been linked on the site in each recipe
+ * The recipe images were all taken from the original recipes which have been linked on the site in each recipe.
+ * Each recipe is referenced to it source via the recipe_url and is available to all users from the redipe detail page
 
 ### Acknowledgements
 * I would like to thank the Slack Community for their endless support.
