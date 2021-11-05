@@ -496,8 +496,10 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 * [MND Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) was used as a general source of knowledge.
 * [youtube](https://www.youtube.com/watch?v=44axq8Absis) This tutorial was used to learn how to achieve a transparent navigation bar.
 * [Stack Overflow](https://stackoverflow.com/) was used to assist during debugging.
+* [Django docs](https://docs.djangoproject.com/en/3.2/) django documentation.
 * [github docs](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) and (https://www.youtube.com/watch?v=3SKjPppM_DU) was used to create the 404 page.
-* [geeksforgeeks](https://www.geeksforgeeks.org/) Many tutorials were followed using , django documentation and youtube for learning about building the django app (views - urls - template). Especially the generic views (CreateView, DeleteView, UpdateView)
+* [geeksforgeeks](https://www.geeksforgeeks.org/) Many tutorials were followed for learning about building the django app (views - urls - template). Especially the generic views (CreateView, DeleteView, UpdateView)
+* [codeamemy.com](https://www.youtube.com/watch?v=m3efqF9abyg&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=4) Tutorial was used to better understand how views and urls work.
 
 ### Media
 * Images were sourced from the following:
