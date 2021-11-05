@@ -345,6 +345,23 @@ border-right: none;
     font-size: 150%;
 }
 
+/* 404 page */
+
+#not-found-img {
+    height: 80vh;
+    width: 50vw;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #msg-404 {
+    font-size: 4em;
+  }
+  
+  #msg-redirect {
+    font-size: 3em;
+  }
+
 /* Media query */
 
 @media (max-width: 575.98px) {
