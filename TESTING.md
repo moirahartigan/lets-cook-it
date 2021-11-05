@@ -6,7 +6,7 @@
 + [Manually Testing Functionality](#manually-testing-functionality)
 + [Responsive Testing](#responsive-testing)
 + [Bugs and Fixes](#bugs-and-fixes)
-+ [Known Bugs](#known-bugs)
+
 ---
 ---
 ## Testing User Stories
@@ -171,7 +171,10 @@ From the admin page, the admin can select the comments and review and approve th
 ![testing user stories](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/testing-user-stories/admin-approve-comments.png)
 
 ---
----
+
+<br>
+[^ back to top ^](#contents)
+<br>
 
 ## Validator Testing
 ### **HTML**
@@ -244,7 +247,6 @@ Again here the errors shown relate to the sunner note editor
 <br>
 
  ---
- ---
 
 
 ### **CSS**
@@ -265,7 +267,6 @@ I checked the app.py file using [PEP8 online](http://pep8online.com/)
 The code passed all checks.
 
 ---
----
 
 
 ## Lighthouse Testing
@@ -275,7 +276,10 @@ The code passed all checks.
 ![desktop lighthouse score](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/validation/lighthouse-desktop.png)
 
 ---
----
+
+<br>
+[^ back to top ^](#contents)
+<br>
 
 ## Manually Testing Functionality
 ### **base.html**
@@ -430,4 +434,55 @@ The code passed all checks.
 |'Log in here' link         |Click              |Redirect to log in page            |Pass|
 
 ---
+
+<br>
+[^ back to top ^](#contents)
+<br>
+
 ---
+
+## Responsive Testing
+
+Family and friends assisted me with real world testing on their personal devices and overall their feedback was quite positive. The site is easy to read and very intuitive. The forms are straight forward and easy to complete for registration, login adding and editing recipes. Users reported all links, navigation and functions work.
+
+## For the Assessors
+
+**_Please note, that due to the time limitations on this project, was not able to add all the testing I wanted to. I Hope the testing that I currently documented, is sufficient_**. 
+
+Thank you 😀
+
+---
+
+## Bugs and Fixes
+
+When refactoring the code I was able to reduce the amout of pylint erros that were in the code. However, there are some that have been left in:
+
++ *Avoid using null=True on string-based fields such CharField*
+
+The forms that I have in place sometimes need to allow for the fields to be left blank so I need to use null=true combined with blank=true
+
++ *line too long*
+
+In the code that I have written, I have followed the line length rule. However, in Django generated files like migrations, I have left them as they were created. The migration files aren't generally going to be edited by humans so I feel comfortable leaving them as they are.
+
++ *'django.contrib.admin' imported but unused*
+
+Not specific to 'django.contrib.admin' but to all imports in files that were created when the app was created and never used. I don't want to delete the files or their auto imports in case they're needed in the future. 
+
++ *Missing module docstring*
+
+I have added docstrings to the views.py for all apps and all the tests that I wrote. I didn't add them to the models or forms files because:
+1. They tended to be smaller than the views
+2. The information on the pages was very self explanitory than the views
+
++ When registering for a profile, users who enter an email address get a 500 server request. I fixed this bug by truning off the email varification.
+
++ When a user was adding a recipe the slug field was not auto generating as in the admin panel, I fixed this by add slugify to the model for front end users. 
+
++ When I first attempted to run my final deployment to heroku I was getting a server 500 error and after checking every line of code in the setting.py file I finally discovered an additional comma  ```STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] ,``` which I removed and this resolved the issue.
+
+---
+
+<br>
+[^ back to top ^](#contents)
+<br>
