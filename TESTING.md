@@ -265,3 +265,92 @@ The code passed all checks.
 
 ---
 ---
+
+## Manually Testing Functionality
+### **base.html**
+
+| Element               | Action        | Expected Result| Pass/Fail  |
+|:-------------         |:------------- |:-----|:-----|
+| **NavBar**            |               |      |
+|Recipes Link           |Click|Redirect to all recipes  |Pass|
+|Register Link          |Click|Redirect to register page|Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log In Link            |Click|Redirect to log in page  |Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log Out Link           |Click|Log user out of account  |Pass|
+|                       |Click|Redirect to log in page  |Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Profile Link           |Click|Redirect to account page|Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Manage Collections Link|Click|Redirect to manage collections page|Pass|
+|                       |     |(Only visible if admin in session) |Pass|
+| **SideNav**           |       |    |
+|Hamburger Icon         |Click|Open Sidenav             |Pass|
+|Recipes Link           |Click|Redirect to all recipes  |Pass|
+|Register Link          |Click|Redirect to register page|Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log In Link            |Click|Redirect to log in page  |Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log Out Link           |Click|Log user out of account  |Pass|
+|                       |Click|Redirect to log in page  |Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|profile Link           |Click|Redirect to account page|Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+| **Footer**            |     |     |
+|Facebook Link          |Click|Open on external page    |Pass|
+|Twitter Link           |Click|Open on external page    |Pass|
+|Instagram Link         |Click|Open on external page    |Pass|
+|Github Link            |Click|Open on external page    |Pass|
+
+---
+
+### **index.html**
+| Element               | Action            | Expected Result           | Pass/Fail  |
+|:-------------         |:-------------     |:-----                     |:-----|
+| **Carousel**          |                   |                           |    |
+|Carousel               |Horizontal scroll  |Scroll through recipes     |Pass|
+|Register Link          |Click              |Redirect to register page  |Pass|
+|Log In Link            |Click              |Redirect to log in page    |Pass|
+
+---
+
+### **Profile.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Add Recipe Btn**        |                   |                                   |    |
+|Add Recipe Button          |Click              |Redirect to recipe add recipe page |Pass|
+| **Recipe Card**           |                   |                                   |    |
+|Recipe Card                |None               |Display recipe action buttons      |Pass|
+|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
+|Edit recipe btn            |Click              |Redirect to edit recipe page       |Pass|
+|Delete recipe btn          |Click              |Open delete confirmation modal     |Pass|
+|Delete msg - confirm btn   |Click              |Delete selected recipe             |Pass|
+|                           |                   |'Recipe deleted' confirmation msg  |Pass|
+|Delete msg - cancel btn    |Click              |Close message with no change made  |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific page number               |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+
+---
+
+### add_recipe.html
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|Text input fields          |Type into          |Text appears,                      |Pass|
+
+---
+### **edit_recipe.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|All fields                 |On page open       |Pre-populated with previous inputs |Pass|
+|Text input fields          |Type into          |Text appears,                      |Pass|
+|Submit btn                 |Click              |Recipe appears on profile page     |Pass|
+|                           |                   |Redirect to profile page           |Pass|
+
+---

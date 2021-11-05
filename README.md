@@ -5,7 +5,7 @@ Lets Cook It! is a virtual recipe collection where all your favourite recipes ca
 It is a community based experience that allows casual, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes.
 ## Demo
 
-[View the Live Website Here]()
+[View the Live Website Here](https://lets-cook-it-app.herokuapp.com/)
 
 <img src="https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/i-am-responsive.png">
 
@@ -93,9 +93,6 @@ Below are the additional functions that can improve the website, however, these 
 | Search by Category                      |     3      |            3            |
 | Contact us form                         |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
-
-> **Note:**<br>
-> During the project, decide to add ..........................................................................
 
 ### Scope Plane
 
@@ -488,8 +485,7 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Copy the URL for the repository.
 + Open Git Bash on your device.
 + Change the current working directory to the location where you want the cloned directory.
-+ Type ```git clone``` in the CLI and then paste the URL you copied earlier. This is what it should look like:
-  + ```$ git clone ```
++ Type ```git clone``` in the CLI and then paste the URL you copied earlier.
 + Press Enter to create your local clone.
 
 # Credits
