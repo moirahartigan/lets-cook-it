@@ -348,18 +348,17 @@ border-right: none;
 /* 404 page */
 
 #not-found-img {
-    height: 80vh;
     width: 50vw;
     display: block;
     margin: 0 auto;
   }
   
   #msg-404 {
-    font-size: 4em;
+    padding: 20px
   }
   
   #msg-redirect {
-    font-size: 3em;
+    padding: 20px
   }
 
 /* Media query */
