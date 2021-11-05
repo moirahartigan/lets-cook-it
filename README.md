@@ -19,15 +19,14 @@ It is a community based experience that allows casual, one-time users to browse 
      1. [Existing Features](#Existing-Features)
      2. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 3. [Technologies Used](#Technologies-Used)
-     1. [Languages](#Languages)
+     1. [General Resources](#General-Resources)
      2. [Tools](#Tools)
-     3. [Libraries](#Libraries)
 4. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
 5. [Deployment](#Deployment)
      1. [1.Deployment through GitHub Pages](#1-Deployment-through-GitHub-Pages)
      2. [2. Heroku Deployment](#2-Heroku-Deployment)
-     3. [2. Forking the Repository](#2-Forking-the-Repository)
-     4. [3. Making a Local Clone](#3-Making-a-Local-Clone)
+     3. [3. Forking the Repository](#3-Forking-the-Repository)
+     4. [4. Making a Local Clone](#4-Making-a-Local-Clone)
 6. [Credits](#Credits)
 
 ***
@@ -63,7 +62,7 @@ The primary goal of Lets Cook It! is to allow the users to create, search, and v
 5. Add and edit and delete recipe categories.
 
 <br>
-[^ back to top ^](#table-of-contents)
+[^ back to top ^](#Table-of-contents)
 <br>
 
 ## Project Planning
@@ -198,7 +197,7 @@ The background image selected is to imitate a marble kitchen countertop and the 
 — **Typography** —
 
 <br>
-[^ back to top ^](#table-of-contents)
+[^ back to top ^](#Table-of-contents)
 <br>
 
 # FEATURES
@@ -272,7 +271,7 @@ Should a user request a page that does not exist they will receive a 404 message
 + “Like” Reaction By Other Users. I ran out of time to implement this feature and decided to leave it out
 
 <br>
-[^ back to top ^](#table-of-contents)
+[^ back to top ^](#Table-of-contents)
 <br>
 
 # Technologies Used
@@ -316,7 +315,7 @@ Should a user request a page that does not exist they will receive a 404 message
 ***
 
 <br>
-[^ back to top ^](#table-of-contents)
+[^ back to top ^](#Table-of-contents)
 <br>
 
 # Testing
@@ -508,7 +507,7 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Press Enter to create your local clone.
 
 <br>
-[^ back to top ^](#table-of-contents)
+[^ back to top ^](#Table-of-contents)
 <br>
 
 # Credits
