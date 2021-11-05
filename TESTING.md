@@ -61,7 +61,7 @@ Pagination has been added to the recipe page to enhance the user experience and 
 
 ---
 
-### As a returning user: 
+### As a registered user: 
 + *I want to be able to log into my account.*
 
 As long as the user has registered for an account, they can use the log in page from the navigation bar to access their account:

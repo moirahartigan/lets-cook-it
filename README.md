@@ -11,68 +11,74 @@ It is a community based experience that allows casual, one-time users to browse 
 
 
 ## Table of contents
-1. [UX](#UX)
-     1. [Project Goals](#Project-Goals)
-     2. [User Stories](#User-Stories)
-     3. [Project Planning](#Project-Planning)
-2. [Features](#Features) 
-     1. [Existing Features](#Existing-Features)
-     2. [Features to Implement in the future](#Features-to-Implement-in-the-future)
-3. [Technologies Used](#Technologies-Used)
-     1. [General Resources](#General-Resources)
-     2. [Tools](#Tools)
-4. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
-5. [Deployment](#Deployment)
-     1. [1.Deployment through GitHub Pages](#1-Deployment-through-GitHub-Pages)
-     2. [2. Heroku Deployment](#2-Heroku-Deployment)
-     3. [3. Forking the Repository](#3-Forking-the-Repository)
-     4. [4. Making a Local Clone](#4-Making-a-Local-Clone)
-6. [Credits](#Credits)
++ [User Experience](#User-Experience)
+     + [Project Goals](#Project-Goals)
+     + [User Stories](#User-Stories)
+     + [Strategy](#Strategy)
+     + [Scope](#Scope)
+     + [Structure](#Structure)
+          + [Front-end Pages](Front-end-Pages)
+     + [Skeleton](#Skeleton)
+          + [Wireframes](#Wireframes)
+     + [Surface](#Surface)
++ [Features](#Features) 
+     + [Existing Features](#Existing-Features)
+     + [Features to Implement in the future](#Features-to-Implement-in-the-future)
++ [Database](Database)
++ [Technologies Used](#Technologies-Used)
+     + [General Resources](#General-Resources)
+     + [Tools](#Tools)
++ [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
++ [Deployment](#Deployment)
+     + [Deployment through GitHub Pages](#1-Deployment-through-GitHub-Pages)
+     + [Heroku Deployment](#2-Heroku-Deployment)
+     + [Forking the Repository](#3-Forking-the-Repository)
+     + [Making a Local Clone](#4-Making-a-Local-Clone)
++ [Credits](#Credits)
 
 ***
-# UX
+# User Experience
 ## Project Goals
 The primary goal of Lets Cook It! is to allow the users to create, search, and view their favorite recipes in one place. The goal for the design was to make it as easy as possible to access information, while striving for a minimalist and user-friendly layout.
 
 ## User Stories
 **As a Casual User, I want to:**
 
-1. Easily find recipes on the database. 
-2. View the recipe detail page to get additional information.
-
-**As a Non-Registered User, I want to:**
-
-1. Navigate to Registration page to Sign-up for an account.
+1. Be able to view recipes without having to register and account. 
+2. Be able to search through the recipes on the site.
+3. Be able to search for recipes that have a specific ingredient.
+4. Be able to register for an account if I want to come back at a later date.
+5. Be able to able to view a specific number of recipe cards on the recipe page so that only a number of recipe card appear at a time on the page.
 
 **As a Registered User, I want to:**
 
-1. Log into my account to gain access to the full functionality of the site.
-2. Navigate to my recipes page to view my uploaded recipes.
-3. Navigate to upload page to add my recipe to the database.
-4. View and edit my recipes as needed.
-5. View and delete my added recipes if I so wish.
-6. Add a comment to another users recipe.
+1. Be able to log into my account.
+2. Be able to upload a recipe.
+3. Have ease of access to any recipes that I have already added.
+4. Be able to view, edit or delete any recipes that I have already added.
+5. Be able to add a comment to other recipes.
 
 **As an Administrative Account holder, I want to:**
 
-1. View **any** recipe to edit recipe as needed.
-2. View **any** recipe to delete recipe as needed.
-3. Approve recipe comments from registered users.
-4. Approve user's uploaded recipes for public view.
-5. Add and edit and delete recipe categories.
+1. Be able to add new recipes to the site.
+2. Be able to edit the pre-existing recipes.
+3. Be able to approve any recipe.
+4. Be able to delete any recipe.
+5. Be able to approve comments left by registered users.
+6. Add and edit and delete recipe categories.
 
 <br>
+
 [^ back to top ^](#Table-of-contents)
 <br>
 
-## Project Planning
+## Strategy Plane
+### — Project Planning —
 
  Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project. As the methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application. 
  <br>
  I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the use of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
-
-### Strategy Plane
-
+<br>
 The website is designed for those who love to cook, and want to be able to access all their favourite recipes in one place. Users can arrive on the site and simply browse the latest recipes or by following very simple registration steps, they can create an account and post their recipes in a well-structured format. There is a search function on the website so they can search for specific recipes by a ingredient. To see recipes, users do not need to register so it is hassle-free. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by users first concept.
 
 The functions on the tables below are minimum requirements for the website to achieve the current user's and owner's goals. On a scale of 1  - 5 
@@ -98,9 +104,9 @@ Below are the additional functions that can improve the website, however, these 
 | Contact us form                         |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
 
-### Scope Plane
+## Scope Plane
 
-To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of essential features.
+To achieve user and owner’s goals, above are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of essential features.
 
 - Simple design Home page that first-time users can recognise the purpose of the website easily. All the recipes are shown on *Home* page through the use of a caorusel;
 - Register page where users can create an account to add, post and edit and delete recipes
@@ -116,9 +122,9 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 > **Note:**<br>
 > A superuser/admin can only create a new category from the backend.
 
-### Structure Plane
+## Structure Plane
 
-— **Front-end** —
+### — **Front-end** —
 
 The website consists of a **Home** page with **9 other core pages**.
 
@@ -150,23 +156,11 @@ Recipe cards and full recipes are accessible by any users. Recipe cards are avai
 
 <br>
 
-— **Back-end** —<br> 
-### Database
-
-The database was built with postgres and was used both locally in gitpod and deployed to a live site by heroku.
-Cloudinary is used to for all images both by the superuser and a standard user for all images uploaded to the website.
-
-The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model liked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it only. 
-
-
-Below is the chart of the custom data model used.
-
-![database](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/database%20models.png)<br>
-
-
-### Skeleton Plane
+## Skeleton Plane
 
 It is a mobile-first website because people usually cook with a recipe so a good mobile-first design helps users whose main purpose is seeing recipes. For users whose main purpose is creating and posting recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website.
+
+### — Wireframes —
 
 - [Wireframes: Home](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Landing-page.png)
 
@@ -187,7 +181,7 @@ It is a mobile-first website because people usually cook with a recipe so a good
 - [Wireframes: Edit Recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Edit-recipe-page.png)
 
 
-### Surface Plane
+## Surface Plane
 
 — **Colour** —
 
@@ -197,12 +191,13 @@ The background image selected is to imitate a marble kitchen countertop and the 
 — **Typography** —
 
 <br>
+
 [^ back to top ^](#Table-of-contents)
 <br>
 
 # FEATURES
 
-## Existing Features
+## — Existing Features —
 #### **Navigation menu displayed across all pages**
 
 The navigation menu will help the user move easily across all pages.
@@ -260,7 +255,7 @@ Admin manages all its CRUD functionality from the backend.
 
 Should a user request a page that does not exist they will receive a 404 message and be redirected back to the home page.
 
-## Features to Implement in the future
+## — Features to Implement in the future —
 + A rating system that allows users to rate each others recipes. 
   + This could lead to sorting by top-rated recipes.
 + Ability to 'save' recipes to a users own account to refer back to.
@@ -271,8 +266,36 @@ Should a user request a page that does not exist they will receive a 404 message
 + “Like” Reaction By Other Users. I ran out of time to implement this feature and decided to leave it out
 
 <br>
+
 [^ back to top ^](#Table-of-contents)
 <br>
+
+# Database
+
+Two relational databases were used to create this site - during production SQLite was used and then Postgres was used for the deployed Heroku version. 
+Cloudinary is used to for all images both by the superuser and a standard user for all images uploaded to the website.
+<br>
+The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model liked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it only. 
+
+Below is the chart of the custom data model used.
+
+![database](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/database%20models.png)<br>
+
+### Recipes
+
++ This model stores the recipe details that the user can view from the site
++ This model pulls information from the categories model to catagorize the type of recipe
++ This model pulls information from the comments model to determine who made the comment on what recipe
+
+### Categories
+
++ This model stores the product category details
++ This model sends information to the recipes model to catagorize the type of recipe being uploaded
+
+### Comments
+
++ This model stores the user name
++ This model sends information to the recipe model to determine who made the comment on which recipe
 
 # Technologies Used
 
@@ -293,7 +316,7 @@ Should a user request a page that does not exist they will receive a 404 message
 - [Heroku](https://www.heroku.com/) for deploying the website
 
 
-### General Resources
+## General Resources
 
 - Code Institute Course Materials
 - [Stack Overflow](https://stackoverflow.com/)
@@ -301,7 +324,7 @@ Should a user request a page that does not exist they will receive a 404 message
 - [W3schools](https://www.w3schools.com/)
 - [Google](https://www.google.com/)
 
-### Tools
+## Tools
 
 - [Balsamiq](https://balsamiq.com/) for wireframes
 - [Tinypng](https://tinypng.com/) for resizing images
@@ -315,6 +338,7 @@ Should a user request a page that does not exist they will receive a 404 message
 ***
 
 <br>
+
 [^ back to top ^](#Table-of-contents)
 <br>
 
@@ -322,7 +346,7 @@ Should a user request a page that does not exist they will receive a 404 message
 Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/moirahartigan/lets-cook-it/blob/main/TESTING.md). 
 
 # Deployment
-## Deployment through GitHub Pages
+## — Deployment through GitHub Pages —
 This site was deployed through GitHub Pages using the following steps:
 
 * Log into GitHub.
@@ -332,7 +356,7 @@ This site was deployed through GitHub Pages using the following steps:
 * Then under "Source" click the "None" dropdown and select the "Main" branch
 * Click the save button.
 
-## Heroku Deployment
+## — Heroku Deployment —
 This project was deployed through Heroku using the following steps:
 
 ### Step. 1 Installing Django and supporting libraries
@@ -491,12 +515,12 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Underneath, locate 'Manual Deploy'; choose the main branch and click 'Deploy Branch'
 + Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
 
-## Forking the Repository
+## — Forking the Repository —
 + Log in to GitHub and locate the GitHub Repository
 + At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
 + You will have a copy of the original repository in your GitHub account.
 + You will now be able to make changes to the new version and keep the original safe. 
-## Making a Local Clone
+## — Making a Local Clone —
 + Log into GitHub.
 + Locate the repository.
 + Click the 'Code' dropdown above the file list.
@@ -507,6 +531,7 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Press Enter to create your local clone.
 
 <br>
+
 [^ back to top ^](#Table-of-contents)
 <br>
 
