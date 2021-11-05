@@ -307,7 +307,7 @@ Admin manages all its CRUD functionality from the backend.
 Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/moirahartigan/lets-cook-it/blob/main/TESTING.md). 
 
 # Deployment
-### Deployment through GitHub Pages
+## Deployment through GitHub Pages
 This site was deployed through GitHub Pages using the following steps:
 
 * Log into GitHub.
@@ -316,8 +316,181 @@ This site was deployed through GitHub Pages using the following steps:
 * Then go to "Pages" tab in the left hand side sidebar.
 * Then under "Source" click the "None" dropdown and select the "Main" branch
 * Click the save button.
-* The page will update and at the top it will say: "Your site is ready to be published at
-* ()
+
+## Heroku Deployment
+This project was deployed through Heroku using the following steps:
+
+### Step. 1 Installing Django and supporting libraries
+
+Heroku needs to know which technologies are being used and any requirements, so the following commands were used in the Terminal in GitPod:
++ In the GitPod terminal, type ```pip3 install django gnuicorn``` to install django and gunicorn.
++ In the GitPod terminal, type ```pip3 install dj_database_url psycopg2``` to install the supporting libraries.
++ In the GitPod terminal, type ```pip3 install dj3-cloudinary-storage``` to install cloudinary libraries.
++ In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
++ In the GitPod terminal, type ```django-admin startproject recipebook .``` to create your project. (Don't forget the .)
++ In the GitPod terminal, type ```python3 manage.py startapp lets_cook_it_app``` to create your requirements file.
+#### In settings.py file:
++ In the settings.py file type ```lets_cook_it_app``` to create your requirements file.
+
+### Step. 2 Deploying an app to Heroku
+#### 2.1 Create the Heroku app:
++ Log into Heroku
++ Select 'Create New App' from your dashboard
++ Choose an app name (lets_cook_it_app)
++ Select the appropriate region based on your location
++ Click 'Create App'
++ Add Database to App Resources - Located in the Resources Tab, Add-ons, search and add 'Heroku Postgres
++ Copy DATABASE_URL - Located in the settings Tab, in Config Vars, Copy Text
+
+#### 2.2 Attach the Database:
+#### In gitpod:
++ Create a new env.py file on the top level directory
+#### In env.py file:
+<br>
+
+```
+import os
+
+os.environ["DATABASE_URL"] - "Paste in Heroku DATABASE_URL Link"
+oos.environ["SECRET_KEY"] - "Make up a ramdom a randomSecretKey"
+```
+
+#### In heroku.com
++ Add Secret Key to Confid Vars
+
+| Key                    | Value               |
+| -------------          |:------------------- |
+| SECRET_KEY             |*Secure secret key*  |
+ 
+#### 2.3 Prepare our environment and settings.py file:
+#### In settings.py:
+
++ Reference env.py
+
+```
+from pathlib import Path 
+import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+     import env
+
+```
++ Remove the insecure secret key and replace - links to the secret key variable on Heroku
+
+```
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+```
+
++ Replace DATABASES Section (comment out the old DataBases Section) - links to the DATABASE_URL variable on Heroku
+
+```
+DATABASES = {
+     'default':
+     dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+```
+#### In the Terminal 
++ In the GitPod terminal, type ```python3 manage.py migrate``` to Make Migrations.
+
+#### 2.4 Get our static and media files stored on Cloudinary:
+#### In Cloudinary.com: 
++ Copy your CLOUDINARY_URL. eg. API Environment Variable copied from the Cloudinary Dashboard
+
+#### In env.py: 
++ Add Clouldinary URL to env.py - be sure to paste in the correct section of the link
+
+```
+os.environ["CLOUDINARY_URL"] ="cloudinary://591333544891113:I7YqdHhfN01xRGjt55dcLywRks4@cloudmoira"
+
+```
+
+#### In Heroku.com:
++ Add Clouldinary URL to Heroku Config Vars - be sure to paste in the correct section of the link
++ Add DISABLE_COLLECTSTATIC to Heroku Config Vars **(temporary step for the moment, must be removed before deployment)**
+
+| Key                    | Value               |
+| -------------          |:------------------- |
+| CLOUDINARY_URL         |cloudinary://5913333 |
+| DATABASE_URL           |postgres://bxctnwwfx |
+| SECRET_KEY             |*Secure secret key*  |
+| DISABLE_COLLECTSTATIC  |1                    |
+
+#### In settings.py:
++ Add Cloudinary Libraries to installed apps **(note: the order is important)**
+
+```
+'cloudinary_storage',
+'django.contrib.staticfiles',
+'cloudinary',
+
+```
++ Tell Django to use Cloudinary to store media and static files *Place under the static files*
+
+```
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+```
++ Change the templates directory to TEMPLATES_DIR *Place within the TEMPLATES array*
++ Link file to the templates directory in Heroku *Placeunder the BASE_DIR line*
+
+```
+BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+```
+
++ Add Heroku Hostname to ALLOWED_HOSTS
+
+```
+ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
+
+```
+
+#### In Gitpod:
++ Create 3 new folders on the top level directory ```media, static, templates```
++ Create a Procfile on the top level directory also ```Procfile```
+
+#### In the Procfile:
++ Add the following code ```web: gunicorn recipebook.wsgi```
+
+#### In the Terminal 
++ Add ```git add .```
++ Commit ```git commit -m "Deployment Commit```
++ Push ```git push```
+
+#### In Heroku.com:
++ From the dashboard, click the 'Deploy' tab towards the top of the screen
++ From here, locate 'Deployment Method' and choose 'GitHub'
++ From the search bar newly appeared, locate your repository by name
++ When you have located the correct repository, click 'Connect'
++ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this
++ Underneath, locate 'Manual Deploy'; choose the main branch and click 'Deploy Branch'
++ Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
+
+## Forking the Repository
++ Log in to GitHub and locate the GitHub Repository
++ At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
++ You will have a copy of the original repository in your GitHub account.
++ You will now be able to make changes to the new version and keep the original safe. 
+## Making a Local Clone
++ Log into GitHub.
++ Locate the repository.
++ Click the 'Code' dropdown above the file list.
++ Copy the URL for the repository.
++ Open Git Bash on your device.
++ Change the current working directory to the location where you want the cloned directory.
++ Type ```git clone``` in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  + ```$ git clone ```
++ Press Enter to create your local clone.
 
 # Credits
 ### Code
@@ -339,6 +512,8 @@ This site was deployed through GitHub Pages using the following steps:
 ### Acknowledgements
 * I would like to thank the Slack Community for their endless support.
 * I would like to thank Kasia Bogucka our class cohort facilitator for her constant assistance and encouragement.
-* Finally, I would like to thank my mentor Oluwafemi Medale for his guidence and feedback throughout this milestone project.
+* I would like to especially thank two of my fellow students Siobhan and Laura for their help and motivation throughout this project.
+* I would like to thank my husband for his understanding and support and for caring for our young children during the long hours taken to complete this project. 
+* Finally, I would like to thank my mentor for his guidence and feedback throughout this milestone project.
  
 ***
