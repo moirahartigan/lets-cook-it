@@ -10,7 +10,7 @@ It is a community based experience that allows casual, one-time users to browse 
 <img src="https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/i-am-responsive.png">
 
 
-### Table of contents
+## Table of contents
 1. [UX](#UX)
      1. [Project Goals](#Project-Goals)
      2. [User Stories](#User-Stories)
