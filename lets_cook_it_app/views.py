@@ -162,7 +162,9 @@ class ProfileRecipes(View):
                 }
             )
         else:
-            published_list = Recipe.objects.filter(status=1, author=request.user)
+            published_list = Recipe.objects.filter(
+                status=1,
+                author=request.user)
             return render(
                 request,
                 'profile.html',
