@@ -19,8 +19,7 @@
                <strong> {{ recipe.title }}?</strong>
             </p>
             <a href="{% url 'profile' %}" class="btn btn-success">Cancel</a>
-            <a href="{% url 'recipe_delete' recipe.slug %}" 
-               class="btn btn-danger">Confirm</a>
+            <a href="{% url 'recipe_delete' recipe.slug %}" class="btn btn-danger">Confirm</a>
          </form>
       </div>
    </div>

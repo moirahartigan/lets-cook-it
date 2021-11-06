@@ -19,7 +19,7 @@ class Categories(models.Model):
         return reverse('home')
 
 
-#Recipes model
+# Recipes model
 class Recipe(models.Model):
     title = models.CharField(max_length=220, unique=True)
     slug = models.SlugField(max_length=220, unique=True)
@@ -52,7 +52,10 @@ class Recipe(models.Model):
 
 # comments model
 class Comment(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name='comments')
 
     name = models.CharField(max_length=40)
     email = models.EmailField()

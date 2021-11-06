@@ -21,11 +21,9 @@
                <div class="col-md-6 col-lg-4">
                   <div class="card mb-3 card h-100">
                      {% if "placeholder" in recipe.image_url.url %}
-                     <img src="/static/css/images/woman-in-chef-hat.jpg" 
-                        class="card-img-top" alt="placeholder image">
+                     <img src="/static/css/images/woman-in-chef-hat.jpg" class="card-img-top" alt="placeholder image">
                      {% else %}
-                     <img class="card-img-top" 
-                        src="{{ recipe.image_url.url }}" alt="recipe image">
+                     <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
                      {% endif %}
                      <p class="image-flash">
                         <span class="card-cat">{{ recipe.categories }}</span>
@@ -33,8 +31,7 @@
                      <div class="card-body">
                         <h5 class="card-title">{{ recipe.title }}</h5>
                         <p class="card-text">Added by: {{ recipe.author }}</p>
-                        <a href="{% url 'recipe_detail' recipe.slug %}" 
-                           class="btn btn-outline-success" id="bt">View</a>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success" id="bt">View</a>
                      </div>
                   </div>
                </div>

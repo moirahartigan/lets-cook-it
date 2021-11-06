@@ -10,11 +10,9 @@
    <div class="container">
       <div class="row height d-flex justify-content-center align-items-center">
          <div class="col-xs-6 col-md-8 col-lg-6 col-11 py-5">
-            <form class="search" method=POST 
-               action="{% url 'search_results' %}"><i class="fa fa-search"></i>
+            <form class="search" method=POST action="{% url 'search_results' %}"><i class="fa fa-search"></i>
                {% csrf_token %}
-               <input type="search" class="form-control" 
-                  placeholder="Search Recipes" name="searched">
+               <input type="search" class="form-control" placeholder="Search Recipes" name="searched">
             </form>
             <br>
          </div>
@@ -30,8 +28,7 @@
                   src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg"
                   class="card-img-top" alt="placeholder image">
                {% else %}
-               <img class="card-img-top" 
-                  src="{{ recipe.image_url.url }}" alt="recipe image">
+               <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
                {% endif %}
                <p class="image-flash">
                   <span class="card-cat">{{ recipe.categories }}</span>
@@ -39,8 +36,7 @@
                <div class="card-body">
                   <h5 class="card-title">{{ recipe.title }}</h5>
                   <p class="card-text">Added by: {{ recipe.author }}</p>
-                  <a href="{% url 'recipe_detail' recipe.slug %}" 
-                     class="btn btn-outline-success">View</a>
+                  <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success">View</a>
                </div>
             </div>
          </div>

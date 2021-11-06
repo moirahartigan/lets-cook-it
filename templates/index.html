@@ -13,9 +13,9 @@
       </div>
       <div class="row mt-5">
          <div class="col-sm-8 d-flex flex-column text-light justify-content-center">
-            <h2>Keep all your 
+            <h2>Keep all your
                <span class="text-warning">favourite Recipes</span>
-                in one place</h2>
+               in one place</h2>
          </div>
       </div>
    </div>
@@ -32,21 +32,18 @@
          <div class="item mb-4">
             <!-- recipe card -->
             <div class="card border-warning card-wr-bg">
-               <a class="recipe-card-image"
-                  href="{% url 'recipe_detail' recipe.slug %}"></a>
+               <a class="recipe-card-image" href="{% url 'recipe_detail' recipe.slug %}"></a>
                {% if "placeholder" in recipe.image_url.url %}
                <img class="card-img-top"
                   src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg"
                   alt="placeholder image">
                {% else %}
-               <img class="card-img-top" src="{{ recipe.image_url.url }}" 
-                  alt="recipe image">
+               <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
                {% endif %}
                <div class="card-body d-grid gap-5">
                   <h5 class="card-title text-center text-capitalize">
                      {{ recipe.title }}</h5>
-                  <a class="recipe-card-image recipe-link" 
-                     href="{% url 'recipe_detail' recipe.slug %}">
+                  <a class="recipe-card-image recipe-link" href="{% url 'recipe_detail' recipe.slug %}">
                      <h2 class="btn btn-outline-success">View Recipe</h2>
                   </a>
                </div>
