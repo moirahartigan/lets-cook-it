@@ -173,8 +173,10 @@ From the admin page, the admin can select the comments and review and approve th
 ---
 
 <br>
+
 [^ back to top ^](#contents)
 <br>
+
 
 ## Validator Testing
 ### **HTML**
@@ -278,6 +280,7 @@ The code passed all checks bar url.py as one of the path line was too long by 3 
 ---
 
 <br>
+
 [^ back to top ^](#contents)
 <br>
 
@@ -436,6 +439,7 @@ The code passed all checks bar url.py as one of the path line was too long by 3 
 ---
 
 <br>
+
 [^ back to top ^](#contents)
 <br>
 
@@ -488,5 +492,6 @@ I have added docstrings to the views.py. I didn't add them to the models or form
 ---
 
 <br>
+
 [^ back to top ^](#contents)
 <br>
