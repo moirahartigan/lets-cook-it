@@ -471,7 +471,7 @@ Not specific to 'django.contrib.admin' but to all imports in files that were cre
 
 + *Missing module docstring*
 
-I have added docstrings to the views.py for all apps and all the tests that I wrote. I didn't add them to the models or forms files because:
+I have added docstrings to the views.py. I didn't add them to the models or forms files because:
 1. They tended to be smaller than the views
 2. The information on the pages was very self explanitory than the views
 
@@ -481,6 +481,10 @@ I have added docstrings to the views.py for all apps and all the tests that I wr
 
 + When I first attempted to run my final deployment to heroku I was getting a server 500 error and after checking every line of code in the setting.py file I finally discovered an additional comma  ```STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] ,``` which I removed and this resolved the issue.
 
+
+### Known Bugs
+
++ I attempted to style the summernote editor however I was unable to override the iframe for dexktop view and there is an overflow of a white box on the page. I kept the form background neutral to to make the issue as subtle as possible.   
 ---
 
 <br>
