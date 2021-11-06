@@ -178,20 +178,23 @@ class ProfileRecipes(View):
         
     def get(self, request):
         """ A view to show profile recipes """
-        published_list = Recipe.objects.filter(status=1, author=request.user)
+        # published_list = Recipe.objects.filter(status=1, author=request.user)
         
-        # if request.user.is_superuser
-        # return render(
-        #     'profile.html',
-        #     {
-        #         'published_list': published_list,
-        #     }
-        # )
-        # else:
-        return render(
-            request,
-            'profile.html',
-            {
-                'published_list': published_list,
-            }
-        )
+        if request.user.is_superuser:
+            published_list = Recipe.objects.filter(status=1)
+            return render(
+                request,
+                'profile.html',
+                {
+                    'published_list': published_list,
+                }
+            )
+        else:
+            published_list = Recipe.objects.filter(status=1, author=request.user)
+            return render(
+                request,
+                'profile.html',
+                {
+                    'published_list': published_list,
+                }
+            )

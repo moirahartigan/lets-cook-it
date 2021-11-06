@@ -75,11 +75,11 @@ The primary goal of Lets Cook It! is to allow the users to create, search, and v
 ## Strategy Plane
 ### — Project Planning —
 
- Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project. As the methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application. 
+ Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project.  
  <br>
- I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the use of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
+ The methodology requires a detailed and thorough project planning process, to design and create a web-based interactive application.I distinguished the required functionality of the site and how it would answer the user stories, as described above, these user stories were then developed through the use of the Five Development Planes framework. To keep track of my development I created a user stories kanban board in github projects. I created an issue for each user story which was set to automatically display in my user story project. As I worked each user story, it was moved to the in progress column and finally into the completed column once it was complete.  
 <br>
-The website is designed for those who love to cook, and want to be able to access all their favourite recipes in one place. Users can arrive on the site and simply browse the latest recipes or by following very simple registration steps, they can create an account and post their recipes in a well-structured format. There is a search function on the website so they can search for specific recipes by a ingredient. To see recipes, users do not need to register so it is hassle-free. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by users first concept.
+ The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by users first concept.
 
 The functions on the tables below are minimum requirements for the website to achieve the current user's and owner's goals. On a scale of 1  - 5 
 
@@ -106,9 +106,9 @@ Below are the additional functions that can improve the website, however, these 
 
 ## Scope Plane
 
-To achieve user and owner’s goals, above are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of essential features.
+To achieve user and owner’s goals, above are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of the essential features.
 
-- Simple design Home page that first-time users can recognise the purpose of the website easily. All the recipes are shown on *Home* page through the use of a caorusel;
+- Simple design Home page where first-time users can recognise the purpose of the website easily. All the recipes are shown on *Home* page through the use of a caorusel;
 - Register page where users can create an account to add, post and edit and delete recipes
 - Login page where users can log in to the website
 - Logout function that users can log out the website
@@ -120,7 +120,7 @@ To achieve user and owner’s goals, above are the minimum features to be includ
 - 404 page that appears for invalid URL and takes users back to *Home* page of the website safely
 
 > **Note:**<br>
-> A superuser/admin can only create a new category from the backend.
+> A superuser/admin can only create a new category from the backend. However In the final stages before submission I adjusted the profile view to render all recipes on the site for an admin/superuser. **Admin now has full CRUD functionality from the front end also.**
 
 ## Structure Plane
 
@@ -137,8 +137,13 @@ The website consists of a **Home** page with **9 other core pages**.
 - **Register** (`account/signup.html`)<br>The page where users can create an account. Once a user creates an account successfully, they will be led to *Profile* page where the user can now start adding recipes. The navigation bar is now different to *Home* page and once a user is registered, the *profile* page and *logout* page is now visible on the navbar.
 
 - **Login** (`account/login.html`)<br>The page where users who have an account can log in to the website. Once users log in successfully, they will be led to *Profile* page. Again the navigation bar is different to *Home* page, and once a user is logged in, the *profile* page and *logout* page is now visible on the navbar.
+**Note:**<br>
+> Please note that login is **case sensitive** 
 
 - **Profile** (`profile.html`)<br>The page where users will be led when they create an account or log in. Users see all of their recipes with an option to view the full recipe,edit or delete the recipe. Users can access the *View Recipe* page *Edit Recipe* page and *Delete Recipe* function by clicking a button on the recipe. There is an option to create a new recipe from this page by clicking a button and that leads to *add Recipe* page. The same navigation bar and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*. There is also a link to *Profile* page on the navigation bar
+
+**Note:**<br>
+> Admin now has full CRUD functionality from the front end also and can view all recipes from the profile page.
 
 - **Add Recipe** (`recipe_form.html`)<br>The page where users can add and post recipes. A summernote editor has been added to the form to allow users the edit the font as they so wish for the recipes they add.
 
@@ -185,11 +190,15 @@ It is a mobile-first website because people usually cook with a recipe so a good
 
 — **Colour** —
 
-As this is a recipes website, I kept the colour scheme simple as I wanted to main focus to be on the recipe images
-The background image selected is to imitate a marble kitchen countertop and the recipe images do all the work as they are the main focus. All the images used are the original recipe images.
+As this is a recipes website, I kept the colour scheme simple and clean as I wanted the main focus to be on the recipe images.
+<br>
+The background image selected is to imitate a marble kitchen countertop and the recipe images do all the work as they are the main focus. All the images used are the original recipe images. A shadow effoect has been applied to each element on the page in order to give it a 3D effect and very subtle colours have been added to card backgrounds and buttons.
 
 — **Typography** —
 
+* As a main font I used Lato, and as a backup font sans-serif
+* On the logo text I used Fleur De Leah, to give the logo some simple decoration
+* On large headings I used Gloria Hallelujah, and cursive as a backup font;
 <br>
 
 [^ back to top ^](#Table-of-contents)
@@ -219,7 +228,7 @@ The carousel will allow the user to browse through the different recipes. This a
 
 #### **All recipes accessible to users who don't want to make an account**
 
-As someone who doesn't particularly like to sign up to websites that I don't plan on adding to but like to view, I wanted to make all of the recipes accessible to a casual viewer. But in order to interact with the site, they Do have to have an account. Without one, the option to upload anything isn't available. 
+As someone who doesn't particularly like to sign up to websites that I don't plan on adding to but like to view, I wanted to make all of the recipes accessible to a casual viewer. But in order to interact with the site, they do have to have an account. Without one, the option to upload anything isn't available. 
 
 #### **Users can search for recipes based on an ingredients**
 
@@ -244,12 +253,12 @@ A registered user is able to upload recipes to the site. Once they have recipes 
 
 #### **Recipe Images**
 
-When uploading a recipe, the user needs to add an image alongside the recipe information. This image will be used on both the recipe card and on the full recipe page. But because the image is added via a url, there are some people who don't was to go to have to do this, or they simply can't on their device. As a result of that I have added a placeholder image url that the user can use in place of their own. It's a stylish image that was found on [Unsplash](https://unsplash.com/) that looks good with the overall feel of the site. 
+When uploading a recipe, the user has the option to add an image alongside the recipe information. This image will be used on both the recipe card and on the full recipe page. But because the image is added via a url, there are some people who may not want to have to do this, or they simply can't on their device. As a result of that I have added a placeholder image url that the user can use in place of their own. It's a stylish image that was found on [freepik](https://www.freepik.com/) that looks good with the overall feel of the site. 
 
 
 #### **Admin  management**
 
-Admin manages all its CRUD functionality from the backend.
+Admin manages all its CRUD functionality mainly from the backend however admin can view all recipes on its own profile page and can view, edit or delete from here on the front end.
 
 #### **404 page**
 
@@ -273,9 +282,9 @@ Should a user request a page that does not exist they will receive a 404 message
 # Database
 
 Two relational databases were used to create this site - during production SQLite was used and then Postgres was used for the deployed Heroku version. 
-Cloudinary is used to for all images both by the superuser and a standard user for all images uploaded to the website.
+Cloudinary is used for all images both by the superuser and a standard user for all images uploaded to the website.
 <br>
-The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model liked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it only. 
+The database contains three custom models - categories recipes and comments. The built in Django user model was utilized and each model linked to this. Each registered user is assigned a user id. They can add recipes which will be linked to their id, and each recipe has an auto generated slug field (this is derived from the recipe's title). The recipe can be edited and deleted by the person who added it or by admin. 
 
 Below is the chart of the custom data model used.
 
@@ -283,23 +292,23 @@ Below is the chart of the custom data model used.
 
 ### Recipes
 
-+ This model stores the recipe details that the user can view from the site
-+ This model pulls information from the categories model to catagorize the type of recipe
-+ This model pulls information from the comments model to determine who made the comment on what recipe
++ This model stores the recipe details that the user can view from the site.
++ This model pulls information from the categories model to catagorize the type of recipe.
++ This model pulls information from the comments model to determine who made the comment on what recipe.
 
 ### Categories
 
-+ This model stores the product category details
-+ This model sends information to the recipes model to catagorize the type of recipe being uploaded
++ This model stores the product category details.
++ This model sends information to the recipes model to catagorize the type of recipe being uploaded.
 
 ### Comments
 
-+ This model stores the user name
-+ This model sends information to the recipe model to determine who made the comment on which recipe
++ This model stores the user name and comment message.
++ This model sends information to the recipe model to determine who made the comment on which recipe.
 
 # Technologies Used
 
-- [Django3](https://www.djangoproject.com/)
+- [Django3](https://www.djangoproject.com/) framework
 - [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
 - [CSS3](https://en.wikipedia.org/wiki/CSS) for style
 - [Postgressql](https://www.postgresql.org/) for the database
@@ -549,10 +558,11 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 * [codeamemy.com](https://www.youtube.com/watch?v=m3efqF9abyg&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=4) Tutorial was used to better understand how views and urls work.
 
 ### Media
-* The Hero image was sourced from the following:
-     * [unsplash](https://unsplash.com)
+* The Hero image and placeholder image were sourced from the following:
+     * [freepik](https://www.freepik.com/free-photo/vegetables-set-left-black-slate_986619.htm#page=1&position=19&from_view=user%23position=9)
+     * [freepik](https://www.freepik.com/free-photo/my-first-dish-my-live-is-delicious_10672361.htm#page=1&position=3&from_view=detail#&position=3&from_view=detail--)
 * The 404 page error image was sourced from the following:
-     * [unsplash](https://www.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_7906233.htm#page=1&query=404&position=24&from_view=search)
+     * [freepik](https://www.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_7906233.htm#page=1&query=404&position=24&from_view=search)
  * The recipe images were all taken from the original recipes which have been linked on the site in each recipe.
  * Each recipe is referenced to it source via the recipe_url and is available to all users from the redipe detail page
 
