@@ -447,7 +447,7 @@ Family and friends assisted me with real world testing on their personal devices
 
 ## For the Assessors
 
-**_Please note, that due to the time limitations on this project, was not able to add all the testing I wanted to. I Hope the testing that I currently documented, is sufficient_**. 
+**_Please note, due to the time limitations on this project, was not able to add all the testing I wanted to. I Hope the testing that I currently documented, is sufficient_**. 
 
 Thank you 😀
 

@@ -17,7 +17,7 @@ It is a community based experience that allows casual, one-time users to browse 
      + [Strategy](#Strategy)
      + [Scope](#Scope)
      + [Structure](#Structure)
-          + [Front-end Pages](Front-end-Pages)
+          + [Front end Pages](Front-end-Pages)
      + [Skeleton](#Skeleton)
           + [Wireframes](#Wireframes)
      + [Surface](#Surface)
@@ -30,10 +30,10 @@ It is a community based experience that allows casual, one-time users to browse 
      + [Tools](#Tools)
 + [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
 + [Deployment](#Deployment)
-     + [Deployment through GitHub Pages](#1-Deployment-through-GitHub-Pages)
-     + [Heroku Deployment](#2-Heroku-Deployment)
-     + [Forking the Repository](#3-Forking-the-Repository)
-     + [Making a Local Clone](#4-Making-a-Local-Clone)
+     + [Deployment through GitHub Pages](#Deployment-through-GitHub-Pages)
+     + [Heroku Deployment](#Heroku-Deployment)
+     + [Forking the Repository](#Forking-the-Repository)
+     + [Making a Local Clone](#Making-a-Local-Clone)
 + [Credits](#Credits)
 
 ***
@@ -72,7 +72,7 @@ The primary goal of Lets Cook It! is to allow the users to create, search, and v
 [^ back to top ^](#Table-of-contents)
 <br>
 
-## Strategy Plane
+## Strategy
 ### — Project Planning —
 
  Agile development was implemented from the onset of this project and simply explained Agile is an iterative approach to project management and software development that helps teams deliver value to their customers, faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. As the development team for this project was a single developer I attempted to use this approach for building this project.  
@@ -104,7 +104,7 @@ Below are the additional functions that can improve the website, however, these 
 | Contact us form                         |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
 
-## Scope Plane
+## Scope
 
 To achieve user and owner’s goals, above are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of the essential features.
 
@@ -122,7 +122,7 @@ To achieve user and owner’s goals, above are the minimum features to be includ
 > **Note:**<br>
 > A superuser/admin can only create a new category from the backend. However In the final stages before submission I adjusted the profile view to render all recipes on the site for an admin/superuser. **Admin now has full CRUD functionality from the front end also.**
 
-## Structure Plane
+## Structure
 
 ### — **Front-end** —
 
@@ -161,11 +161,12 @@ Recipe cards and full recipes are accessible by any users. Recipe cards are avai
 
 <br>
 
-## Skeleton Plane
+
+## Skeleton
 
 It is a mobile-first website because people usually cook with a recipe so a good mobile-first design helps users whose main purpose is seeing recipes. For users whose main purpose is creating and posting recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website.
 
-### — Wireframes —
+### Wireframes
 
 - [Wireframes: Home](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Landing-page.png)
 
@@ -186,7 +187,7 @@ It is a mobile-first website because people usually cook with a recipe so a good
 - [Wireframes: Edit Recipe](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/Edit-recipe-page.png)
 
 
-## Surface Plane
+## Surface
 
 — **Colour** —
 
@@ -206,7 +207,7 @@ The background image selected is to imitate a marble kitchen countertop and the 
 
 # FEATURES
 
-## — Existing Features —
+## Existing Features 
 #### **Navigation menu displayed across all pages**
 
 The navigation menu will help the user move easily across all pages.
@@ -264,7 +265,7 @@ Admin manages all its CRUD functionality mainly from the backend however admin c
 
 Should a user request a page that does not exist they will receive a 404 message and be redirected back to the home page.
 
-## — Features to Implement in the future —
+## Features to Implement in the future 
 + A rating system that allows users to rate each others recipes. 
   + This could lead to sorting by top-rated recipes.
 + Ability to 'save' recipes to a users own account to refer back to.
@@ -279,6 +280,7 @@ Should a user request a page that does not exist they will receive a 404 message
 [^ back to top ^](#Table-of-contents)
 <br>
 
+
 # Database
 
 Two relational databases were used to create this site - during production SQLite was used and then Postgres was used for the deployed Heroku version. 
@@ -288,7 +290,7 @@ The database contains three custom models - categories recipes and comments. The
 
 Below is the chart of the custom data model used.
 
-![database](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/database%20models.png)<br>
+![database](https://github.com/moirahartigan/lets-cook-it/blob/main/static/readme/database-models.png)<br>
 
 ### Recipes
 
@@ -355,7 +357,7 @@ Below is the chart of the custom data model used.
 Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/moirahartigan/lets-cook-it/blob/main/TESTING.md). 
 
 # Deployment
-## — Deployment through GitHub Pages —
+## Deployment through GitHub Pages
 This site was deployed through GitHub Pages using the following steps:
 
 * Log into GitHub.
@@ -365,7 +367,7 @@ This site was deployed through GitHub Pages using the following steps:
 * Then under "Source" click the "None" dropdown and select the "Main" branch
 * Click the save button.
 
-## — Heroku Deployment —
+## Heroku Deployment
 This project was deployed through Heroku using the following steps:
 
 ### Step. 1 Installing Django and supporting libraries
@@ -524,12 +526,12 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Underneath, locate 'Manual Deploy'; choose the main branch and click 'Deploy Branch'
 + Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
 
-## — Forking the Repository —
+## Forking the Repository
 + Log in to GitHub and locate the GitHub Repository
 + At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
 + You will have a copy of the original repository in your GitHub account.
 + You will now be able to make changes to the new version and keep the original safe. 
-## — Making a Local Clone —
+## Making a Local Clone
 + Log into GitHub.
 + Locate the repository.
 + Click the 'Code' dropdown above the file list.
