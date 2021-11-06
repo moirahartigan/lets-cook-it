@@ -11,10 +11,12 @@ from .forms import RecipeCommentForm, CategoryForm, RecipeForm
 
 
 def page_not_found(request, exception):
+    """ A view to show 404 page """
     return render(request, 'not-found.html')
 
 
 class HomeList(generic.ListView):
+    """ A view to show recipe list on home page carousel """
     model = Recipe
     queryset = Recipe.objects.filter(
         status=1, approved=True).order_by('-created_on')
@@ -22,6 +24,7 @@ class HomeList(generic.ListView):
 
 
 class RecipeList(generic.ListView):
+    """ A view to show all recipes """
     model = Recipe
     queryset = Recipe.objects.filter(
         status=1, approved=True).order_by('-created_on')
@@ -29,16 +32,18 @@ class RecipeList(generic.ListView):
     paginate_by = 6
 
 
-class CategoryView(generic.ListView):
-    model = Categories
-    queryset = Recipe.objects.values('categories').distinct()
-    template_name = 'recipes.html'
+# class CategoryView(generic.ListView):
+#     """ A view to show all categories """
+#     model = Categories
+#     queryset = Recipe.objects.values('categories').distinct()
+#     template_name = 'recipes.html'
 
 
 # CRUD - Read functionality
 class RecipeDetail(View):
-
+        
     def get(self, request, slug):
+        """ A view to show recipe detail """
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
@@ -106,6 +111,7 @@ class RecipeDetail(View):
 
 # CRUD - Create functionality
 class RecipeCreateView(LoginRequiredMixin, CreateView):
+    """ A view to show add a recipe form """
     model = Recipe
     form_class = RecipeForm
     template_name = 'recipe_form.html'
@@ -127,6 +133,7 @@ class AddCategoryView(LoginRequiredMixin, CreateView):
 
 # CRUD - update functionality
 class RecipeEdit(LoginRequiredMixin, UpdateView):
+    """ A view to show edit recipe form """
     model = Recipe
     form_class = RecipeForm
     template_name = 'recipe_edit_form.html'
@@ -137,6 +144,7 @@ class RecipeEdit(LoginRequiredMixin, UpdateView):
 
 # CRUD - Delete functionality
 class RecipeDelete(LoginRequiredMixin, DeleteView):
+    """ A view to show delete recipe confirmation page """
     model = Recipe
     template_name = 'recipe_delete_confirm.html'
     success_url = reverse_lazy('recipes')
@@ -144,6 +152,7 @@ class RecipeDelete(LoginRequiredMixin, DeleteView):
 
 # Search View
 def SearchView(request):
+    """ A view to show search results """
     if request.method == "POST":
         searched = request.POST['searched']
         ingredients = Recipe.objects.filter(ingredients__contains=searched)
@@ -166,10 +175,19 @@ def SearchView(request):
 
 # User Recipe View
 class ProfileRecipes(View):
-
+        
     def get(self, request):
+        """ A view to show profile recipes """
         published_list = Recipe.objects.filter(status=1, author=request.user)
-
+        
+        # if request.user.is_superuser
+        # return render(
+        #     'profile.html',
+        #     {
+        #         'published_list': published_list,
+        #     }
+        # )
+        # else:
         return render(
             request,
             'profile.html',
