@@ -5,60 +5,66 @@
 
 
 <div class="container py-5">
-  <h2 class="text-center">Recipes</h2>
-  <!-- Search -->  
-  <div class="container">
-     <div class="row height d-flex justify-content-center align-items-center">
-        <div class="col-xs-6 col-md-8 col-lg-6 col-11 py-5">
-           <form class="search" method=POST action="{% url 'search_results' %}"> <i class="fa fa-search"></i>
-              {% csrf_token %}
-              <input type="search" class="form-control" placeholder="Search Recipes" name="searched">
-           </form>
-           <br>
-           <!-- <div class="text-center"><button class="btn btn-success">Search</button></div> -->
-        </div>
-     </div>
-  </div>
-  <div class="container">
-     <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
-        {% for recipe in recipe_list %}        
-        <div class="col-md-6 col-lg-4">
-           <div class="card mb-3 card">
-              {% if "placeholder" in recipe.image_url.url %}
-              <img src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg" class="card-img-top" alt="placeholder image">
-              {% else %}
-              <img class="card-img-top" src="{{ recipe.image_url.url }}" alt="recipe image">
-              {% endif %}
-              <p class="image-flash">
-                 <span class="card-cat">{{ recipe.categories }}</span>
-              </p>
-              <div class="card-body">
-                 <h5 class="card-title">{{ recipe.title }}</h5>
-                 <p class="card-text">Added by: {{ recipe.author }}</p>
-                 <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-outline-success">View</a>
-              </div>
-           </div>
-        </div>
-        {% endfor %}
-     </div>
-  </div>
-  <!-- PAGINATION -->
-  {% if is_paginated %}
-  <div class="pagination">
-     <div class="page-links">
-        {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-        <span class="current">
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-        </span>
-        {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-        {% endif %}
-     </div>
-  </div>
-  {% endif %}
+   <h2 class="text-center">Recipes</h2>
+   <!-- Search -->
+   <div class="container">
+      <div class="row height d-flex justify-content-center align-items-center">
+         <div class="col-xs-6 col-md-8 col-lg-6 col-11 py-5">
+            <form class="search" method=POST 
+               action="{% url 'search_results' %}"><i class="fa fa-search"></i>
+               {% csrf_token %}
+               <input type="search" class="form-control" 
+                  placeholder="Search Recipes" name="searched">
+            </form>
+            <br>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
+         {% for recipe in recipe_list %}
+         <div class="col-md-6 col-lg-4">
+            <div class="card mb-3 card">
+               {% if "placeholder" in recipe.image_url.url %}
+               <img
+                  src="https://res.cloudinary.com/cloudmoira/image/upload/v1635156927/Recipe%20images/my-first-dish-my-live-is-delicious_1_q7wctd.jpg"
+                  class="card-img-top" alt="placeholder image">
+               {% else %}
+               <img class="card-img-top" 
+                  src="{{ recipe.image_url.url }}" alt="recipe image">
+               {% endif %}
+               <p class="image-flash">
+                  <span class="card-cat">{{ recipe.categories }}</span>
+               </p>
+               <div class="card-body">
+                  <h5 class="card-title">{{ recipe.title }}</h5>
+                  <p class="card-text">Added by: {{ recipe.author }}</p>
+                  <a href="{% url 'recipe_detail' recipe.slug %}" 
+                     class="btn btn-outline-success">View</a>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+   <!-- PAGINATION -->
+   {% if is_paginated %}
+   <div class="pagination">
+      <div class="page-links">
+         {% if page_obj.has_previous %}
+         <a href="?page=1">&laquo; First</a>
+         <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+         {% endif %}
+         <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+         </span>
+         {% if page_obj.has_next %}
+         <a href="?page={{ page_obj.next_page_number }}">Next</a>
+         <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+         {% endif %}
+      </div>
+   </div>
+   {% endif %}
 </div>
+
 {% endblock %}

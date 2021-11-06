@@ -8,39 +8,40 @@
 
 
 <section class="py-5 container account-container">
-  <div class="container">
-      <div class="row login g-0">
-          <div class="d-none d-lg-block col-lg-5">
-              <img class="img-fluid" src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg" alt="">
-          </div>
-          <div class="col-lg-7 text-center py-5">
-              <h1 class="py-5"><strong>Come Back Soon</strong></h1>
+    <div class="container">
+        <div class="row login g-0">
+            <div class="d-none d-lg-block col-lg-5">
+                <img class="img-fluid"
+                    src="https://res.cloudinary.com/cloudmoira/image/upload/c_scale,h_680,w_550/v1635187577/Recipe%20images/krakenimages-7BpuzmcxlHU-unsplash_gsypu6.jpg"
+                    alt="logout image">
+            </div>
+            <div class="col-lg-7 text-center py-5">
+                <h1 class="py-5"><strong>Come Back Soon</strong></h1>
 
-              <div class="py-3 pt-3">
-                  <h3>{% trans "Log Out" %}</h3>
-                  <p>{% trans 'Are you sure you want to Log out?' %}</p>
-                  
-   
-                  <form method="POST" action="{% url 'account_logout' %}">
-                      <div class="form-row py-3 pt-5">
-                          <div class="offset-lg-1 col-lg-10">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            {% if redirect_field_value %}
-                            <input class="inp" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                            {% endif %}
-                            <button class="btn1 btn-signup right" type="submit">{% trans 'Log Out' %}</button>
-                          </div>
-                      </div>
-                  </form>
+                <div class="py-3 pt-3">
+                    <h3>{% trans "Log Out" %}</h3>
+                    <p>{% trans 'Are you sure you want to Log out?' %}</p>
+
+
+                    <form method="POST" action="{% url 'account_logout' %}">
+                        <div class="form-row py-3 pt-5">
+                            <div class="offset-lg-1 col-lg-10">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                {% if redirect_field_value %}
+                                <input class="inp" type="hidden" 
+                                    name="{{ redirect_field_name }}"
+                                    value="{{ redirect_field_value }}" />
+                                {% endif %}
+                                <button class="btn1 btn-signup right" 
+                                    type="submit">{% trans 'Log Out' %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-          </div>
-
-      </div>
-    </div> 
+            </div>
+        </div>
+    </div>
 </section>
-
-
-
-
 {% endblock %}

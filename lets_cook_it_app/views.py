@@ -32,25 +32,15 @@ class RecipeList(generic.ListView):
     paginate_by = 6
 
 
-# class CategoryView(generic.ListView):
-#     """ A view to show all categories """
-#     model = Categories
-#     queryset = Recipe.objects.values('categories').distinct()
-#     template_name = 'recipes.html'
-
-
 # CRUD - Read functionality
 class RecipeDetail(View):
-        
+
     def get(self, request, slug):
         """ A view to show recipe detail """
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
             approved=True).order_by("-created_on")
-        # likes = False
-        # if recipe.liked.filter(id=self.request.user.id).exists():
-        #     likes = True
 
         return render(
             request,
@@ -59,7 +49,6 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "commented": False,
-                # "liked": liked,
                 'comment_form': RecipeCommentForm()
             },
         )
@@ -69,9 +58,6 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(
             approved=True).order_by("-created_on")
-        # likes = False
-        # if recipe.liked.filter(id=self.request.user.id).exists():
-        #     likes = True
 
         comment_form = RecipeCommentForm(data=request.POST)
 
@@ -91,22 +77,9 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "commented": True,
-                # "likes": likes,
                 'comment_form': RecipeCommentForm()
             },
         )
-
-
-# class RecipeLike(View):
-
-#     def recipe(self, request, slug):
-#         recipe = get_object_or_404(Recipe, slug=slug)
-#         if recipe.liked.filter(id=request.user.id).exists():
-#             recipe.liked.remove(request.user)
-#         else:
-#             recipe.liked.add(request.user)
-
-#         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 # CRUD - Create functionality
@@ -175,11 +148,10 @@ def SearchView(request):
 
 # User Recipe View
 class ProfileRecipes(View):
-        
+
     def get(self, request):
         """ A view to show profile recipes """
-        # published_list = Recipe.objects.filter(status=1, author=request.user)
-        
+
         if request.user.is_superuser:
             published_list = Recipe.objects.filter(status=1)
             return render(
