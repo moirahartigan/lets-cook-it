@@ -18,10 +18,8 @@ class Categories(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-    # def get_Recipe(self):
-    #     return Recipe.objects.filter(categories_name=self.title)
 
-
+#Recipes model
 class Recipe(models.Model):
     title = models.CharField(max_length=220, unique=True)
     slug = models.SlugField(max_length=220, unique=True)
@@ -37,8 +35,6 @@ class Recipe(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
     approved = models.BooleanField(default=False)
-    likes = models.ManyToManyField(
-        User, related_name='recipe_like', blank=True)
     categories = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
     # Using slugify found here https://kodnito.com/posts/slugify-urls-django/
@@ -53,9 +49,6 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-    def number_of_likes(self):
-        return self.likes.count()
-  
 
 # comments model
 class Comment(models.Model):
@@ -72,4 +65,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.message} by {self.name}"
-
