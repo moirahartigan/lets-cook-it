@@ -264,7 +264,7 @@ I checked the script.js file using [JSHint](https://jshint.com/)
 ### **Python**
 I checked the app.py file using [PEP8 online](http://pep8online.com/)
 
-The code passed all checks.
+The code passed all checks bar url.py as one of the path line was too long by 3 charactors. Splitting this paths caused issues on the live site so I left the line length as it was.
 
 ---
 

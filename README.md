@@ -24,7 +24,7 @@ It is a community based experience that allows casual, one-time users to browse 
 + [Features](#Features) 
      + [Existing Features](#Existing-Features)
      + [Features to Implement in the future](#Features-to-Implement-in-the-future)
-+ [Database](Database)
++ [Database](#Database)
 + [Technologies Used](#Technologies-Used)
      + [General Resources](#General-Resources)
      + [Tools](#Tools)
@@ -104,6 +104,12 @@ Below are the additional functions that can improve the website, however, these 
 | Contact us form                         |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
 
+<br>
+
+[^ back to top ^](#Table-of-contents)
+<br>
+
+
 ## Scope
 
 To achieve user and owner’s goals, above are the minimum features to be included in this project. Also, **CRUD** Create, Read, Update, and Delete functions are required for this project so these are implemented as a part of the essential features.
@@ -124,7 +130,7 @@ To achieve user and owner’s goals, above are the minimum features to be includ
 
 ## Structure
 
-### — **Front-end** —
+### **Front end pages** 
 
 The website consists of a **Home** page with **9 other core pages**.
 
@@ -159,6 +165,9 @@ The website consists of a **Home** page with **9 other core pages**.
 
 Recipe cards and full recipes are accessible by any users. Recipe cards are available on *Home* on the carousel and *Recipe* pages and full recipes are available on *Recipe* page.
 
+<br>
+
+[^ back to top ^](#Table-of-contents)
 <br>
 
 
@@ -204,6 +213,8 @@ The background image selected is to imitate a marble kitchen countertop and the 
 
 [^ back to top ^](#Table-of-contents)
 <br>
+
+
 
 # FEATURES
 
@@ -526,11 +537,16 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 + Underneath, locate 'Manual Deploy'; choose the main branch and click 'Deploy Branch'
 + Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
 
+<br>
+
 ## Forking the Repository
 + Log in to GitHub and locate the GitHub Repository
 + At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
 + You will have a copy of the original repository in your GitHub account.
 + You will now be able to make changes to the new version and keep the original safe. 
+
+<br>
+
 ## Making a Local Clone
 + Log into GitHub.
 + Locate the repository.
@@ -573,6 +589,6 @@ ALLOWED_HOSTS = ["lets-cook-it-app.herokuapp.com", "localhost"]
 * I would like to thank Kasia Bogucka our class cohort facilitator for her constant assistance and encouragement.
 * I would like to especially thank two of my fellow students Siobhan and Laura for their help and motivation throughout this project.
 * I would like to thank my husband for his understanding and support and for caring for our young children during the long hours taken to complete this project. 
-* Finally, I would like to thank my mentor for his guidence and feedback throughout this milestone project.
+* Finally, I would like to thank my mentor Adegbenga Adeye for his guidence and feedback throughout this project.
  
 ***
